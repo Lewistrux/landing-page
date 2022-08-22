@@ -18,8 +18,6 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-    <!--estilos propios-->
-  <link rel="stylesheet" href="Adminlte/dist/css/estilos.css">
   @yield('pre-script')
 </head>
 <body class="hold-transition sidebar-mini">

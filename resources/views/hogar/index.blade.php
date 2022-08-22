@@ -11,42 +11,11 @@
     </header>
 @endsection
 @section('contenido')
-    <div class="card">
-      <div class="card-body banner">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="img/banners/banner_3.png" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/banners/banner_2.png" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img/banners/banner_1.png" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-custom-icon" aria-hidden="true">
-              <i class="fas fa-chevron-left"></i>
-            </span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-custom-icon" aria-hidden="true">
-              <i class="fas fa-chevron-right"></i>
-            </span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-      <!-- /.card-body -->
-    </div>
+    <!-- <section id="banner">
+        <img src="img/portadas/22.png">
+    </section> -->
     <div class="content-page"> 
+
       <div class="formulario">
         <div class="row">
           <div class="col-lg-8">
@@ -60,14 +29,14 @@
                 <div class="card-body">
                   <div class="row">
 
-                    <div class="col-lg-12">
+                    <div class="col-12">
                       <div class="form-group">
                         <label for="nombre">Nombre completo</label>
                         <input type="text" class="form-control form-control-sm" id="nombre" name="nombre" placeholder="Nombre" required>
                       </div>
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Tipo documento</label>
                         <select class="form-control form-control-sm select2" id="tipo_documento" name="tipo_documento">
@@ -78,7 +47,7 @@
                       </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-12 col-sm-12" id="div_dni">
+                    <div class="col-lg-6 col-md-6 col-sm-12" id="div_dni">
                       <div class="form-group">
                         <label>DNI</label>
                         <div class="input-group">
@@ -90,7 +59,7 @@
                       </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-12 col-sm-12" id="div_ruc">
+                    <div class="col-lg-6 col-md-6 col-sm-12" id="div_ruc">
                       <div class="form-group">
                         <label>RUC</label>
                         <div class="input-group">
@@ -102,7 +71,7 @@
                       </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-12 col-sm-12" id="div_carne">
+                    <div class="col-lg-6 col-md-6 col-sm-12" id="div_carne">
                       <div class="form-group">
                         <label>Carnet extranjería</label>
                         <div class="input-group">
@@ -114,8 +83,7 @@
                       </div>
                     </div>
 
-                    <div class="col-lg-6">
-                      <!-- phone mask -->
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Número</label>
 
@@ -125,11 +93,10 @@
                           </div>
                           <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['999-999-999']" data-mask>
                         </div>
-                        <!-- /.input group -->
                       </div>
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Departamento</label>
                         <select class="form-control form-control-sm select2 ">
@@ -144,7 +111,7 @@
                       </div>
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Provincia</label>
                         <select class="form-control form-control-sm select2 ">
@@ -159,7 +126,7 @@
                       </div>
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Distrito</label>
                         <select class="form-control form-control-sm select2 ">
@@ -185,6 +152,155 @@
           </div>
         </div>
       </div>
+
+      <div class="cards">
+        <div class="content-buttons">
+          <div class="row">
+            <div class="col-lg-3 col-md-2 col-sm-0"></div>
+            <div class="col-lg-3 col-md-4 col-sm-12 text-right algin-center">
+              <button type="button" id="btn-2play" onclick="Boton2Play()" class="btn btn-lg btn-block" style="background-color: red; color: white;">2 Play</button>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 text-left">
+              <button type="button" id="btn-3play" onclick="Boton3Play()" class="btn btn-lg btn-block" style="background-color: red; color: white;">3 Play</button>
+            </div>
+            <div class="col-lg-3 col-md-2 col-sm-0"></div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-planes">
+        <div class="row g-4" id="2play">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-4">
+            <div class="card h-100">
+              <img src="img/botones/btn_inter_tel.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <h5> <b> Planes 3 play</b></h5>
+                    <p class="card-text">Disfruta de los mejores planes 3 play para ti y tu familia.</p>
+                  </div>
+                  <div class="col-lg-4">
+                    <img src="img/servicios/claro_video.png" class="img-into-card" alt="">
+                  </div>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                
+                <li class="list-group-item">
+                  <i class="fa fa-check" style="color: green;"></i>
+                  <b>50 Mbps</b> de internet
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-check" style="color: green;"></i>
+                  Hasta <b>75 Mbps</b>  de internet
+                  <br><span class="text-muted pl-3">Contando con Full Claro</span>
+                </li>
+                <li class="list-group-item">
+                <i class="fa fa-check" style="color: green;"></i>
+                  Hasta 15 Mbps de <b>subida</b> 
+                </li>
+              </ul>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-lg-8">
+                    Planes desde:
+                    <h2>S/.40</h2>  
+                    <span class="text-muted text-sm">por el 1er mes</span> 
+                  </div>
+                  <div class="col-lg-4">
+                    <button type="button" class="btn btn-info">Me interesa</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card h-100">
+              <img src="img/botones/btn_inter_tv.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5> <b> Planes 3 play</b></h5>
+                <p class="card-text">Disfruta de los mejores planes 3 play para ti y tu familia.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                
+                <li class="list-group-item">
+                  <i class="fa fa-check" style="color: green;"></i>
+                  <b>50 Mbps</b> de internet
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-check" style="color: green;"></i>
+                  Hasta <b>75 Mbps</b>  de internet
+                  <br><span class="text-muted pl-3">Contando con Full Claro</span>
+                </li>
+                <li class="list-group-item">
+                <i class="fa fa-check" style="color: green;"></i>
+                  Hasta 15 Mbps de <b>subida</b> 
+                </li>
+              </ul>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-lg-8">
+                    Planes desde:
+                    <h2>S/.40</h2>  
+                    <span class="text-muted text-sm">por el 1er mes</span> 
+                  </div>
+                  <div class="col-lg-4">
+                    <button type="button" class="btn btn-info">Me interesa</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2"></div>
+        </div>
+
+        <div class="row g-4" id="3play">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+            <div class="card h-100">
+              <img src="img/botones/btn_inter_tv_tel.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5> <b> Planes 3 play</b></h5>
+                <p class="card-text">Disfruta de los mejores planes 3 play para ti y tu familia.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                
+                <li class="list-group-item">
+                  <i class="fa fa-check" style="color: green;"></i>
+                  <b>50 Mbps</b> de internet
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-check" style="color: green;"></i>
+                  Hasta <b>75 Mbps</b>  de internet
+                  <br><span class="text-muted pl-3">Contando con Full Claro</span>
+                </li>
+                <li class="list-group-item">
+                <i class="fa fa-check" style="color: green;"></i>
+                  Hasta 15 Mbps de <b>subida</b> 
+                </li>
+              </ul>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-lg-8">
+                    Planes desde:
+                    <h2>S/.40</h2>  
+                    <span class="text-muted text-sm">por el 1er mes</span> 
+                  </div>
+                  <div class="col-lg-4">
+                    <button type="button" class="btn btn-info">Me interesa</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4"></div>
+        </div>
+      </div>
+      
+      
+      <!-- <div class="portada">
+        <img src="" alt="">
+      </div> -->
       
     </div>
 @endsection
@@ -204,13 +320,25 @@
 
       IniciarCargado();
       $('#tipo_documento').on('change', CambioTipoDocumento);
+      // $('#btn-3play').on('onclik',Boton3Play);
     })
+
+    function Boton3Play(){
+      $('#3play').show();
+      $('#2play').hide();
+    }
+
+    function Boton2Play(){
+      $('#2play').show();
+      $('#3play').hide();
+    }
 
     function IniciarCargado(){
       // $('#div_dni').hide();
       $('#div_ruc').hide();
       $('#div_carne').hide();
       $('#tipo_documento').trigger('change');
+      $('#3play').hide();
     }
 
     function CambioTipoDocumento(){

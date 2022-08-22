@@ -61,6 +61,7 @@ negro: 010101
 }
 
 .content-page{
+    /* padding: 20px; */
     background-color: white;
     width: 100%;
 }
@@ -148,7 +149,7 @@ footer{
 
 @media (min-width: 1024px) {
 	#banner img {
-		margin-top: -150px;
+		margin-top: 0px;
 	}
 }
 
@@ -181,4 +182,28 @@ footer{
     background-image: url('../img/formularios/form_movil.png');
     margin-bottom: 30px;
    
+}
+
+.portada {
+	margin-top: 0px;
+	position: relative;
+}
+.content-buttons{
+    padding: 30px;
+}
+.cards-planes{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.color_red{
+    color: #fff;
+    background-color: #f10018;
+    border-color: #f10018;
+    box-shadow: none;
+  }
+
+.img-into-card{
+    max-height: 50px;
 }
