@@ -7,7 +7,7 @@
     </header>
 @endsection
 @section('contenido')
-<div class="card">
+      <!-- <div class="card">
         <div class="card-body banner">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -40,28 +40,154 @@
             </a>
           </div>
         </div>
-        <!-- /.card-body -->
-      </div>
-
+      </div> -->
+      <section id="portada" class="portada">
+        <img src="img/portadas/postula.png" class="portada">
+      </section>
       <div class="content-page"> 
-        <div class="targets text-center">
-          <div class="row">
-            <div class="col-lg-4">
-              <a type="button" class="btn btn-outline-warning" href="{{route('hogar')}}">
-                <img src="img/servicios/hogar.png" class="tarjeta-btn" alt="">
-              </a>
-            </div>
-            <div class="col-lg-4">
-              <a type="button" class="btn btn-outline-warning" href="{{route('moviles')}}">
-                <img src="img/servicios/movil.png" class="tarjeta-btn" alt="">
-              </a>
-            </div>
-            <div class="col-lg-4">
-              <a type="button" class="btn btn-outline-warning" href="{{route('empresas')}}">
-                <img src="img/servicios/empresa.png" class="tarjeta-btn" alt="">
-              </a>
+        <!-- <div class="row">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-4">
+            <div class="card card-dark">
+              <div class="card-header">
+                <h3 class="card-title">Dejanos tus datos</h3>
+              </div>
+              <form>
+                <div class="card-body">
+                  <div class="row">
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" class="form-control form-control-sm" id="nombre" name="nombre" placeholder="Nombre" required>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Tipo documento</label>
+                        <select class="form-control form-control-sm select2" id="tipo_documento" name="tipo_documento">
+                          <option selected="selected" value="DNI">DNI</option>
+                          <option value="RUC">RUC</option>
+                          <option value="CARNE">Carnet extranjería</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12" id="div_dni">
+                      <div class="form-group">
+                        <label>DNI</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          </div>
+                          <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['99999999']" data-mask>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12" id="div_ruc">
+                      <div class="form-group">
+                        <label>RUC</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          </div>
+                          <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['99999999999']" data-mask>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12" id="div_carne">
+                      <div class="form-group">
+                        <label>Carnet extranjería</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          </div>
+                          <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['999999999999']" data-mask>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Número</label>
+
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                          </div>
+                          <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['999-999-999']" data-mask>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Departamento</label>
+                        <select class="form-control form-control-sm select2 ">
+                          <option selected="selected">La Libertad</option>
+                          <option>Alaska</option>
+                          <option>California</option>
+                          <option>Delaware</option>
+                          <option>Tennessee</option>
+                          <option>Texas</option>
+                          <option>Washington</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Provincia</label>
+                        <select class="form-control form-control-sm select2 ">
+                          <option selected="selected">Trujillo</option>
+                          <option>Alaska</option>
+                          <option>California</option>
+                          <option>Delaware</option>
+                          <option>Tennessee</option>
+                          <option>Texas</option>
+                          <option>Washington</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Distrito</label>
+                        <select class="form-control form-control-sm select2 ">
+                          <option selected="selected">La esperanza</option>
+                          <option>Alaska</option>
+                          <option>California</option>
+                          <option>Delaware</option>
+                          <option>Tennessee</option>
+                          <option>Texas</option>
+                          <option>Washington</option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </div>                  
+                </div>
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                </div>
+              </form>
             </div>
           </div>
+          <div class="col-lg-4">
+          </div>
+        </div> -->
+        <div class="row content-buttons">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
+            <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-postular">Postula Aquí</button>
+          </div>
+          <div class="col-lg-3"></div>
         </div>
       </div>
+    @include('formulario.postular')
 @endsection

@@ -8,6 +8,55 @@ body{
     position: relative;
     margin: 0;
 }  
+/* .navegacion:hover{
+    outline: none;
+    color: #f10018 !important;
+} */
+/* .navegacion{
+    text-decoration: none;
+}
+.navegacion:link {
+    outline: none;
+    color: #265301;
+  }
+  .navegacion:hover {
+    color: orange;
+    background: #161616;
+  } */
+.navegacion {
+    font-size: 20px;
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+    width: 120px;
+    margin-right: 0.625%;
+    text-align: center;
+    line-height: 3;
+    height: 80px;
+}
+  
+.navegacion:link {
+    color: #fca118;
+}
+
+.navegacion:visited {
+    color: #fde827;
+}
+
+.navegacion:focus {
+    color: #ffec44;
+    background: #353535;
+}
+
+.navegacion:hover {
+    background-color: #ffec44;
+    color: #fff16e !important;
+    background: #181818;
+}
+.navegacion:active {
+    background: #fdff75d5;
+    color: #fcff41;
+}
 
 /* paleta de colores claro distribuidor
 rojo: #D02B1F
@@ -42,15 +91,16 @@ negro: 010101
 .content-autorized{
     margin-left: 80px;
 }
+
 .content_space{
    padding: 10px; 
-   
 }
 
 .logo{
     max-height: 50px;
     margin-left: 60px;
 }
+
 .logo-footer{
     max-height: 60px; 
 }
@@ -100,10 +150,12 @@ footer{
 	margin-top: 0px;
 	position: relative;
 }
+
 #banner img {
 	width: 100%;
 	height: 100%;
 }
+
 #banner .contenedor {
 	position: absolute;
 	top: 50%;
@@ -111,9 +163,11 @@ footer{
 	transform: translateX(-50%) translateY(-50%);
 	color: #fff;
 }
+
 #banner h2 {
 	font-size: 28px;
 }
+
 #banner a {
 	display: block;
 	width: 100px;
@@ -123,6 +177,7 @@ footer{
 	margin-top: 10px;
 	border: 3px solid #fff;
 }
+
 #banner a:hover {
 	background: rgba(51,51,51,0.5);
 }
@@ -185,25 +240,56 @@ footer{
 }
 
 .portada {
+    width: 100%;
 	margin-top: 0px;
 	position: relative;
 }
+
 .content-buttons{
-    padding: 30px;
+    padding: 15px;
+    background-color: #ffd257f5;
 }
+
 .cards-planes{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 15px;
 }
+
 .color_red{
     color: #fff;
     background-color: #f10018;
     border-color: #f10018;
     box-shadow: none;
-  }
+}
 
 .img-into-card{
+    padding: 0px;
     max-height: 50px;
 }
+
+.content-burbuja{
+    padding: 20px;
+    background-color: #fffffff5;
+}
+
+.burbuja{
+    border-radius: 50%;
+    width: 80px;
+}
+
+.whatsapp {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+}
+
+.publicidad{
+    max-height: 300px;
+}
+  

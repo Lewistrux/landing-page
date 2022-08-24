@@ -9,8 +9,11 @@
 @section('contenido')
     
     <div class="wrapper">
+      <section id="banner" class="banner">
+        <img src="img/portadas/portada_principal.png">
+      </section>
       <!-- ./wrapper -->
-      <div class="card">
+      <!-- <div class="card">
         <div class="card-body banner">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -20,13 +23,13 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="img/banners/banner_3.png" alt="First slide">
+                <img class="d-block w-100" src="img/banners/banner_1.png" alt="First slide">
               </div>
               <div class="carousel-item">
                 <img class="d-block w-100" src="img/banners/banner_2.png" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="img/banners/banner_1.png" alt="Third slide">
+                <img class="d-block w-100" src="img/banners/banner_3.png" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -43,9 +46,21 @@
             </a>
           </div>
         </div>
-        <!-- /.card-body -->
-      </div>
-
+      </div> -->
+      <!-- <div class="row p-4">
+        <div class="col-lg-3">
+          <img src="img/publicidad/p1.png" class="publicidad" alt="">
+        </div>
+        <div class="col-lg-3">
+          <img src="img/publicidad/p2.png" class="publicidad" alt="">
+        </div>
+        <div class="col-lg-3">
+          <img src="img/publicidad/p3.png" class="publicidad" alt="">
+        </div>
+        <div class="col-lg-3">
+          <img src="img/publicidad/p4.png" class="publicidad" alt="">
+        </div>
+      </div> -->
       <div class="content-page"> 
         <div class="targets text-center">
           <div class="row">

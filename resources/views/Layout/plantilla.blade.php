@@ -31,12 +31,12 @@
         </a>
 
         <button class="navbar-toggler order-0 text-muted bg-light" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <div class="collapse navbar-collapse order-3 justify-content-end" id="navbarCollapse">
           <!-- Left navbar links -->    
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ">
             <li class="nav-item">
               <a href="{{route('inicio')}}" class="btn btn-lg btn-block btn-dark btn-flat nav-link text-muted">Inicio</a>
             </li>
@@ -64,6 +64,11 @@
     <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">Vera Villanueva</a>.</strong> All rights
     reserved.
   </footer> -->
+  <section id="acceso_wspp">
+    <a href="https://wa.me/961717474" class="whatsapp" target="_blank">
+      <img src="img/icon/wsapp.png" alt="" class="burbuja">
+    </a>
+  </section>
   <footer class="container-fluid bg-dark py-5">
     <div class="container">
       <div class="row">
@@ -93,7 +98,7 @@
                         <ul>
                             <li> <a href="https://www.facebook.com/Clarohogar3play" target="blank"> Facebook</a> </li>
                             <li> <a href="#"> Instagram</a> </li>
-                            <li> <a href="#"> WhatsApp</a> </li>
+                            <li> <a href="https://wa.me/961717474" target="blank"> WhatsApp</a> </li>
                             <li> <a href="#"> Email</a> </li>
                         
                         </ul>
@@ -101,7 +106,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 ">
-                  <h6> Newsletter</h6>
+                  <h6> Novedades</h6>
                   <div class="social">
                       <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                       <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -117,51 +122,6 @@
       @copy
     </div> -->
   </footer>
-  <!-- <footer class="bg-black">
-    <div class="container">
-      
-    </div>
-      <div class="container ">
-        <div class="row invoice-info">
-          <div class="col-sm-4 invoice-col">
-            <img src="img/logo_lewis.png" class="logo-footer m-4" alt="Lewis Claro">
-          </div>
-
-          <div class="col-sm-4 invoice-col">
-           
-          </div>
-
-          <div class="col-sm-4 invoice-col mt-3">
-            <b>Contactanos</b><br>
-            <br>
-            <b>
-              <i class="fa-brands fa-facebook"></i>
-              <i class="bi bi-facebook"></i>
-              <a href="https://www.facebook.com/Clarohogar3play" target="blank">Facebook</a>
-            </b><br>
-            <b>
-              <i id="icon-ig" class="bi bi-instagram"></i>
-              <a href="https://www.facebook.com/Clarohogar3play" target="blank" >Instagram</a>
-            </b><br>
-            <b>
-              <i id="icon-wp" class="bi bi-whatsapp"></i>
-              <a href="https://www.facebook.com/Clarohogar3play" target="blank" >WhatsApp</a>
-            </b><br>
-            <b>
-              <i id="icon-wp" class="bi bi-whatsapp"></i>
-              <a href="https://www.facebook.com/Clarohogar3play" target="blank" >WhatsApp</a>
-            </b>
-            <br>
-            <b>
-              <i id="icon-email" class="bi bi-envelope"></i>
-              <a href="https://www.facebook.com/Clarohogar3play" target="blank" >Email</a>
-            </b><br><br>
-            <b>Ubicanos</b><br>
-            <a href="https://www.google.com/maps/dir//Maquinegocios,+Av.+Espa%C3%B1a+136,+Trujillo+13001/@-8.1153854,-79.0315428,18.75z/data=!4m8!4m7!1m0!1m5!1m1!1s0x91ad3d9d444f36b1:0xcd0a00ecfb1bf1dc!2m2!1d-79.0315236!2d-8.1152006" target="blank" >Av. España 136 - Trujillo</a>
-          </div>
-        </div>
-      </div>
-    </footer> -->
 
 </div>
 <!-- ./wrapper -->
