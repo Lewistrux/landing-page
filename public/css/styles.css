@@ -27,37 +27,63 @@ body{
     font-size: 20px;
     outline: none;
     text-decoration: none;
-    padding: 2px 1px 0;
-    width: 120px;
+    /* padding: 2px 1px 0; */
+    /* width: 100px; */
+    padding: 10px;
     margin-right: 0.625%;
     text-align: center;
-    line-height: 3;
-    height: 80px;
+    /* line-height: 3; */
+    /* height: 80px; */
+    
 }
-  
 .navegacion:link {
     color: #fca118;
 }
-
 .navegacion:visited {
-    color: #fde827;
+    color: #f8f1acc4;
 }
-
 .navegacion:focus {
     color: #ffec44;
     background: #353535;
 }
-
 .navegacion:hover {
     background-color: #ffec44;
-    color: #fff16e !important;
+    color: #f7cb3e !important;
     background: #181818;
+    border-radius: 5px;
 }
 .navegacion:active {
-    background: #fdff75d5;
-    color: #fcff41;
+    background: #4e4e4efd;
+    color: #a56b34;
 }
 
+.link {
+    font-size: 16px;
+    outline: none;
+    text-decoration: none;
+    padding: 4px;
+    /* text-align: center; */
+}
+.link:link {
+    color: #fcf087;
+}
+.link:visited {
+    color: #fcf087;
+}
+.link:focus {
+    color: #ffec44;
+    background: #353535;
+}
+.link:hover {
+    background-color: #ffec44;
+    color: #f7cb3e !important;
+    background: #181818;
+    border-radius: 5px;
+}
+.link:active {
+    background: #f7f463fd;
+    color: #fcff41;
+}
 /* paleta de colores claro distribuidor
 rojo: #D02B1F
 negro: 010101 
@@ -135,6 +161,11 @@ footer{
     width: 100%;
     color: white;
     padding-left: 50px;
+}
+
+.foot-end{
+    padding: 20px;
+    background: #010101;
 }
 
 .centrado{
@@ -247,7 +278,7 @@ footer{
 
 .content-buttons{
     padding: 15px;
-    background-color: #ffd257f5;
+    background-color: #ffeb94f5;
 }
 
 .cards-planes{
@@ -293,3 +324,9 @@ footer{
     max-height: 300px;
 }
   
+.sin-borde{
+    border: none;
+}
+.contenido{
+    padding: 20px;
+}

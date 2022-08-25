@@ -25,22 +25,22 @@
                         <p class="text-muted text-center">Distribuidor Autorizado de Claro</p>
                         <ul class="list-group list-group-unbordered mb-3">
                             <li class="list-group-item">
-                                <b>Facebook</b> <a class="float-right" href="https://www.facebook.com/Clarohogar3play" target="blank">Claro hogar 3play</a>
+                                <b>Facebook</b> <a class="float-right link" href="https://www.facebook.com/Clarohogar3play" target="blank" style="color: rgb(255, 81, 0)">Claro hogar 3play</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Instagram</b> <a class="float-right" href="https://www.facebook.com/Clarohogar3play" target="blank">clarohome3play</a>
+                                <b>Instagram</b> <a class="float-right link" href="https://www.facebook.com/Clarohogar3play" target="blank" style="color: rgb(255, 81, 0)">clarohome3play</a>
                             </li>
                             <li class="list-group-item">
-                                <b>WhatsApp</b> <a class="float-right" href="https://wa.me/961717474" target="blank">Encargada Marketing</a>
+                                <b>WhatsApp</b> <a class="float-right link" href="https://wa.me/961717474" target="blank" style="color: rgb(255, 81, 0)">Encargada Marketing</a>
                             </li>
                         </ul>
-                        <a href="#" class="btn btn-warning btn-block"><b>Siguenos</b></a>
+                        <a href="#" class="btn btn-warning btn-block text-white"><b>Siguenos</b></a>
                     </div>
                 </div>
                 
                 <div class="card card-warning">
                     <div class="card-header">
-                        <h3 class="card-title">Acerca de nosotros</h3>
+                        <h3 class="card-title text-white">Acerca de nosotros</h3>
                     </div>
                     <div class="card-body">
                         <strong><i class="fas fa-map-marker-alt mr-1"></i> Ubicación</strong>
@@ -51,7 +51,7 @@
             </div>
 
             <div class="col-md-8">
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
                         <div class="inner">
@@ -108,17 +108,17 @@
                         </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="card">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Información</a></li>
+                            <li class="nav-item"><a class="nav-link active bg-warning" href="#settings" data-toggle="tab">Ubicación</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="tab-pane active" id="settings">
-                                <form class="form-horizontal">
+                                {{-- <form class="form-horizontal">
                                 <div class="form-group row">
                                     <label for="inputName" class="col-sm-2 col-form-label">Somos</label>
                                     <div class="col-sm-10">
@@ -163,7 +163,8 @@
                                     <button type="submit" class="btn btn-danger">Submit</button>
                                     </div>
                                 </div>
-                                </form>
+                                </form> --}}
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7899.746588945557!2d-79.03578811999816!3d-8.114381594962968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d9d441352ed%3A0x8a2684783358cb0b!2sAv.%20Espa%C3%B1a%20146%2C%20Trujillo%2013001!5e0!3m2!1ses-419!2spe!4v1661355646776!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>

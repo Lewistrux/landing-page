@@ -9,7 +9,7 @@
 @section('contenido')
     
     <div class="wrapper">
-      <section id="banner" class="banner">
+      <section id="banner">
         <img src="img/portadas/portada_principal.png">
       </section>
       <!-- ./wrapper -->
@@ -65,7 +65,7 @@
         <div class="targets text-center">
           <div class="row">
             <div class="col-lg-4">
-              <a type="button" class="btn btn-outline-warning" href="{{route('hogar')}}">
+              <a type="button" class="btn btn-outline-warning sin-borde" href="{{route('hogar')}}">
                 <img src="img/servicios/hogar.png" class="tarjeta-btn" alt="">
               </a>
             </div>

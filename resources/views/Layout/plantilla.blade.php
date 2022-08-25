@@ -38,32 +38,24 @@
           <!-- Left navbar links -->    
           <ul class="navbar-nav ">
             <li class="nav-item">
-              <a href="{{route('inicio')}}" class="btn btn-lg btn-block btn-dark btn-flat nav-link text-muted">Inicio</a>
+              <a href="{{route('inicio')}}" class="btn-block navegacion">Inicio</a>
             </li>
             <li class="nav-item">
-              <a href="{{route('trabaja_con_nosotros')}}" class="btn btn-lg btn-block btn-dark btn-flat nav-link text-muted">Trabaja con nosotros</a>
+              <a href="{{route('trabaja_con_nosotros')}}" class=" btn-block navegacion">Trabaja con nosotros</a>
             </li>
             <li class="nav-item">
-              <a href="{{route('nosotros')}}" class="btn btn-lg btn-block btn-dark btn-flat nav-link text-muted">Nosotros</a>
+              <a href="{{route('nosotros')}}" class=" btn-block navegacion">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a href="{{route('login')}}" class="btn btn-lg btn-block btn-dark btn-flat nav-link text-muted">Acceso</a>
+              <a href="{{route('login')}}" class=" btn-block navegacion">Acceso</a>
             </li>
           </ul>
         </div>
     </div>
   </nav>
-  <!-- /.navbar -->
 
       @yield('contenido')
 
-  <!-- <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 1.0.5
-    </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">Vera Villanueva</a>.</strong> All rights
-    reserved.
-  </footer> -->
   <section id="acceso_wspp">
     <a href="https://wa.me/961717474" class="whatsapp" target="_blank">
       <img src="img/icon/wsapp.png" alt="" class="burbuja">
@@ -85,7 +77,7 @@
                   <h5><b>Acerca de la empresa</b> </h5>
                   <p>Distribuidor Autorizado de Claro</p>
                   <p>Más de 5 años brindando el mejor servicio</p>
-                  <a href="#" class="btn-footer"> Más información </a><br>
+                  <a href="#" class="btn-footer link"> Más información </a><br>
                 </div>
             </div>
           </div>
@@ -96,11 +88,10 @@
                   <div class="row ">
                       <div class="col-md-12">
                         <ul>
-                            <li> <a href="https://www.facebook.com/Clarohogar3play" target="blank"> Facebook</a> </li>
-                            <li> <a href="#"> Instagram</a> </li>
-                            <li> <a href="https://wa.me/961717474" target="blank"> WhatsApp</a> </li>
-                            <li> <a href="#"> Email</a> </li>
-                        
+                            <li class="nav"><a href="https://www.facebook.com/Clarohogar3play" target="blank" class="link"> Facebook</a> </li>
+                            <li class="nav"> <a href="#" class="link"> Instagram</a> </li>
+                            <li class="nav"> <a href="https://wa.me/961717474" target="blank" class="link"> WhatsApp</a> </li>
+                            <li class="nav"> <a href="#" class="link"> Email</a> </li>
                         </ul>
                       </div>
                   </div>
@@ -121,6 +112,13 @@
     <!-- <div class="bg-black">
       @copy
     </div> -->
+  </footer>
+  <footer class="footer foot-end">
+    <div class="float-right d-none d-sm-block">
+      <b>Área de sistemas.</b> 
+    </div>
+    <strong>Copyright &copy; 2022 <a href="#" class="link"> Diego Vera Villanueva</a>.</strong> All rights
+    reserved.
   </footer>
 
 </div>
