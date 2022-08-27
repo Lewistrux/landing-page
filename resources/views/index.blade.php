@@ -10,7 +10,12 @@
     
     <div class="wrapper">
       <section id="banner">
-        <img src="img/portadas/portada_principal.png">
+        <div class="row">
+          <div class="col-12">
+          <img src="img/portadas/portada_principal.png">
+          </div>
+        </div>
+        
       </section>
       <!-- ./wrapper -->
       <!-- <div class="card">
@@ -64,21 +69,29 @@
       <div class="content-page"> 
         <div class="targets text-center">
           <div class="row">
-            <div class="col-lg-4">
-              <a type="button" class="btn btn-outline-warning sin-borde" href="{{route('hogar')}}">
-                <img src="img/servicios/hogar.png" class="tarjeta-btn" alt="">
-              </a>
+            <div class="col-1"></div>
+            <div class="col-lg-10">
+              <div class="row">
+              <div class="col-lg-4 p-2">
+                  <a type="button" class="btn btn-outline-warning" href="{{route('hogar')}}">
+                    <img src="img/servicios/hogar.png" class="tarjeta-btn" alt="">
+                  </a>
+                </div>
+                <div class="col-lg-4 p-2">
+                  <a type="button" class="btn btn-outline-warning" href="{{route('moviles')}}">
+                    <img src="img/servicios/movil.png" class="tarjeta-btn" alt="">
+                  </a>
+                </div>
+                <div class="col-lg-4 p-2">
+                  <a type="button" class="btn btn-outline-warning" href="{{route('empresas')}}">
+                    <img src="img/servicios/empresa.png" class="tarjeta-btn" alt="">
+                  </a>
+                </div>
+              </div>
+                
             </div>
-            <div class="col-lg-4">
-              <a type="button" class="btn btn-outline-warning" href="{{route('moviles')}}">
-                <img src="img/servicios/movil.png" class="tarjeta-btn" alt="">
-              </a>
-            </div>
-            <div class="col-lg-4">
-              <a type="button" class="btn btn-outline-warning" href="{{route('empresas')}}">
-                <img src="img/servicios/empresa.png" class="tarjeta-btn" alt="">
-              </a>
-            </div>
+                
+            <div class="col-1"></div>
           </div>
         </div>
       </div>

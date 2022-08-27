@@ -71,47 +71,32 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="form-group">
-                                <label>Departamento</label>
-                                <select class="form-control form-control-sm select2 ">
-                                    <option selected="selected">La Libertad</option>
-                                    <option>Alaska</option>
-                                    <option>California</option>
-                                    <option>Delaware</option>
-                                    <option>Tennessee</option>
-                                    <option>Texas</option>
-                                    <option>Washington</option>
-                                </select>
-                            </div>
+                        <div class="form-group">
+                            <label>Departamento</label>
+                            <select class="form-control form-control-sm select2" id="region">
+                                <option></option>
+                                @foreach($regiones as $region)
+                                    <option value="{{ $region->regi_ID }}">{{ $region->regi_nombre }}</option>
+                                @endforeach
+                            </select>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="form-group">
-                                <label>Provincia</label>
-                                <select class="form-control form-control-sm select2 ">
-                                    <option selected="selected">Trujillo</option>
-                                    <option>Alaska</option>
-                                    <option>California</option>
-                                    <option>Delaware</option>
-                                    <option>Tennessee</option>
-                                    <option>Texas</option>
-                                    <option>Washington</option>
-                                </select>
-                            </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Provincia</label>
+                            <select class="form-control form-control-sm select2" id="provincia">
+                                <option></option>
+                            </select>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="form-group">
-                                <label>Distrito</label>
-                                <select class="form-control form-control-sm select2 ">
-                                    <option selected="selected">La esperanza</option>
-                                    <option>Alaska</option>
-                                    <option>California</option>
-                                    <option>Delaware</option>
-                                    <option>Tennessee</option>
-                                    <option>Texas</option>
-                                    <option>Washington</option>
-                                </select>
-                            </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Distrito</label>
+                            <select class="form-control form-control-sm select2" id="distrito">
+                                <option></option>
+                            </select>
                         </div>
+                    </div>
                     </div>  
                     <div class="modal-footer justify-content-between">
                         <!-- <button type="button" class="btn btn-default" data-dismiss="modal"></button> -->

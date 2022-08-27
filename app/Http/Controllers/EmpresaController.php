@@ -15,6 +15,18 @@ class EmpresaController extends Controller
     {
         return view('empresa.index');
     }
+    public function moviles()
+    {
+        return view('empresa.movil');
+    }
+    public function fijas()
+    {
+        return view('empresa.fija');
+    }
+    public function soluciones()
+    {
+        return view('empresa.soluciones');
+    }
 
     /**
      * Show the form for creating a new resource.

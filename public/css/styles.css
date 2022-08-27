@@ -240,8 +240,8 @@ footer{
 }
 
 .tarjeta-btn{
-    max-width: 320px;
-    max-height: 400px;
+    max-width: 280px;
+    max-height: 350px;
 }
 
 .color-header{
@@ -278,6 +278,9 @@ footer{
 
 .content-buttons{
     padding: 15px;
+    background-color: #d34d4df5;
+}
+.content-buttons-card{
     background-color: #ffeb94f5;
 }
 

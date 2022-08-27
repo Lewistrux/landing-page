@@ -212,7 +212,7 @@
           </div>
         </div>
       </div>
-      <div class="cards-planes">
+      <div class="cards-planes content-buttons-card">
         <div class="row p-4 g-4" id="2play">
           <!-- <div class="col-lg-2"></div> -->
           <div class="col-lg-4">

@@ -1,4 +1,8 @@
 @extends('Layout.plantilla')
+@section('pre-script')
+  <!-- Select2 -->
+  <link rel="stylesheet" href="Adminlte/plugins/select2/css/select2.min.css">
+@endsection
 @section('distribuidor')
     <header id="distribuidor_red" class="distribuidor_red">
       <div class="content-autorized">
@@ -194,54 +198,89 @@
               <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box shadow">
                   <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
-    
                   <div class="info-box-content">
-                    <span class="info-box-text">Shadows</span>
+                    <span class="info-box-text">Asesor</span>
                     <span class="info-box-number">Regular</span>
                   </div>
-                  <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box -->
               </div>
               <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box shadow">
                   <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
-    
                   <div class="info-box-content">
-                    <span class="info-box-text">Shadows</span>
+                    <span class="info-box-text">Supervisor</span>
                     <span class="info-box-number">Regular</span>
                   </div>
-                  <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box -->
               </div>
               <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box shadow">
                   <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
-    
                   <div class="info-box-content">
-                    <span class="info-box-text">Shadows</span>
+                    <span class="info-box-text">Mesa de control</span>
                     <span class="info-box-number">Regular</span>
                   </div>
-                  <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box -->
               </div>
               <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box shadow">
                   <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
-    
                   <div class="info-box-content">
-                    <span class="info-box-text">Shadows</span>
+                    <span class="info-box-text">Reclutado</span>
                     <span class="info-box-number">Regular</span>
                   </div>
-                  <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box -->
               </div>
             </div>
           </div>
         </section>
       </div>
     @include('formulario.postular')
+@endsection
+
+@section('post-script')
+  <!-- Select2 -->
+  <script src="Adminlte/plugins/select2/js/select2.full.min.js"></script>
+  <!-- InputMask -->
+  <script src="Adminlte/plugins/moment/moment.min.js"></script>
+  <script src="Adminlte/plugins/inputmask/jquery.inputmask.min.js"></script>
+  <script>
+    $(function () {
+      //Initialize Select2 Elements
+      $('.select2').select2({
+        placeholder: "Seleccionar",
+        allowClear: false,
+        width: '100%',
+      });
+      //Money Euro
+      $('[data-mask]').inputmask()
+
+      IniciarCargado();
+      $('#tipo_documento').on('change', CambioTipoDocumento);
+      $('#region').on('change', CambioRegion);
+    })
+
+    function CambioRegion(){
+      let region_id = $('#region').val();
+      
+    }
+
+    function IniciarCargado(){
+      $('#div_ruc').hide();
+      $('#div_carne').hide();
+      $('#tipo_documento').trigger('change');
+    }
+
+    function CambioTipoDocumento(){
+      let tipo = $('#tipo_documento').val();
+      if(tipo == 'DNI'){
+        $('#div_dni').show();
+        $('#div_carne').hide();
+      }
+      if(tipo == 'CARNE'){
+        $('#div_dni').hide();
+        $('#div_carne').show();
+      }
+    }
+  </script>
 @endsection

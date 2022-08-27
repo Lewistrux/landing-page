@@ -77,7 +77,7 @@
                   <h5><b>Acerca de la empresa</b> </h5>
                   <p>Distribuidor Autorizado de Claro</p>
                   <p>Más de 5 años brindando el mejor servicio</p>
-                  <a href="#" class="btn-footer link"> Más información </a><br>
+                  <a href="{{route('nosotros')}}" class="btn-footer link"> Más información </a><br>
                 </div>
             </div>
           </div>
@@ -88,10 +88,10 @@
                   <div class="row ">
                       <div class="col-md-12">
                         <ul>
-                            <li class="nav"><a href="https://www.facebook.com/Clarohogar3play" target="blank" class="link"> Facebook</a> </li>
-                            <li class="nav"> <a href="#" class="link"> Instagram</a> </li>
+                            <li class="nav"><a href="https://www.facebook.com/rapinet136" target="blank" class="link"> Facebook</a> </li>
+                            <li class="nav"> <a href="https://www.instagram.com/call_claro/" target="blank" class="link"> Instagram</a> </li>
                             <li class="nav"> <a href="https://wa.me/961717474" target="blank" class="link"> WhatsApp</a> </li>
-                            <li class="nav"> <a href="#" class="link"> Email</a> </li>
+                            <!-- <li class="nav"> <a href="#" class="link"> Email</a> </li> -->
                         </ul>
                       </div>
                   </div>

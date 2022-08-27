@@ -1,8 +1,8 @@
 <div class="modal fade" id="modal-postular">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Déjanos tus datos</h4>
+            <div class="modal-header bg-gray">
+              <h4 class="modal-title">Trabaja con nosotros</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -21,7 +21,6 @@
                             <label>Tipo documento</label>
                             <select class="form-control form-control-sm select2" id="tipo_documento" name="tipo_documento">
                                 <option selected="selected" value="DNI">DNI</option>
-                                <option value="RUC">RUC</option>
                                 <option value="CARNE">Carnet extranjería</option>
                             </select>
                         </div>
@@ -34,18 +33,6 @@
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
                                 <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['99999999']" data-mask>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12 col-sm-12" id="div_ruc">
-                        <div class="form-group">
-                            <label>RUC</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                </div>
-                                <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['99999999999']" data-mask>
                             </div>
                         </div>
                     </div>
@@ -77,44 +64,27 @@
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="form-group">
                             <label>Departamento</label>
-                            <select class="form-control form-control-sm select2 ">
-                                <option selected="selected">La Libertad</option>
-                                <option>Alaska</option>
-                                <option>California</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
+                            <select class="form-control form-control-sm select2" id="region">
+                                <option></option>
+                                @foreach($regiones as $region)
+                                    <option value="{{ $region->regi_ID }}">{{ $region->regi_nombre }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
-
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="form-group">
                             <label>Provincia</label>
-                            <select class="form-control form-control-sm select2 ">
-                                <option selected="selected">Trujillo</option>
-                                <option>Alaska</option>
-                                <option>California</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
+                            <select class="form-control form-control-sm select2" id="provincia">
+                                <option></option>
                             </select>
                         </div>
                     </div>
-
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="form-group">
                             <label>Distrito</label>
-                            <select class="form-control form-control-sm select2 ">
-                                <option selected="selected">La esperanza</option>
-                                <option>Alaska</option>
-                                <option>California</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
+                            <select class="form-control form-control-sm select2" id="distrito">
+                                <option></option>
                             </select>
                         </div>
                     </div>

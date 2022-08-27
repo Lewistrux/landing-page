@@ -25,10 +25,10 @@
                         <p class="text-muted text-center">Distribuidor Autorizado de Claro</p>
                         <ul class="list-group list-group-unbordered mb-3">
                             <li class="list-group-item">
-                                <b>Facebook</b> <a class="float-right link" href="https://www.facebook.com/Clarohogar3play" target="blank" style="color: rgb(255, 81, 0)">Claro hogar 3play</a>
+                                <b>Facebook</b> <a class="float-right link" href="https://www.facebook.com/rapinet136" target="blank" style="color: rgb(255, 81, 0)">Call Claro</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Instagram</b> <a class="float-right link" href="https://www.facebook.com/Clarohogar3play" target="blank" style="color: rgb(255, 81, 0)">clarohome3play</a>
+                                <b>Instagram</b> <a class="float-right link" href="https://www.instagram.com/call_claro/" target="blank" style="color: rgb(255, 81, 0)">call_claro</a>
                             </li>
                             <li class="list-group-item">
                                 <b>WhatsApp</b> <a class="float-right link" href="https://wa.me/961717474" target="blank" style="color: rgb(255, 81, 0)">Encargada Marketing</a>
@@ -46,13 +46,14 @@
                         <strong><i class="fas fa-map-marker-alt mr-1"></i> Ubicación</strong>
                         <p class="text-muted">Av. España 136 - Trujillo - Perú</p>
                         <hr>
+                        
                     </div>
                 </div>
             </div>
 
             <div class="col-md-8">
-                {{-- <div class="row">
-                    <div class="col-lg-3 col-6">
+                <div class="row">
+                    <!-- <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
                         <div class="inner">
                             <h3>Equipos</h3>
@@ -107,71 +108,83 @@
                             Más info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                         </div>
-                    </div>
-                </div> --}}
+                    </div> -->
+                </div> 
                 <div class="card">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link active bg-warning" href="#settings" data-toggle="tab">Ubicación</a></li>
+                            <li class="nav-item pr-2"><a class="nav-link active bg-warning" href="#settings" data-toggle="tab">Ubicación</a></li>
+                            <li class="nav-item pr-2"><a class="nav-link bg-warning" href="#servicios" data-toggle="tab">Servicios</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="tab-pane active" id="settings">
-                                {{-- <form class="form-horizontal">
-                                <div class="form-group row">
-                                    <label for="inputName" class="col-sm-2 col-form-label">Somos</label>
-                                    <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                    <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputName2" class="col-sm-2 col-form-label">Name</label>
-                                    <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputName2" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
-                                    <div class="col-sm-10">
-                                    <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
-                                    <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="offset-sm-2 col-sm-10">
-                                    <div class="checkbox">
-                                        <label>
-                                        <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                                        </label>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                    </div>
-                                </div>
-                                </form> --}}
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7899.746588945557!2d-79.03578811999816!3d-8.114381594962968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d9d441352ed%3A0x8a2684783358cb0b!2sAv.%20Espa%C3%B1a%20146%2C%20Trujillo%2013001!5e0!3m2!1ses-419!2spe!4v1661355646776!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="tab-pane" id="servicios">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="info-box bg-success">
+                                            <span class="info-box-icon"><i class="fas fa-shopping-cart"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="h5">Venta de equipos al contado.</span>
+                                                <span class="progress-description">
+                                                    Cuotas desde 0 inicial.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="info-box bg-success">
+                                            <span class="info-box-icon"><i class="far fa-copy"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="h5">Pagos de recibos Claro.</span>
+                                                <span class="progress-description">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="info-box bg-success">
+                                            <span class="info-box-icon"><i class="fa fa-mobile"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="h5">Recargas de celulares.</span>
+                                                <span class="progress-description">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="info-box bg-success">
+                                            <span class="info-box-icon"><i class="fa fa-sim-card"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="h5">Reposición de chip Postpago - Prepago.</span>
+                                                <span class="progress-description">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="info-box bg-success">
+                                            <span class="info-box-icon"><i class="fa fa-sync-alt"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="h5">Migración de Prepago a Postpago.</span>
+                                                <span class="progress-description">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>    
       </div>
     </section>

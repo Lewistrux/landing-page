@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Region;
 use Illuminate\Http\Request;
 
-class HogarController extends Controller
+class NosotrosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class HogarController extends Controller
      */
     public function index()
     {
-        $regiones = Region::get();
-        return view('hogar.index',compact('regiones'));
+        return view('Vista.nosotros');
     }
 
     /**
