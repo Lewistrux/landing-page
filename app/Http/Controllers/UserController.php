@@ -38,7 +38,7 @@ class UserController extends Controller
             if(password_verify($password,$hashp))
             {
                 $hashp=$query[0]->rol;
-                return view('bienvenido');
+                return view('administracion.index');
             }
             else
             {

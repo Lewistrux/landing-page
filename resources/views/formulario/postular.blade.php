@@ -9,6 +9,7 @@
             </div>
             <div class="modal-body">
               <form>
+              @csrf 
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
