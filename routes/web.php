@@ -57,3 +57,7 @@ Route::get('/hogar','HogarController@index')->name('hogar');
 Route::post('/locacion/provincias','LocacionController@cargarProvincias')->name('locacion.provincias');
 Route::post('/locacion/distritos','LocacionController@cargarDistritos')->name('locacion.distritos');
 
+  // =================================== FORMULARIOS ===============================================
+  Route::post('/formulario/registro/{tipo}','FormularioController@store')->name('form.registro');
+  
+  

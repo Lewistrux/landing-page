@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Distrito;
 use App\Provincia;
 use App\Region;
 use Illuminate\Http\Request;
@@ -18,8 +19,8 @@ class LocacionController extends Controller
 
         // Castear por seguridad
         $departamento_id = str_pad($departamento_id, 2, "0", STR_PAD_LEFT);
-        $provincias = Region::find($departamento_id)->provincias;
-
+        // $provincias = Region::find($departamento_id)->provincias;
+        $provincias = Provincia::where('prov_regionID', $departamento_id)->get();
         if (empty($provincias)) {
             $error = true;
             $message = "No se cargaron las provincias. Intente nuevamente por favor";
@@ -27,8 +28,8 @@ class LocacionController extends Controller
             $collection = collect([]);
             foreach ($provincias as $provincia) {
                 $collection->push([
-                    'id' => str_pad($provincia->id, 4, "0", STR_PAD_LEFT),
-                    'text' => $provincia->nombre
+                    'id' => $provincia->prov_ID,  //str_pad($provincia->prov_ID, 4, "0", STR_PAD_LEFT),
+                    'text' => $provincia->prov_nombre
                 ]);
             }
         }
@@ -51,7 +52,8 @@ class LocacionController extends Controller
 
         // Castear por seguridad
         $provincia_id = str_pad($provincia_id, 4, "0", STR_PAD_LEFT);
-        $distritos = Provincia::find($provincia_id)->distritos;
+        // $distritos = Provincia::find($provincia_id)->distritos;
+        $distritos = Distrito::where('dist_provinciaID', $provincia_id)->get();
         if (empty($distritos)) {
             $error = true;
             $message = "No se cargaron los distritos. Intente nuevamente por favor";
@@ -59,8 +61,8 @@ class LocacionController extends Controller
             $collection = collect([]);
             foreach ($distritos as $distrito) {
                 $collection->push([
-                    'id' => str_pad($distrito->id, 6, "0", STR_PAD_LEFT),
-                    'text' => $distrito->nombre
+                    'id' => $distrito->dist_ID,// str_pad($distrito->dist_ID, 6, "0", STR_PAD_LEFT),
+                    'text' => $distrito->dist_nombre
                 ]);
             }
         }

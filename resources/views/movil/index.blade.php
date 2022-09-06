@@ -185,7 +185,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="img/cards/max_29.png" class="card-img-top" alt="..."> 
+                  <img src="img/cards/movil/max_29.png" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -197,7 +197,7 @@
               </div>
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="img/cards/max_39.png" class="card-img-top" alt="..."> 
+                  <img src="img/cards/movil/max_39.png" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -209,7 +209,7 @@
               </div>
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="img/cards/max_49.png" class="card-img-top" alt="..."> 
+                  <img src="img/cards/movil/max_49.png" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -229,7 +229,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="img/cards/max_55.png" class="card-img-top" alt="..."> 
+                  <img src="img/cards/movil/max_55.png" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -241,7 +241,7 @@
               </div>
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="img/cards/max_69.png" class="card-img-top" alt="..."> 
+                  <img src="img/cards/movil/max_69.png" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -269,6 +269,7 @@
         </div>
       </div>
     </div>
+    @include('formulario.movil')
 @endsection
 
 @section('post-script')
@@ -280,12 +281,18 @@
   <script>
     $(function () {
       //Initialize Select2 Elements
-      $('.select2').select2()
-      //Money Euro
+      $('.select2').select2({
+        placeholder: "Seleccionar",
+        allowClear: false,
+        width: '100%',
+      });
+      
       $('[data-mask]').inputmask()
 
       IniciarCargado();
       $('#tipo_documento').on('change', CambioTipoDocumento);
+      $('#region').on('change', cargarProvincias);
+      $('#provincia').on('change', cargarDistritos);
     })
 
     function IniciarCargado(){
@@ -311,6 +318,66 @@
         $('#div_dni').hide();
         $('#div_ruc').hide();
         $('#div_carne').show();
+      }
+    }
+
+    function cargarProvincias() {
+      let departamento_id = this.value;
+      console.log(departamento_id);
+      if (departamento_id !== "" || departamento_id.length > 0) {
+          $.ajax({
+              type: 'post',
+              dataType: 'json',
+              data: {
+                  _token: $('input[name=_token]').val(),
+                  departamento_id: departamento_id
+              },
+              url: "{{ route('locacion.provincias') }}",
+              success: function (response) {
+                  // Limpiamos data
+                  $("#provincia").empty();
+                  $("#distrito").empty();
+                  if (!response.error) {
+                      // Mostramos la información
+                      if (response.provincias != null) {
+                        $("#provincia").select2({
+                            data: response.provincias
+                        }).val($('#provincia').find(':selected').val()).trigger('change');
+                      }
+                  } else {
+                      Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: response.message });
+                  }
+              }
+          });
+      }
+    }
+
+    function cargarDistritos() {
+      let provincia_id = this.value;
+      if (provincia_id !== "" || provincia_id.length > 0) {
+          $.ajax({
+              type: 'post',
+              dataType: 'json',
+              data: {
+                  _token: $('input[name=_token]').val(),
+                  provincia_id: provincia_id
+              },
+              url: "{{ route('locacion.distritos') }}",
+              success: function (response) {
+                  // Limpiamos data
+                  $("#distrito").empty();
+                  if (!response.error) {
+                      // Mostramos la información
+                      if (response.distritos != null) {
+                        $("#distrito").select2({
+                            data: response.distritos
+                        }).val($('#distrito').find(':selected').val()).trigger('change');
+                      }
+                  } else {
+                      Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: response.message });
+                  }
+              }
+          });
       }
     }
   </script>

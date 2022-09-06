@@ -278,10 +278,11 @@ footer{
 
 .content-buttons{
     padding: 15px;
-    background-color: #d34d4df5;
+    background-color: #fce787;
+    /* background: rgb(51,51,51,0.9); */
 }
 .content-buttons-card{
-    background-color: #ffeb94f5;
+    /* background-color: #ffdf4ef5; */
 }
 
 .cards-planes{

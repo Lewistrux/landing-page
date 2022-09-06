@@ -259,12 +259,8 @@
       IniciarCargado();
       $('#tipo_documento').on('change', CambioTipoDocumento);
       $('#region').on('change', cargarProvincias);
+      $('#provincia').on('change', cargarDistritos);
     })
-
-    function CambioRegion(){
-      let region_id = $('#region').val();
-      
-    }
 
     function cargarProvincias() {
       let departamento_id = this.value;
@@ -282,21 +278,12 @@
                   // Limpiamos data
                   $("#provincia").empty();
                   $("#distrito").empty();
-
                   if (!response.error) {
                       // Mostramos la información
                       if (response.provincias != null) {
-                          var old_provincia = $("#old_provincia").val();
-                          var provincia_existente = response.provincias.find(p => p.id === old_provincia);
-                          if (provincia_existente !== undefined && old_provincia !== undefined && old_provincia !== null && old_provincia !== "") {
-                              $("#provincia").select2({
-                                  data: response.provincias
-                              }).val(old_provincia).trigger('change');
-                          } else {
-                              $("#provincia").select2({
-                                  data: response.provincias
-                              }).val($('#provincia').find(':selected').val()).trigger('change');
-                          }
+                        $("#provincia").select2({
+                            data: response.provincias
+                        }).val($('#provincia').find(':selected').val()).trigger('change');
                       }
                   } else {
                       Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: response.message });
@@ -307,7 +294,7 @@
     }
 
     function cargarDistritos() {
-      var provincia_id = this.value;
+      let provincia_id = this.value;
       if (provincia_id !== "" || provincia_id.length > 0) {
           $.ajax({
               type: 'post',
@@ -323,17 +310,9 @@
                   if (!response.error) {
                       // Mostramos la información
                       if (response.distritos != null) {
-                          var old_distrito = $("#old_distrito").val();
-                          var distrito_existente = response.distritos.find(d => d.id === old_distrito);
-                          if (distrito_existente !== undefined && old_distrito !== undefined && old_distrito !== null && old_distrito !== "") {
-                              $("#distrito").select2({
-                                  data: response.distritos
-                              }).val(old_distrito).trigger('change');
-                          } else {
-                              $("#distrito").select2({
-                                  data: response.distritos
-                              }).val($('#distrito').find(':selected').val()).trigger('change');
-                          }
+                        $("#distrito").select2({
+                            data: response.distritos
+                        }).val($('#distrito').find(':selected').val()).trigger('change');
                       }
                   } else {
                       Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: response.message });

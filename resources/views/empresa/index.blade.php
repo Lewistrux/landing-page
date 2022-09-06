@@ -8,7 +8,7 @@
     </header>
 @endsection
 @section('contenido')
-<div class="card">
+  <div class="card">
     <div class="card-body banner">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -51,17 +51,17 @@
     <div class="targets text-center">
       <div class="row">
         <div class="col-lg-4">
-          <a type="button" class="btn btn-outline-warning sin-borde" href="{{route('hogar')}}">
+          <a type="button" class="btn btn-outline-warning sin-borde" href="{{route('empresas.fijas')}}">
             <img src="img/servicios/hogar.png" class="tarjeta-btn" alt="">
           </a>
         </div>
         <div class="col-lg-4">
-          <a type="button" class="btn btn-outline-warning" href="{{route('moviles')}}">
+          <a type="button" class="btn btn-outline-warning" href="{{route('empresas.moviles')}}">
             <img src="img/servicios/movil.png" class="tarjeta-btn" alt="">
           </a>
         </div>
         <div class="col-lg-4">
-          <a type="button" class="btn btn-outline-warning" href="{{route('empresas')}}">
+          <a type="button" class="btn btn-outline-warning" href="{{route('empresas.soluciones')}}">
             <img src="img/servicios/empresa.png" class="tarjeta-btn" alt="">
           </a>
         </div>

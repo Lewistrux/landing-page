@@ -9,6 +9,7 @@
             </div>
             <div class="modal-body">
                 <form>
+                @csrf 
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
@@ -80,23 +81,23 @@
                                 @endforeach
                             </select>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="form-group">
-                            <label>Provincia</label>
-                            <select class="form-control form-control-sm select2" id="provincia">
-                                <option></option>
-                            </select>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="form-group">
-                            <label>Distrito</label>
-                            <select class="form-control form-control-sm select2" id="distrito">
-                                <option></option>
-                            </select>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label>Provincia</label>
+                                <select class="form-control form-control-sm select2" id="provincia">
+                                    <option></option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label>Distrito</label>
+                                <select class="form-control form-control-sm select2" id="distrito">
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
                     </div>  
                     <div class="modal-footer justify-content-between">
                         <!-- <button type="button" class="btn btn-default" data-dismiss="modal"></button> -->
@@ -109,7 +110,7 @@
     </div>
 </div>
 
-    {{-- <div class="modal fade" id="modal-default" tabindex="-1" aria-labelledby="modal-block-small" aria-hidden="true" style="display: none;">
+    <!-- {{-- <div class="modal fade" id="modal-default" tabindex="-1" aria-labelledby="modal-block-small" aria-hidden="true" style="display: none;">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="block block-themed block-transparent mb-0">
@@ -138,4 +139,4 @@
             </div>
         </div>
     </div> --}}
-    
+     -->

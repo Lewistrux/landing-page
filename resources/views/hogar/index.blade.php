@@ -2,6 +2,8 @@
 @section('pre-script')
 <!-- Select2 -->
 <link rel="stylesheet" href="Adminlte/plugins/select2/css/select2.min.css">
+<!-- Toastr -->
+<link rel="stylesheet" href="Adminlte/plugins/toastr/toastr.min.css">
 @endsection
 @section('distribuidor')
     <header id="distribuidor_red" class="distribuidor_red">
@@ -217,7 +219,7 @@
           <!-- <div class="col-lg-2"></div> -->
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/2play_inter_tel.png" class="card-img-top" alt="...">
+              <img src="img/cards/hogar/2play_inter_tel.png" class="card-img-top" alt="...">
               <!-- <div class="card-body text-center  p-0"> -->
                 <!-- <h5> <b> Planes 2 play</b></h5>
                 <p class="card-text">Disfruta de los mejores planes 2 play para ti y tu familia.</p> -->
@@ -268,7 +270,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/2play_avanzado.png" class="card-img-top" alt="Claro 2 play">
+              <img src="img/cards/hogar/2play_avanzado.png" class="card-img-top" alt="Claro 2 play">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -315,7 +317,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/2play_superior.png" class="card-img-top" alt="Claro 2 play">
+              <img src="img/cards/hogar/2play_superior.png" class="card-img-top" alt="Claro 2 play">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -367,7 +369,7 @@
           <div class="col-lg-2"></div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/3play_avanzado.png" class="card-img-top" alt="...">
+              <img src="img/cards/hogar/3play_avanzado.png" class="card-img-top" alt="...">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -419,7 +421,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/3play_superior.png" class="card-img-top" alt="...">
+              <img src="img/cards/hogar/3play_superior.png" class="card-img-top" alt="...">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -480,7 +482,7 @@
           <div class="col-lg-2"></div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/2play_netflix.png" class="card-img-top" alt="...">
+              <img src="img/cards/hogar/2play_netflix.png" class="card-img-top" alt="...">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -527,7 +529,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/3play_netflix.png" class="card-img-top" alt="...">
+              <img src="img/cards/hogar/3play_netflix.png" class="card-img-top" alt="...">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -581,7 +583,7 @@
         </div>
       </div>      
     </div>
-    @include('formulario.modal')
+    @include('formulario.hogar')
 @endsection
 
 @section('post-script')
@@ -590,6 +592,8 @@
   <!-- InputMask -->
   <script src="Adminlte/plugins/moment/moment.min.js"></script>
   <script src="Adminlte/plugins/inputmask/jquery.inputmask.min.js"></script>
+  <!-- Toastr -->
+  <script src="Adminlte/plugins/toastr/toastr.min.js"></script>
   <script>
     $(function () {
       //Initialize Select2 Elements
@@ -604,7 +608,44 @@
       IniciarCargado();
       $('#tipo_documento').on('change', CambioTipoDocumento);
       // $('#btn-3play').on('onclik',Boton3Play);
+      $('#region').on('change', cargarProvincias);
+      $('#provincia').on('change', cargarDistritos);
+
+      //FORMULARIOS
+      $('#formHogar').on('submit', submitFormCreate);
     })
+
+    // SUBMITS
+    function submitFormCreate(e){
+      e.preventDefault();
+      console.log($('#formHogar').serialize());
+      $.ajax({
+          type: "POST",
+          url: "{{ route('form.registro','FIJA') }}",
+          data: $('#formHogar').serialize(),
+      }).done(function (response){
+        console.log(response);
+          if(!response.error){
+              clearModalCreate();
+              $('#modal-default').modal('hide');
+              toastr.success(response.message);
+          }else{
+             
+          }
+      });
+    }
+
+    function clearModalCreate(event){
+      $('#tipo_documento').val('');
+      $('#dni').val('');
+      $('#ruc').val('');
+      $('#carnet').val('');
+      $('#numero').val('');
+      $('#region').val('');
+      $('#distrito').val('');
+      $('#provincia').val('');
+      $('#nombre').val('');
+    }
 
     function Boton3Play(){
       $('#3play').show();
@@ -649,6 +690,66 @@
         $('#div_dni').hide();
         $('#div_ruc').hide();
         $('#div_carne').show();
+      }
+    }
+
+    function cargarProvincias() {
+      let departamento_id = this.value;
+      console.log(departamento_id);
+      if (departamento_id !== "" || departamento_id.length > 0) {
+          $.ajax({
+              type: 'post',
+              dataType: 'json',
+              data: {
+                  _token: $('input[name=_token]').val(),
+                  departamento_id: departamento_id
+              },
+              url: "{{ route('locacion.provincias') }}",
+              success: function (response) {
+                  // Limpiamos data
+                  $("#provincia").empty();
+                  $("#distrito").empty();
+                  if (!response.error) {
+                      // Mostramos la información
+                      if (response.provincias != null) {
+                        $("#provincia").select2({
+                            data: response.provincias
+                        }).val($('#provincia').find(':selected').val()).trigger('change');
+                      }
+                  } else {
+                      Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: response.message });
+                  }
+              }
+          });
+      }
+    }
+
+    function cargarDistritos() {
+      let provincia_id = this.value;
+      if (provincia_id !== "" || provincia_id.length > 0) {
+          $.ajax({
+              type: 'post',
+              dataType: 'json',
+              data: {
+                  _token: $('input[name=_token]').val(),
+                  provincia_id: provincia_id
+              },
+              url: "{{ route('locacion.distritos') }}",
+              success: function (response) {
+                  // Limpiamos data
+                  $("#distrito").empty();
+                  if (!response.error) {
+                      // Mostramos la información
+                      if (response.distritos != null) {
+                        $("#distrito").select2({
+                            data: response.distritos
+                        }).val($('#distrito').find(':selected').val()).trigger('change');
+                      }
+                  } else {
+                      Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: response.message });
+                  }
+              }
+          });
       }
     }
   </script>

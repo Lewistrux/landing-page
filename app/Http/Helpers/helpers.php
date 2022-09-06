@@ -11,7 +11,22 @@ if (! function_exists('usuario')) {
     return auth()->user();
   }
 }
+if (!function_exists('setCadena')) {
+  function setCadena($cadena, $lower = false)
+  {
+      if ($lower)
+          return mb_strtolower(trim($cadena));
 
+      return mb_strtoupper(trim($cadena));
+  }
+}
+
+// if (!function_exists('setNumero')) {
+//   function setNumero($cadena)
+//   {
+//     return ($cadena);
+//   }
+// }
 // if (! function_exists('nombre_apellidos')) {
 //   function nombre_apellidos()
 //   {
