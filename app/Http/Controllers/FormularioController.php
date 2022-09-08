@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use App\Distrito;
 use App\Persona;
 use App\Provincia;
@@ -17,7 +18,7 @@ class FormularioController extends Controller
         //
     }
 
-    public function store(Request $request, $tipo)
+    public function store(Request $request, $area)
     {
         $error = false;
         $message = "";
@@ -28,22 +29,24 @@ class FormularioController extends Controller
         $provincia = Provincia::where('prov_ID',$request->provincia)->first();
         $distrito = Distrito::where('dist_ID',$request->distrito)->first();
 
-        $persona = new Persona();
-        $persona->tipo_documento = $request->tipo_documento;
-        if($request->tipo_documento == "DNI") $persona->documento = setCadena($request->dni);
-        if($request->tipo_documento == "RUC") $persona->documento = setCadena($request->ruc);
-        if($request->tipo_documento == "CARNE") $persona->documento = setCadena($request->carnet);
-        $persona->nombre = setCadena($request->nombre);
-        $persona->departamento = ($departamento) ? setCadena($departamento->regi_nombre) : '';
-        $persona->provincia = ($provincia) ? setCadena($provincia->prov_nombre) : '';
-        $persona->distrito = ($distrito) ? setCadena($distrito->dist_nombre) :  '';
-        $persona->numero = setCadena($request->numero);
-        $persona->save();
+        $cliente = new Cliente();
+        $cliente->tipo_documento = $request->tipo_documento;
+        if($request->tipo_documento == "DNI") $cliente->documento = setCadena($request->dni);
+        if($request->tipo_documento == "RUC") $cliente->documento = setCadena($request->ruc);
+        if($request->tipo_documento == "CARNE") $cliente->documento = setCadena($request->carnet);
+        $cliente->nombres = setCadena($request->nombre);
+        $cliente->area = setCadena($area);
+        $cliente->departamento = ($departamento) ? setCadena($departamento->regi_nombre) : '';
+        $cliente->provincia = ($provincia) ? setCadena($provincia->prov_nombre) : '';
+        $cliente->distrito = ($distrito) ? setCadena($distrito->dist_nombre) :  '';
+        $cliente->numero = setCadena($request->numero);
+        $cliente->save();
 
-        if ($persona) {
-            $collection->push($persona);
+        if ($cliente) {
+            $collection->push($cliente);
             $message = "Se registró correctamente, nos comunicaremos con usted.";
         }else {
+            $error = true;
             $message = "No se pudo registrar, porfavor vueva a intentarlo";
         }
 

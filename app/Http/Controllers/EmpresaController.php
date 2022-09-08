@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Region;
 use Illuminate\Http\Request;
 
 class EmpresaController extends Controller
@@ -12,15 +13,18 @@ class EmpresaController extends Controller
     }
     public function moviles()
     {
-        return view('empresa.movil');
+        $regiones = Region::get();
+        return view('empresa.movil',compact('regiones'));
     }
     public function fijas()
     {
-        return view('empresa.fija');
+        $regiones = Region::get();
+        return view('empresa.fija',compact('regiones'));
     }
     public function soluciones()
     {
-        return view('empresa.soluciones');
+        $regiones = Region::get();
+        return view('empresa.soluciones',compact('regiones'));
     }
 
     public function create()

@@ -1,14 +1,12 @@
 @extends('Layout.plantilla')
 @section('pre-script')
 <!-- Select2 -->
-<link rel="stylesheet" href="Adminlte/plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="{{ asset('Adminlte/plugins/select2/css/select2.min.css') }}">
+<!-- Toastr -->
+<link rel="stylesheet" href="{{ asset('Adminlte/plugins/toastr/toastr.min.css') }}">
 @endsection
 @section('distribuidor')
-    <header id="distribuidor_red" class="distribuidor_red">
-      <div class="content-autorized">
-          <img src="img/logotipo/logo-distribuidor-autorizado-persona.png" alt="distribuidor" class="logo_distribuidor">
-      </div>
-    </header>
+    @include('Layout.header_red')
 @endsection
 @section('contenido')
     <div class="card">
@@ -22,16 +20,16 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="img/banners/movil/movil_1.png" alt="First slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_1.png') }}" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="img/banners/movil/movil_2.png" alt="Second slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_2.png') }}" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="img/banners/movil/movil_3.png" alt="Third slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_3.png') }}" alt="Third slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="img/banners/movil/movil_4.png" alt="four slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_4.png') }}" alt="four slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -185,11 +183,11 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="img/cards/movil/max_29.png" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/movil/max_29.png') }}" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-default">Me interesa</button>
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
                       </div>
                     </div>
                   </div>
@@ -197,11 +195,11 @@
               </div>
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="img/cards/movil/max_39.png" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/movil/max_39.png') }}" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-default">Me interesa</button>
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
                       </div>
                     </div>
                   </div>
@@ -209,11 +207,11 @@
               </div>
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="img/cards/movil/max_49.png" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/movil/max_49.png') }}" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-default">Me interesa</button>
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
                       </div>
                     </div>
                   </div>
@@ -229,11 +227,11 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="img/cards/movil/max_55.png" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/movil/max_55.png') }}" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-default">Me interesa</button>
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
                       </div>
                     </div>
                   </div>
@@ -241,28 +239,16 @@
               </div>
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="img/cards/movil/max_69.png" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/movil/max_69.png') }}" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-default">Me interesa</button>
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- <div class="col-lg-4">
-                <div class="card">
-                  <img src="img/cards/max_29.png" class="card-img-top" alt="..."> 
-                  <div class="card-footer">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-default">Me interesa</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
             </div>
           </div>
           <div class="col-lg-1"></div>
@@ -274,10 +260,12 @@
 
 @section('post-script')
   <!-- Select2 -->
-  <script src="Adminlte/plugins/select2/js/select2.full.min.js"></script>
+  <script src="{{ asset('Adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
   <!-- InputMask -->
-  <script src="Adminlte/plugins/moment/moment.min.js"></script>
-  <script src="Adminlte/plugins/inputmask/jquery.inputmask.min.js"></script>
+  <script src="{{ asset('Adminlte/plugins/moment/moment.min.js') }}"></script>
+  <script src="{{ asset('Adminlte/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
+  <!-- Toastr -->
+  <script src="{{ asset('Adminlte/plugins/toastr/toastr.min.js') }}"></script>
   <script>
     $(function () {
       //Initialize Select2 Elements
@@ -293,7 +281,42 @@
       $('#tipo_documento').on('change', CambioTipoDocumento);
       $('#region').on('change', cargarProvincias);
       $('#provincia').on('change', cargarDistritos);
+
+      //FORMULARIOS
+      $('#formMovil').on('submit', submitFormCreate);
     })
+
+    // SUBMITS
+    function submitFormCreate(e){
+      e.preventDefault();
+      console.log($('#formMovil').serialize());
+      $.ajax({
+          type: "POST",
+          url: "{{ route('form.registro','MOVIL') }}",
+          data: $('#formMovil').serialize(),
+      }).done(function (response){
+        console.log(response);
+          if(!response.error){
+              clearModalCreate();
+              $('#modal-movil').modal('hide');
+              toastr.success(response.message);
+          }else{
+            toastr.danger(response.message);
+          }
+      });
+    }
+
+    function clearModalCreate(event){
+      $('#tipo_documento').val('');
+      $('#dni').val('');
+      $('#ruc').val('');
+      $('#carnet').val('');
+      $('#numero').val('');
+      $('#region').val('');
+      $('#distrito').val('');
+      $('#provincia').val('');
+      $('#nombre').val('');
+    }
 
     function IniciarCargado(){
       // $('#div_dni').hide();

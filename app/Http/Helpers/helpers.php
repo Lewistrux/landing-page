@@ -1,9 +1,11 @@
 <?php
 
+use App\Cliente;
 use App\Models\Distrito;
 use App\Models\Locacion;
-use App\Models\Persona;
+use App\Persona;
 use App\Models\Usuario;
+use Carbon\Carbon;
 
 if (! function_exists('usuario')) {
   function usuario()
@@ -11,6 +13,7 @@ if (! function_exists('usuario')) {
     return auth()->user();
   }
 }
+
 if (!function_exists('setCadena')) {
   function setCadena($cadena, $lower = false)
   {
@@ -18,6 +21,40 @@ if (!function_exists('setCadena')) {
           return mb_strtolower(trim($cadena));
 
       return mb_strtoupper(trim($cadena));
+  }
+}
+
+if (! function_exists('aviso_clientes_nuevos')) {
+  function aviso_clientes_nuevos()
+  {
+    $clientes = Cliente::where('estado','NUEVO')->get();
+    return count($clientes);
+  }
+}
+
+if (! function_exists('total_clientes')) {
+  function total_clientes()
+  {
+    $clientes = Cliente::all();
+    return count($clientes);
+  }
+}
+
+if (! function_exists('aviso_clientes_nuevos')) {
+  function aviso_clientes_nuevos()
+  {
+    $clientes = Cliente::where('estado','NUEVO')->get();
+    return count($clientes);
+  }
+}
+
+if (!function_exists('getFecha')) {
+  function getFecha($fecha, $formato = null)
+  {
+      if (is_null($formato))
+          $formato = 'd/m/Y';
+
+      return Carbon::parse($fecha)->format($formato);
   }
 }
 

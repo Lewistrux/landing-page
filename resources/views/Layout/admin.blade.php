@@ -4,24 +4,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RAPINET | ADMIN</title>
-
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="Adminlte/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{ asset('Adminlte/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="Adminlte/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{ asset('Adminlte/dist/css/adminlte.min.css') }}">
+  @yield('pre-script')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-secondary navbar-light">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class=" link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Inicio</a>
+        <a href="{{ route('administracion') }}" class=" link">Inicio</a>
       </li>
     </ul>
 
@@ -59,20 +62,16 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
+      
     </ul>
   </nav>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="#" class="brand-link">
+    <a href="{{ route('administracion') }}" class="brand-link">
       <!-- <img src="img/logotipo/rapinet_blanco.png" alt="AdminLTE Logo" class="brand-image" style="opacity: .8"> -->
-      <span class="brand-text font-weight pl-5"> RAPINET SAC</span>
+      <span class="brand-text font-weight pl-5 pr-5 ml-3 link"> RAPINET SAC</span>
     </a>
 
     <!-- Sidebar -->
@@ -80,7 +79,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="Adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ asset('img/avatar/avatar2.png') }}" class="img-circle elevation-3" alt="User Image">
           <!-- <img src="img/logotipo/rapinet_blanco.png" class="brand-image" alt="User Image"> -->
         </div>
         <div class="info">
@@ -93,7 +92,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-users"></i>
               <p>
                 Clientes
                 <i class="right fas fa-angle-left"></i>
@@ -101,38 +100,47 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../../index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{ route('clientes.nuevos') }}" class="nav-link">
+                  <i class="fas fa-user-plus nav-icon"></i>
                   <p>Nuevos</p>
+                  <span class="right badge badge-warning">{{ aviso_clientes_nuevos() }}</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{ route('clientes.asignados') }}" class="nav-link">
+                  <i class="fas fa-user-check nav-icon"></i>
                   <p>Asignados</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Atendidos</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-clipboard"></i>
               <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
+                Postulantes
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('clientes.nuevos') }}" class="nav-link">
+                  <i class="fas fa-user-plus nav-icon"></i>
+                  <p>Nuevos</p>
+                  <!-- <span class="right badge badge-danger">X</span> -->
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../index2.html" class="nav-link">
+                  <i class="fas fa-user-check nav-icon"></i>
+                  <p>Asignados</p>
+                </a>
+              </li>
+            </ul>
           </li>
-
           <li class="nav-item">
             <a href="{{route('login')}}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-door-open"></i>
               <p>
                 Cerrar Sesión
                 <span class="right badge badge-danger">X</span>
@@ -178,8 +186,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Área de sistemas.</b> 
     </div>
-    <strong>Copyright &copy; 2022 <a href="#" class="link"> Diego Vera Villanueva</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2022 <a href="#" class="link"> Diego Vera Villanueva</a>.</strong> Todos los derechos reservados.
   </footer>
 
   <!-- Control Sidebar -->
@@ -191,10 +198,11 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="Adminlte/plugins/jquery/jquery.min.js"></script>
+<script src="{{ asset('Adminlte/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
-<script src="Adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('Adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="Adminlte/dist/js/adminlte.min.js"></script>
+<script src="{{ asset('Adminlte/dist/js/adminlte.min.js') }}"></script>
+@yield('post-script')
 </body>
 </html>

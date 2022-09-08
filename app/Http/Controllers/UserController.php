@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,7 +39,8 @@ class UserController extends Controller
             if(password_verify($password,$hashp))
             {
                 $hashp=$query[0]->rol;
-                return view('administracion.index');
+                // return view('administracion.index');
+                return redirect()->route('administracion');
             }
             else
             {
@@ -49,6 +51,11 @@ class UserController extends Controller
         {
             return back()->withErrors(['name'=>'Usuario no Valida'])->withInput([request('usuario')]);
         }
+    }
+
+    public function index()
+    {
+        return view('administracion.index');
     }
 
     public function create()

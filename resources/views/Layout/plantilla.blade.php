@@ -4,12 +4,12 @@
 <title>LEWIS</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
   <link rel="icon" href="img/injasicon.png">
   <!-- Theme style -->
-  <link rel="stylesheet" href="Adminlte/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{ asset('Adminlte/dist/css/adminlte.min.css') }}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="Adminlte/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{ asset('Adminlte/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   
@@ -27,7 +27,7 @@
   <nav class="navbar navbar-expand-md navbar-light navbar-white bg-dark text-white">
     <div class="container">
         <a href="{{route('inicio')}}" class="navbar-brand">
-          <img src="img/logotipo/rapinet_blanco.png" alt="Claro Lewis" class="logo brand-image " style="opacity: .9">
+          <img src="{{ asset('img/logotipo/rapinet_blanco.png') }}" alt="Claro Lewis" class="logo brand-image " style="opacity: .9">
         </a>
 
         <button class="navbar-toggler order-0 text-muted bg-light" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-md-6 ">
                   <div class="logo-part">
-                      <img src="img/logotipo/rapinet_blanco.png" class="w-50 logo-footer" >
+                      <img src="{{ asset('img/logotipo/rapinet_blanco.png') }}" class="w-50 logo-footer" >
                       <p></p>
                       <p>Distribuidor Autorizado</p>
                   </div>
@@ -125,20 +125,20 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="Adminlte/plugins/jquery/jquery.min.js"></script>
+<script src="{{ asset('Adminlte/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
-<script src="Adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('Adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="Adminlte/dist/js/adminlte.min.js"></script>
+<script src="{{ asset('Adminlte/dist/js/adminlte.min.js') }}"></script>
 
 <!-- jQuery UI 1.11.4 -->
-<script src="Adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="{{ asset('Adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- AdminLTE App -->
-<script src="Adminlte/dist/js/adminlte.js"></script>
+<script src="{{ asset('Adminlte/dist/js/adminlte.js') }}"></script>
 @yield('post-script')
 @stack('scripts')
 </body>

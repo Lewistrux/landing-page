@@ -1,18 +1,16 @@
 @extends('Layout.plantilla')
+
 @section('distribuidor')
-    <header id="distribuidor_red" class="distribuidor_red">
-      <div class="content-autorized">
-          <img src="img/logotipo/logo-distribuidor-autorizado-persona.png" alt="distribuidor" class="logo_distribuidor">
-      </div>
-    </header>
+  @include('Layout.header_red')
 @endsection
+
 @section('contenido')
     
     <div class="wrapper">
       <section id="banner">
         <div class="row">
           <div class="col-12">
-          <img src="img/portadas/portada_principal.png">
+          <img src="{{ asset('img/portadas/portada_principal.png') }}">
           </div>
         </div>
         
@@ -73,18 +71,18 @@
             <div class="col-lg-10">
               <div class="row">
               <div class="col-lg-4 p-2">
-                  <a type="button" class="btn btn-outline-warning" href="{{route('hogar')}}">
-                    <img src="img/servicios/hogar.png" class="tarjeta-btn" alt="">
+                  <a type="button" class="btn" href="{{route('hogar')}}">
+                    <img src="{{ asset('img/servicios/hogar.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
                   </a>
                 </div>
                 <div class="col-lg-4 p-2">
-                  <a type="button" class="btn btn-outline-warning" href="{{route('moviles')}}">
-                    <img src="img/servicios/movil.png" class="tarjeta-btn" alt="">
+                  <a type="button" class="btn" href="{{route('moviles')}}">
+                    <img src="{{ asset('img/servicios/movil.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
                   </a>
                 </div>
                 <div class="col-lg-4 p-2">
-                  <a type="button" class="btn btn-outline-warning" href="{{route('empresas')}}">
-                    <img src="img/servicios/empresa.png" class="tarjeta-btn" alt="">
+                  <a type="button" class="btn" href="{{route('empresas')}}">
+                    <img src="{{ asset('img/servicios/empresa.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
                   </a>
                 </div>
               </div>

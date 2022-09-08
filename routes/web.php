@@ -24,7 +24,7 @@ Route::post('/accediendo', 'UserController@login')->name('user.login');
 // ==============================================================================================
 
 // =================================== ADMINISTRADOR ===============================================
-//Route::get('/Administracion', 'UserController@acceso')->name('administración');
+Route::get('/Administracion', 'UserController@index')->name('administracion');
 // ==============================================================================================
 
   // =================================== Nosotros ===============================================
@@ -44,20 +44,23 @@ Route::get('/empresas/soluciones','EmpresaController@soluciones')->name('empresa
 
 // ==============================================================================================
 
-  // =================================== Moviles ===============================================
+// =================================== Moviles ===============================================
 Route::get('/moviles','MovilController@index')->name('moviles');
 
 // ==============================================================================================
 
-  // =================================== Hogar/fija ===============================================
+// =================================== Hogar/fija ===============================================
 Route::get('/hogar','HogarController@index')->name('hogar');
 // ==============================================================================================
 
-  // =================================== LOCACIÓN ===============================================
+// =================================== LOCACIÓN ===============================================
 Route::post('/locacion/provincias','LocacionController@cargarProvincias')->name('locacion.provincias');
 Route::post('/locacion/distritos','LocacionController@cargarDistritos')->name('locacion.distritos');
 
-  // =================================== FORMULARIOS ===============================================
-  Route::post('/formulario/registro/{tipo}','FormularioController@store')->name('form.registro');
-  
-  
+// =================================== FORMULARIOS ===============================================
+Route::post('/formulario/registro/{area}','FormularioController@store')->name('form.registro');
+
+// =================================== CLIENTES ===============================================
+Route::get('/clientes/nuevos','ClienteController@nuevos')->name('clientes.nuevos');
+Route::get('/clientes/asignados','ClienteController@asignados')->name('clientes.asignados');
+// ==============================================================================================

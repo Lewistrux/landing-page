@@ -37,7 +37,7 @@ body{
     
 }
 .navegacion:link {
-    color: #fca118;
+    color: #fcf087;
 }
 .navegacion:visited {
     color: #f8f1acc4;
@@ -82,6 +82,36 @@ body{
 }
 .link:active {
     background: #f7f463fd;
+    color: #fcff41;
+}
+
+
+.link-tarjeta {
+    font-size: 16px;
+    outline: none;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 20px;
+    /* text-align: center; */
+}
+.link-tarjeta:link {
+    color: #fcf087;
+}
+.link-tarjeta:visited {
+    color: #fcf087;
+}
+.link-tarjeta:focus {
+    color: #ffec44;
+    background: #353535;
+}
+.link-tarjeta:hover {
+    background-color: #ffec44;
+    color: #f7cb3e !important;
+    background: #f7cb3e;
+    border-radius: 5px;
+}
+.link-tarjeta:active {
+    background: #505050fd;
     color: #fcff41;
 }
 /* paleta de colores claro distribuidor
@@ -224,24 +254,25 @@ footer{
 
 @media (min-width: 768px) {
 	#banner {
-		height: 300px;
+		height: 380px;
 		overflow: hidden;
 	}
 	#banner img {
 		height: auto;
-		margin-top: -100px;
+		margin-top: -50px;
 	}
 }
 
 @media (min-width: 1024px) {
 	#banner img {
-		margin-top: 0px;
+		margin-top: -80px;
 	}
 }
 
 .tarjeta-btn{
     max-width: 280px;
     max-height: 350px;
+    border-radius: 25px;
 }
 
 .color-header{

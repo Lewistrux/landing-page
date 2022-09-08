@@ -1,21 +1,17 @@
 @extends('Layout.plantilla')
+
 @section('pre-script')
-<!-- Select2 -->
-<link rel="stylesheet" href="Adminlte/plugins/select2/css/select2.min.css">
-<!-- Toastr -->
-<link rel="stylesheet" href="Adminlte/plugins/toastr/toastr.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{ asset('Adminlte/plugins/select2/css/select2.min.css') }}">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="{{ asset('Adminlte/plugins/toastr/toastr.min.css') }}">
 @endsection
+
 @section('distribuidor')
-    <header id="distribuidor_red" class="distribuidor_red">
-      <div class="content-autorized">
-          <img src="img/logotipo/logo-distribuidor-autorizado-persona.png" alt="distribuidor" class="logo_distribuidor">
-      </div>
-    </header>
+  @include('Layout.header_red')
 @endsection
+
 @section('contenido')
-    <!-- <section id="banner">
-        <img src="img/portadas/2.png">
-    </section> -->
     <div class="card">
       <div class="card-body banner">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -26,13 +22,13 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="img/banners/banner_1.png" alt="First slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/banner_1.png') }}" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="img/banners/banner_2.png" alt="Second slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/banner_2.png') }}" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="img/banners/banner_3.png" alt="Third slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/banner_3.png') }}" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -219,7 +215,7 @@
           <!-- <div class="col-lg-2"></div> -->
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/hogar/2play_inter_tel.png" class="card-img-top" alt="...">
+              <img src="{{ asset('img/cards/hogar/2play_inter_tel.png') }}" class="card-img-top" alt="...">
               <!-- <div class="card-body text-center  p-0"> -->
                 <!-- <h5> <b> Planes 2 play</b></h5>
                 <p class="card-text">Disfruta de los mejores planes 2 play para ti y tu familia.</p> -->
@@ -270,7 +266,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/hogar/2play_avanzado.png" class="card-img-top" alt="Claro 2 play">
+              <img src="{{ asset('img/cards/hogar/2play_avanzado.png') }}" class="card-img-top" alt="Claro 2 play">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -317,7 +313,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/hogar/2play_superior.png" class="card-img-top" alt="Claro 2 play">
+              <img src="{{ asset('img/cards/hogar/2play_superior.png') }}" class="card-img-top" alt="Claro 2 play">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -369,7 +365,7 @@
           <div class="col-lg-2"></div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/hogar/3play_avanzado.png" class="card-img-top" alt="...">
+              <img src="{{ asset('img/cards/hogar/3play_avanzado.png') }}" class="card-img-top" alt="...">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -421,7 +417,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/hogar/3play_superior.png" class="card-img-top" alt="...">
+              <img src="{{ asset('img/cards/hogar/3play_superior.png') }}" class="card-img-top" alt="...">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -482,7 +478,7 @@
           <div class="col-lg-2"></div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/hogar/2play_netflix.png" class="card-img-top" alt="...">
+              <img src="{{ asset('img/cards/hogar/2play_netflix.png') }}" class="card-img-top" alt="...">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -529,7 +525,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="img/cards/hogar/3play_netflix.png" class="card-img-top" alt="...">
+              <img src="{{ asset('img/cards/hogar/3play_netflix.png') }}" class="card-img-top" alt="...">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -588,12 +584,12 @@
 
 @section('post-script')
   <!-- Select2 -->
-  <script src="Adminlte/plugins/select2/js/select2.full.min.js"></script>
+  <script src="{{ asset('Adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
   <!-- InputMask -->
-  <script src="Adminlte/plugins/moment/moment.min.js"></script>
-  <script src="Adminlte/plugins/inputmask/jquery.inputmask.min.js"></script>
+  <script src="{{ asset('Adminlte/plugins/moment/moment.min.js') }}"></script>
+  <script src="{{ asset('Adminlte/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
   <!-- Toastr -->
-  <script src="Adminlte/plugins/toastr/toastr.min.js"></script>
+  <script src="{{ asset('Adminlte/plugins/toastr/toastr.min.js') }}"></script>
   <script>
     $(function () {
       //Initialize Select2 Elements
@@ -630,7 +626,7 @@
               $('#modal-default').modal('hide');
               toastr.success(response.message);
           }else{
-             
+            toastr.danger(response.message);
           }
       });
     }
