@@ -63,4 +63,5 @@ Route::post('/formulario/registro/{area}','FormularioController@store')->name('f
 // =================================== CLIENTES ===============================================
 Route::get('/clientes/nuevos','ClienteController@nuevos')->name('clientes.nuevos');
 Route::get('/clientes/asignados','ClienteController@asignados')->name('clientes.asignados');
+Route::post('/clientes/asignar/{id}','ClienteController@asignar')->name('clientes.asignar');
 // ==============================================================================================

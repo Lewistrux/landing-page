@@ -254,18 +254,18 @@ footer{
 
 @media (min-width: 768px) {
 	#banner {
-		height: 380px;
+		height: 400px;
 		overflow: hidden;
 	}
 	#banner img {
 		height: auto;
-		margin-top: -50px;
+		margin-top: -20px;
 	}
 }
 
 @media (min-width: 1024px) {
 	#banner img {
-		margin-top: -80px;
+		margin-top: -35px;
 	}
 }
 

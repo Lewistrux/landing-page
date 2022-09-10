@@ -1,5 +1,7 @@
 @extends('Layout.admin')
 @section('pre-script')
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{ asset('Adminlte/plugins/select2/css/select2.min.css') }}">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('Adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('Adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
@@ -65,6 +67,8 @@
 @endsection
 
 @section('post-script')
+<!-- Select2 -->
+<script src="{{ asset('Adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
 <!-- DataTables  & Plugins -->
 <script src="{{ asset('Adminlte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('Adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
@@ -80,19 +84,7 @@
 <script src="{{ asset('Adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 <script>
     var IDCliente = 0
-
-    $(document).ready(function(){
-        constructDatatable(false)
-
-        // MODALS
-        $('#modal-delete').on('show.bs.modal', showModalDelete)
-        $('#modal-active').on('show.bs.modal', showModalActive)
-
-        // FORMULARIOS
-        $('#formDelete').on('submit', submitFormDelete)
-        $('#formActive').on('submit', submitFormActive)
-    })
-  $(function () {
+    $(function () {
     $("#clientes").DataTable({
         // "order":[[8,"desc"]],
         // "columnDefs": [
@@ -356,22 +348,51 @@
           }
         }
       }).buttons().container().appendTo('#clientes_wrapper .col-md-6:eq(0)');
-    // $("#example1").DataTable({
-    //   "responsive": true, 
-    //   "lengthChange": false, 
-    //   "autoWidth": false,
-    //   "language": {
-    //     "processing": "Procesando...",
-    //     "zeroRecords": "No se encontraron resultados",
-    //     "emptyTable": "Ningún dato disponible en esta tabla",
-    //     "search": "Buscar:",
-    //     "loadingRecords": "Cargando..."
-    //   },
-    //   "buttons": [
-    //     "copy", "csv", "excel", "pdf", "print", "colvis"
-    //   ]
-      
-    // }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
   });
+    $(document).ready(function(){
+        $('.select2').select2({
+          placeholder: "Seleccionar",
+          allowClear: false,
+          width: '100%',
+        });
+        // MODALS
+        $('#modal-asignar').on('show.bs.modal', showModalAsignar)
+
+        // FORMULARIOS
+        $('#formAsignar').on('submit', submitFormAsignar)
+    })
+
+    function showModalAsignar(event){
+      let button = $(event.relatedTarget) // Button that triggered the modal
+      IDCliente = button.data('id');
+      let nombre = button.data('nombre');
+      let numero = button.data('numero');
+      let area = button.data('area');
+      // cargamos el modal
+      let modal = $(this);
+      $('#nombre').val(nombre);
+      $('#numero').val(numero);
+      $('#area').val(area);
+      //modal.find('#A_mensaje').text(nombre);
+    }
+
+    function submitFormActive(e){
+        e.preventDefault();
+        var enlace = "{{ route('clientes.asignar','IDCliente') }}"
+        enlace = enlace.replace('IDCliente', IDCliente)
+        $.ajax({
+            type: "put",
+            url: enlace,
+            data: $('#formAsignar').serialize(),
+            success: function(response){
+              $('#modal-asignar').modal('hide');
+              
+            },
+            error: function(error){
+                console.log(error)
+            }
+        });
+    }
+
 </script>
 @endsection
