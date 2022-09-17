@@ -13,12 +13,12 @@ class AreaSeeder extends Seeder
     public function run()
     {
         $area1 = new Area();
-        $area1->nombre = 'MOVIL';
+        $area1->nombre = 'CAMPO';
         $area1->activo = true;
         $area1->save();
 
         $area2 = new Area();
-        $area2->nombre = 'FIJA';
+        $area2->nombre = 'CALL MASIVO';
         $area2->activo = true;
         $area2->save();
 
@@ -26,5 +26,10 @@ class AreaSeeder extends Seeder
         $area3->nombre = 'CORPORATIVO';
         $area3->activo = true;
         $area3->save();
+
+        $area4 = new Area();
+        $area4->nombre = 'CALL PERÚ';
+        $area4->activo = true;
+        $area4->save();
     }
 }

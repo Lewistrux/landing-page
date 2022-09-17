@@ -1,16 +1,27 @@
 <?php
 
+use App\Asesor;
 use App\Cliente;
 use App\Models\Distrito;
 use App\Models\Locacion;
 use App\Persona;
 use App\Models\Usuario;
+use App\Supervisor;
 use Carbon\Carbon;
 
 if (! function_exists('usuario')) {
   function usuario()
   {
     return auth()->user();
+  }
+}
+
+if (! function_exists('getNombresYApellidosUser')) {
+  function getNombresYApellidosUser()
+  {
+    $usuario = usuario();
+    $data = $usuario->nombres.' '.$usuario->apellidos;
+    return $data;
   }
 }
 
@@ -40,11 +51,25 @@ if (! function_exists('total_clientes')) {
   }
 }
 
-if (! function_exists('aviso_clientes_nuevos')) {
-  function aviso_clientes_nuevos()
+if (! function_exists('getSupervisores')) {
+  function getSupervisores()
   {
-    $clientes = Cliente::where('estado','NUEVO')->get();
-    return count($clientes);
+    $supervisores = Supervisor::join('areas as ar','ar.id','supervisores.area_id')
+    ->where('supervisores.activo',true)
+    ->select('supervisores.id','supervisores.nombres','supervisores.apellidos','ar.nombre as area')
+    ->get();
+    return $supervisores;
+  }
+}
+
+if (! function_exists('getAsesores')) {
+  function getAsesores()
+  {
+    $asesores = Asesor::join('areas as ar','ar.id','asesores.area_id')
+    ->where('asesores.activo',true)
+    ->select('asesores.id','asesores.nombres','asesores.apellidos','ar.nombre as area')
+    ->get();
+    return $asesores;
   }
 }
 
@@ -153,27 +178,6 @@ if (!function_exists('getFecha')) {
 //   }
 // }
 
-// if (! function_exists('formato_DiaMesAnio')) {
-//   function formato_DiaMesAnio($fecha)
-//   {
-//     $onlyfecha = substr($fecha, 0, 10);
-//     $aux = explode('-',$onlyfecha);
-//     $week_days = array ("", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado", "Domingo");
-//     //$months = array ("", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-//     $months = array ("", "Ene.", "Feb.", "Mar.", "Abr.", "May.", "Jun.", "Jul.", "Ago.", "Sep.", "Oct.", "Nov.", "Dic.");
-//     // $year_now = date ("Y");
-//     // $month_now = date ("n");
-//     // $day_now = date ("j");
-//     //$week_day_now = date ("w");
-//     //dd($months[(int)$aux[1]]);
-//     $dia_semana = $week_days[(date('N', strtotime($fecha)))];
-//     //$date = $week_days[$week_day_now] . ", " . $aux[2] . " de " . $months[$aux[1]] . " de " . $aux[0];
-//     $date = $dia_semana.", ".$aux[2] . " de " . $months[(int)$aux[1]] . " del " . $aux[0];
-//     //$date = $day_now . " de " . $months[$month_now] . " de " . $year_now;
-//     return $date;
-//   }
-// }
-
 // if (! function_exists('formato_onlyhora')) {
 //   function formato_onlyhora($fecha)
 //   {
@@ -191,139 +195,6 @@ if (!function_exists('getFecha')) {
 //   }
 // }
 
-// if (! function_exists('fechas_iguales')) {
-//   function fechas_iguales($fecha1, $fecha2)
-//   {
-//     //dd(strtotime( formato_onlyfecha($fecha1)), strtotime( formato_onlyfecha($fecha2) ));
-//     if (strtotime( formato_onlyfecha($fecha1) ) == strtotime( formato_onlyfecha($fecha2) )) {
-//       return true;
-//     }
-//     return false;
-//   }
-// }
-
-// if (! function_exists('get_Roles')) {
-//   function get_Roles()
-//   {
-//     $roles = Rol::get();
-
-//     return $roles;
-//   }
-// }
-
-
-// if (! function_exists('get_RolbyUser')) {
-//   function get_RolbyUser($idUsuario)
-//   {
-//     $usuario = Usuario::join('rol','rol.rol_ID','usuario.usua_rolID')->first();
-
-//     return $usuario->rol_nombre;
-//   }
-// }
-
-
-// if (!function_exists('get_EstadoCompra')) {
-//   function get_EstadoCompra($estado)
-//   {
-//     switch ($estado) {
-//       case "EMITIDA":
-//           return "info";
-//       case "PENDIENTE":
-//           return "warning";
-//       case "RECHAZADA":
-//           return "secondary";
-//       case "APROBADA":
-//           return "primary";
-//       case "CANCELADA":
-//           return "danger";
-//       case "FINALIZADA":
-//           return "success";
-//       case "AUTORIZADA":
-//           return "primary";
-//       case "EN ESPERA":
-//           return "success";
-//       case "RECEPCIONADA":
-//           return "success";
-//           break;
-//     }
-//   }
-// }
-
-// if (! function_exists('get_NombreProducto')) {
-//   function get_NombreProducto($idProducto)
-//   {
-//     $producto = Producto::findOrFail($idProducto);
-//     return $producto->prod_nombre;
-//   }
-// }
-
-// if (! function_exists('get_dataProducto')) {
-//   function get_dataProducto($idProducto)
-//   {
-//     $producto = Producto::findOrFail($idProducto);
-//     return $producto;
-//   }
-// }
-
-// Para listar las ventas
-
-// if (! function_exists('get_dataCliente')) {
-//   function get_dataCliente($id, $tipo)
-//   {
-//     $respuesta = "";
-
-//     if ( $tipo=="PERSONA" ){
-//       $cliente = Cliente::select('persona.pers_paterno', 'persona.pers_materno', 'persona.pers_nombres')
-//                           ->join('persona', 'persona.pers_ID', 'cliente.clie_personaID')
-//                           ->where('cliente.clie_ID', $id)
-//                           ->where('cliente.clie_estado', 1)
-//                           ->where('persona.pers_estado', 1)
-//                           ->first();
-
-//       $respuesta = $cliente->pers_paterno." ".$cliente->pers_materno." ".$cliente->pers_nombres;
-//     }else{
-//       $cliente = Cliente::select('empr_razonSocial')
-//                           ->join('empresa', 'empresa.empr_ID', 'cliente.clie_empresaID')
-//                           ->where('cliente.clie_ID', $id)
-//                           ->where('cliente.clie_estado', 1)
-//                           ->where('empresa.empr_estado', 1)
-//                           ->first();
-
-//       $respuesta = $cliente->empr_razonSocial;
-//     }
-//     return $respuesta;
-//   }
-// }
-
-// if (! function_exists('get_nameUser')) {
-//   function get_nameUser($id)
-//   {
-//     $user = Usuario::findOrFail($id);
-
-//     return $user->usua_nombre;
-//   }
-// }
-
-// if (! function_exists('get_detalles_bicicleta')) {
-//   function get_detalles_bicicleta($idBicicleta, $caso){
-
-//     if ( $caso ){
-//       $detalles = DetalleBicicleta::select('debi_especificacionID as id', 'especificacion.espe_desc as nombre')
-//                                   ->join('especificacion', 'especificacion.espe_ID', 'detalle_bicicleta.debi_especificacionID')
-//                                   ->where('debi_productoID', $idBicicleta)
-//                                   ->where('especificacion.espe_estado', 1)
-//                                   ->orderBy('especificacion.espe_desc', 'asc')->get();
-//     }else{
-//       $detalles = DetalleBicicleta::join('especificacion', 'especificacion.espe_ID', 'detalle_bicicleta.debi_especificacionID')
-//                                   ->where('debi_productoID', $idBicicleta)
-//                                   ->where('especificacion.espe_estado', 1)
-//                                   ->orderBy('especificacion.espe_desc', 'asc')->get();
-//     }
-
-//     return $detalles;
-//   }
-// }
-
 // UBIGEO
 // if (!function_exists('departamentos')) {
 //     function departamentos($id = null)
@@ -336,41 +207,3 @@ if (!function_exists('getFecha')) {
 //         }
 //     }
 // }
-
-
-// if (!function_exists('provincias')) {
-//     function provincias($id = null)
-//     {
-//         if (is_null($id)) {
-//             return Provincia::all();
-//         } else {
-//             $provincia_id = str_pad($id, 4, "0", STR_PAD_LEFT);
-//             return Provincia::where('id', $provincia_id)->first();
-//         }
-//     }
-// }
-
-// if (!function_exists('distritos')) {
-//     function distritos($id = null)
-//     {
-//         if (is_null($id)) {
-//             return Distrito::all();
-//         } else {
-//             $distrito_id = str_pad($id, 6, "0", STR_PAD_LEFT);
-//             return Distrito::where('id', $distrito_id)->first();
-//         }
-//     }
-// }
-
-// if (! function_exists('get_locacion')){
-//   function get_locacion($idLocacion){
-//     $locacion = Locacion::join('distrito', 'distrito.dist_ID', 'locacion.loca_distritoID')
-//                         ->join('provincia', 'provincia.prov_ID', 'distrito.dist_provinciaID')
-//                         ->join('region', 'region.regi_ID', 'provincia.prov_regionID')
-//                         ->where('locacion.loca_ID', $idLocacion)
-//                         ->first();
-
-//     return $locacion;
-//   }
-// }
-

@@ -1,6 +1,8 @@
 @extends('Layout.admin')
 @section('pre-script')
-  <!-- Select2 -->
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="{{ asset('Adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+<!-- Select2 -->
   <link rel="stylesheet" href="{{ asset('Adminlte/plugins/select2/css/select2.min.css') }}">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('Adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
@@ -38,8 +40,6 @@
               <tr>
                 <td class="text-sm">{{ $cliente->nombres }}</td>
                 <td class="text-sm">{{ $cliente->numero }}</td>
-                <!-- <td class="text-sm">{{ $cliente->tipo_documento }}</td>
-                <td class="text-sm">{{ $cliente->documento }}</td> -->
                 <td class="text-sm text-center">{{ $cliente->area }}</td>
                 <td class="text-sm">{{ $cliente->departamento }}</td>
                 <td class="text-sm">{{ $cliente->provincia }}</td>
@@ -67,6 +67,8 @@
 @endsection
 
 @section('post-script')
+<!-- SweetAlert2 -->
+<script src="{{ asset('Adminlte/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 <!-- Select2 -->
 <script src="{{ asset('Adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
 <!-- DataTables  & Plugins -->
@@ -85,14 +87,7 @@
 <script>
     var IDCliente = 0
     $(function () {
-    $("#clientes").DataTable({
-        // "order":[[8,"desc"]],
-        // "columnDefs": [
-        //   { responsivePriority: 1, targets: 0 },
-        //   { responsivePriority: 2, targets: 1 },
-        //   { responsivePriority: 4, targets: -2 },
-        //   { responsivePriority: 3, targets: -1 }
-        // ],
+      $("#clientes").DataTable({
         "autoWidth": false,
         "paging": true,
         "language": {
@@ -348,6 +343,7 @@
           }
         }
       }).buttons().container().appendTo('#clientes_wrapper .col-md-6:eq(0)');
+
   });
     $(document).ready(function(){
         $('.select2').select2({
@@ -355,6 +351,7 @@
           allowClear: false,
           width: '100%',
         });
+        
         // MODALS
         $('#modal-asignar').on('show.bs.modal', showModalAsignar)
 
@@ -364,6 +361,7 @@
 
     function showModalAsignar(event){
       let button = $(event.relatedTarget) // Button that triggered the modal
+      
       IDCliente = button.data('id');
       let nombre = button.data('nombre');
       let numero = button.data('numero');
@@ -373,26 +371,50 @@
       $('#nombre').val(nombre);
       $('#numero').val(numero);
       $('#area').val(area);
+
       //modal.find('#A_mensaje').text(nombre);
     }
 
-    function submitFormActive(e){
+    function submitFormAsignar(e){
         e.preventDefault();
-        var enlace = "{{ route('clientes.asignar','IDCliente') }}"
+        let enlace = "{{ route('clientes.asignar','IDCliente') }}"
         enlace = enlace.replace('IDCliente', IDCliente)
+        
         $.ajax({
-            type: "put",
+            type: "POST",
             url: enlace,
             data: $('#formAsignar').serialize(),
             success: function(response){
               $('#modal-asignar').modal('hide');
-              
+              if (!response.error) {
+                let Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 3000
+                });
+                Toast.fire({
+                  icon: 'success',
+                  title: response.message
+                })
+                location.reload();
+              } else {
+                let Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 3000
+                });
+                Toast.fire({
+                  icon: 'error',
+                  title: response.message
+                })
+              }
             },
             error: function(error){
                 console.log(error)
             }
         });
     }
-
 </script>
 @endsection

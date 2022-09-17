@@ -19,8 +19,8 @@
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
                                     <input type="text" class="form-control form-control-sm" id="nombre" name="nombre" disabled>
+                                    
                                 </div>
-                                
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
@@ -49,10 +49,12 @@
                     <hr>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group">
-                            <label>Asesor</label>
-                            <select class="form-control form-control-sm select2" id="asesor" name="asesor" required>
+                            <label>Supervisor</label>
+                            <select class="form-control form-control-sm select2" id="supervisor" name="supervisor" required>
                                 <option></option>
-                                <option value="Asesor">Asesor</option>
+                                @foreach( getSupervisores() as $supervisor)
+                                    <option value="{{ $supervisor->id }}">{{ $supervisor->nombres }} {{ $supervisor->apellidos }} <small class="text-xs text-muted font-italic"> - ({{$supervisor->area}})</small></option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

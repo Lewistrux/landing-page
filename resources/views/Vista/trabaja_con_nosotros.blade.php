@@ -11,188 +11,10 @@
     </header>
 @endsection
 @section('contenido')
-      <!-- <div class="card">
-        <div class="card-body banner">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="img/banners/banner_3.png" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="img/banners/banner_2.png" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="img/banners/banners.png" alt="Third slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-custom-icon" aria-hidden="true">
-                <i class="fas fa-chevron-left"></i>
-              </span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-custom-icon" aria-hidden="true">
-                <i class="fas fa-chevron-right"></i>
-              </span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-      </div> -->
       <section id="portada" class="portada">
         <img src="img/portadas/postula.png" class="portada">
       </section>
-      <div class="content-page"> 
-        <!-- <div class="row">
-          <div class="col-lg-4">
-          </div>
-          <div class="col-lg-4">
-            <div class="card card-dark">
-              <div class="card-header">
-                <h3 class="card-title">Dejanos tus datos</h3>
-              </div>
-              <form>
-                <div class="card-body">
-                  <div class="row">
-
-                    <div class="col-12">
-                      <div class="form-group">
-                        <label for="nombre">Nombre completo</label>
-                        <input type="text" class="form-control form-control-sm" id="nombre" name="nombre" placeholder="Nombre" required>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <div class="form-group">
-                        <label>Tipo documento</label>
-                        <select class="form-control form-control-sm select2" id="tipo_documento" name="tipo_documento">
-                          <option selected="selected" value="DNI">DNI</option>
-                          <option value="RUC">RUC</option>
-                          <option value="CARNE">Carnet extranjería</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12" id="div_dni">
-                      <div class="form-group">
-                        <label>DNI</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                          </div>
-                          <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['99999999']" data-mask>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12" id="div_ruc">
-                      <div class="form-group">
-                        <label>RUC</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                          </div>
-                          <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['99999999999']" data-mask>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12" id="div_carne">
-                      <div class="form-group">
-                        <label>Carnet extranjería</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                          </div>
-                          <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['999999999999']" data-mask>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <div class="form-group">
-                        <label>Número</label>
-
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                          </div>
-                          <input type="text" class="form-control form-control-sm" data-inputmask="'mask': ['999-999-999']" data-mask>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <div class="form-group">
-                        <label>Departamento</label>
-                        <select class="form-control form-control-sm select2 ">
-                          <option selected="selected">La Libertad</option>
-                          <option>Alaska</option>
-                          <option>California</option>
-                          <option>Delaware</option>
-                          <option>Tennessee</option>
-                          <option>Texas</option>
-                          <option>Washington</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <div class="form-group">
-                        <label>Provincia</label>
-                        <select class="form-control form-control-sm select2 ">
-                          <option selected="selected">Trujillo</option>
-                          <option>Alaska</option>
-                          <option>California</option>
-                          <option>Delaware</option>
-                          <option>Tennessee</option>
-                          <option>Texas</option>
-                          <option>Washington</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <div class="form-group">
-                        <label>Distrito</label>
-                        <select class="form-control form-control-sm select2 ">
-                          <option selected="selected">La esperanza</option>
-                          <option>Alaska</option>
-                          <option>California</option>
-                          <option>Delaware</option>
-                          <option>Tennessee</option>
-                          <option>Texas</option>
-                          <option>Washington</option>
-                        </select>
-                      </div>
-                    </div>
-
-                  </div>                  
-                </div>
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary w-100">Enviar</button>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="col-lg-4">
-          </div>
-        </div> -->
-        <div class="row content-buttons">
-          <div class="col-lg-3"></div>
-          <div class="col-lg-6">
-            <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-postular">Postula Aquí</button>
-          </div>
-          <div class="col-lg-3"></div>
-        </div>
-        <section class="content">
+        <!-- <section class="content m-5">
           <div class="container-fluid contenido">
             <div class="row">
               <div class="col-md-3 col-sm-6 col-12">
@@ -233,7 +55,102 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
+      <div class="content m-5"> 
+        <div class="card">
+          <div class="card-header p-2">
+              <ul class="nav nav-pills items-center">
+                
+                  <li class="nav-item m-2">
+                    <a class="active w-100 " href="#settings" data-toggle="tab">
+                      <div class="info-box ">
+                        <span class="info-box-icon bg-info">
+                          <i class="fas fa-user"></i>
+                          <!-- <img src="{{ asset('img/botones/btn_inter_tel.png')}}" alt=""> -->
+                        </span>
+                        <div class="info-box-content">
+                          <span class="info-box-text">Quiero ser ... </span>
+                          <span class="info-box-number">Asesor</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                 
+                  <li class="nav-item m-2">
+                    <a class="w-100" href="#servicios" data-toggle="tab">
+                      <div class="info-box">
+                        <span class="info-box-icon bg-info">
+                          <i class="fas fa-user-shield"></i>
+                        </span>
+                        <div class="info-box-content">
+                          <span class="info-box-text">Quiero ser ... </span>
+                          <span class="info-box-number">Supervisor</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item m-2">
+                    <a class="w-100" href="#servicios" data-toggle="tab">
+                      <div class="info-box ">
+                        <span class="info-box-icon bg-info">
+                          <i class="fas fa-user-clock"></i>
+                        </span>
+                        <div class="info-box-content">
+                          <span class="info-box-text">Quiero ser ... </span>
+                          <span class="info-box-number">Mesa de control</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item m-2">
+                    <a class="" href="#servicios" data-toggle="tab">
+                      <div class="info-box ">
+                        <span class="info-box-icon bg-info">
+                          <i class="fas fa-user-check"></i>
+                        </span>
+                        <div class="info-box-content">
+                          <span class="info-box-text">Quiero ser ... </span>
+                          <span class="info-box-number">Reclutador</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                    
+              </ul>
+          </div>
+          <div class="card-body">
+              <div class="tab-content">
+                  <div class="tab-pane active" id="settings">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7899.746588945557!2d-79.03578811999816!3d-8.114381594962968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d9d441352ed%3A0x8a2684783358cb0b!2sAv.%20Espa%C3%B1a%20146%2C%20Trujillo%2013001!5e0!3m2!1ses-419!2spe!4v1661355646776!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  <div class="tab-pane" id="servicios">
+                      <div class="row">
+                          <div class="col-md-6 col-sm-6 col-12">
+                              <div class="info-box bg-success">
+                                  <span class="info-box-icon"><i class="fa fa-sync-alt"></i></span>
+                                  <div class="info-box-content">
+                                      <span class="h5">Migración de Prepago a Postpago.</span>
+                                      <span class="progress-description">
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card-footer">
+
+          </div>
+        </div>
+        <!-- <div class="row content-buttons">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
+            <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-postular">Postula Aquí</button>
+          </div>
+          <div class="col-lg-3"></div>
+        </div> -->
+       
       </div>
     @include('formulario.postular')
 @endsection

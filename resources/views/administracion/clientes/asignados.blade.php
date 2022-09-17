@@ -21,8 +21,6 @@
             <tr>
               <th>Nombres</th>
               <th>N° Celular</th>
-              <th>Tipo Doc</th>
-              <th>N° Documento</th>
               <th>Departamento</th>
               <th>Provincia</th>
               <th>Distrito</th>
@@ -35,22 +33,19 @@
               <tr>
                 <td class="text-sm">{{ $cliente->nombres }}</td>
                 <td class="text-sm">{{ $cliente->numero }}</td>
-                <td class="text-sm">{{ $cliente->tipo_documento }}</td>
-                <td class="text-sm">{{ $cliente->documento }}</td>
                 <td class="text-sm">{{ $cliente->departamento }}</td>
                 <td class="text-sm">{{ $cliente->provincia }}</td>
                 <td class="text-sm">{{ $cliente->distrito }}</td>
                 <td class="text-sm">{{ getFecha($cliente->created_at) }}</td>
                 <td style="text-align: center;">
                   <div class="btn-group">
-                    @if ($cliente->estado == 'NUEVO')
+                    @if ($cliente->estado == 'ASIGNADO')
                       <button class="btn btn-sm btn-warning" idCliente="{{ $cliente->id }}" title="Asignar">
                         <i class="fas fa-clipboard-check" ></i> Asignar
                       </button>
                     @endif
                   </div>
-                </td>
-                      
+                </td>   
               </tr>
             @endforeach
           </tbody>

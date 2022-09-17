@@ -16,7 +16,7 @@ class CreateAsignaciones extends Migration
         Schema::create('asignaciones', function (Blueprint $table) {
             $table->id();
             $table->foreignId('cliente_id')->constrained('clientes')->onDelete('cascade');
-            $table->foreignId('asesor_id')->constrained('asesores')->onDelete('cascade');
+            $table->foreignId('supervisor_id')->constrained('supervisores')->onDelete('cascade');
             $table->foreignId('area_id')->constrained('areas')->onDelete('cascade');
             $table->string('estado')->default('ASIGNADO');
             $table->boolean('activo')->default(true);

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Area;
+use App\Asesor;
+use App\Asignacion;
 use App\Cliente;
 use App\Persona;
+use App\Supervisor;
 use Illuminate\Http\Request;
 
 class ClienteController extends Controller
@@ -47,6 +51,46 @@ class ClienteController extends Controller
     {
         $clientes = Cliente::where('estado','<>','NUEVO')->get();
         return view('administracion.clientes.asignados',compact('clientes'));
+    }
+
+    public function asignar(Request $request, $id)
+    {
+        $error = false;
+        $message = "";
+        $collection = collect([]);
+
+        $supervisor = Supervisor::findOrFail($request->supervisor);
+        $cliente = Cliente::findOrFail($id);
+
+        if ($supervisor && $cliente) {
+            $asignacion = new Asignacion();
+            $asignacion->cliente_id = $cliente->id;
+            $asignacion->supervisor_id = $supervisor->id;
+            $asignacion->area_id = $supervisor->area_id;
+            $asignacion->estado = 'ASIGNADO';   
+            $asignacion->created_by = usuario()->id;
+            $asignacion->save();
+
+            $cliente->estado = 'ASIGNADO';
+            $cliente->save();
+
+            $message = "Se asignó al supervisor correctamente";
+        } else {
+            $error = true;
+            $message = "No se pudo realizar la asignación, intentelo nuevamente";
+        }
+        
+        if (!$error) {
+            $collection->push($asignacion);
+        }
+        
+        $response = [
+            'error' => $error,
+            'message' => $message,
+            'datos' => $collection
+        ];
+
+        return response()->json($response);
     }
 
     public function index()

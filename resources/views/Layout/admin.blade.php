@@ -31,7 +31,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge">15</span>
@@ -56,7 +56,7 @@
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
@@ -79,11 +79,11 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ asset('img/avatar/avatar2.png') }}" class="img-circle elevation-3" alt="User Image">
+          <img src="{{ asset('img/avatar/avatar2.png') }}" class="img-circle" alt="User Image">
           <!-- <img src="img/logotipo/rapinet_blanco.png" class="brand-image" alt="User Image"> -->
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ usuario()->name }}</a>
+          <a href="#" class="d-block link text-sm">{{ getNombresYApellidosUser() }}</a>
         </div>
       </div>
 
@@ -119,24 +119,9 @@
               <i class="nav-icon fas fa-clipboard"></i>
               <p>
                 Postulantes
-                <i class="right fas fa-angle-left"></i>
+                <span class="right badge badge-warning">{{ aviso_clientes_nuevos() }}</span>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('clientes.nuevos') }}" class="nav-link">
-                  <i class="fas fa-user-plus nav-icon"></i>
-                  <p>Nuevos</p>
-                  <!-- <span class="right badge badge-danger">X</span> -->
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
-                  <i class="fas fa-user-check nav-icon"></i>
-                  <p>Asignados</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
             <a href="{{route('login')}}" class="nav-link">
