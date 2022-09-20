@@ -19,29 +19,29 @@
         <table id="clientes" class="table table-sm table-bordered hover display nowrap">
           <thead>
             <tr>
-              <th>Nombres</th>
-              <th>N° Celular</th>
-              <th>Departamento</th>
-              <th>Provincia</th>
-              <th>Distrito</th>
-              <th>F. Registro</th>
+              <th>Cliente</th>
+              <th>Supervisor</th>
+              <th>Área</th>
+              <th>Estado</th>
+              <th>F. Asignación</th>
               <th>Opciones</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($clientes as $cliente)
+            @foreach($asignaciones as $cliente)
               <tr>
-                <td class="text-sm">{{ $cliente->nombres }}</td>
-                <td class="text-sm">{{ $cliente->numero }}</td>
-                <td class="text-sm">{{ $cliente->departamento }}</td>
-                <td class="text-sm">{{ $cliente->provincia }}</td>
-                <td class="text-sm">{{ $cliente->distrito }}</td>
+                <td class="text-sm">{{ $cliente->cliente }}</td>
+                <td class="text-sm">{{ $cliente->supervisor_nombre }} {{ $cliente->supervisor_apellidos }}</td>
+                <td class="text-sm">{{ $cliente->area }}</td>
+                <td class="text-sm"><span class="badge text-wrap badge-{{ getEstado_asignacion($cliente->estado)}}">{{ $cliente->estado }}</span></td>
                 <td class="text-sm">{{ getFecha($cliente->created_at) }}</td>
                 <td style="text-align: center;">
                   <div class="btn-group">
                     @if ($cliente->estado == 'ASIGNADO')
-                      <button class="btn btn-sm btn-warning" idCliente="{{ $cliente->id }}" title="Asignar">
-                        <i class="fas fa-clipboard-check" ></i> Asignar
+                      <button class="btn btn-sm btn-warning" data-id="{{ $cliente->id }}" data-nombre="{{ $cliente->nombres }}"
+                        data-area="{{ $cliente->area }}" data-numero="{{ $cliente->numero }}" title="Asignar" data-toggle="modal" 
+                        data-target="#modal-asignar">
+                        <i class="fas fa-pencil" ></i> Actualizar
                       </button>
                     @endif
                   </div>

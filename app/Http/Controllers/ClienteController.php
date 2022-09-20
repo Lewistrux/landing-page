@@ -49,8 +49,15 @@ class ClienteController extends Controller
 
     public function asignados()
     {
-        $clientes = Cliente::where('estado','<>','NUEVO')->get();
-        return view('administracion.clientes.asignados',compact('clientes'));
+        $asignaciones = Asignacion::join('clientes as cl','asignaciones.cliente_id','cl.id')
+        ->join('supervisores as sup','sup.id','asignaciones.supervisor_id')
+        ->join('areas as a','a.id','asignaciones.area_id')
+        ->where([
+            ['asignaciones.activo', true]
+        ])
+        ->select('asignaciones.*','cl.nombres as cliente','cl.id as cliente_id','sup.id as supervisor_id','sup.nombres as supervisor_nombre','sup.apellidos as supervisor_apellidos', 'a.nombre as area')
+        ->get();
+        return view('administracion.clientes.asignados',compact('asignaciones'));
     }
 
     public function asignar(Request $request, $id)
