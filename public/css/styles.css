@@ -362,3 +362,6 @@ footer{
 .contenido{
     padding: 20px;
 }
+.espacio_entre{
+    justify-content: space-between;
+}

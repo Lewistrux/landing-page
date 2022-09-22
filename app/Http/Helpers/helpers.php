@@ -86,21 +86,21 @@ if (!function_exists('getFecha')) {
 if(!function_exists('getEstado_asignacion')){
   function getEstado_asignacion($estado)
   {
-      switch ($estado) {
-          case 'ASIGNADO':
-              return "secondary";
-          case 'PROCESANDO':
-              return "info";
-          case 'VENDIDO':
-              return "success";
-          case 'RECHAZADO':
-              return "danger";
-          case 'CANCELADO':
-              return "dark";
-          case 'REASIGNADO':
-              return "warning";
-              break;
-      }
+    switch ($estado) {
+      case 'ASIGNADO':
+          return "secondary";
+      case 'PROCESANDO':
+          return "info";
+      case 'VENDIDO':
+          return "success";
+      case 'RECHAZADO':
+          return "danger";
+      case 'CANCELADO':
+          return "dark";
+      case 'REASIGNADO':
+          return "warning";
+        break;
+    }
   }
 }
 // if (!function_exists('setNumero')) {

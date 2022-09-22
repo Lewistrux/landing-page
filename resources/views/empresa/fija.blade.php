@@ -101,7 +101,7 @@
       console.log($('#formMovil').serialize());
       $.ajax({
           type: "POST",
-          url: "{{ route('form.registro','MOVIL') }}",
+          url: "{{ route('form.registro','CORP-FIJA') }}",
           data: $('#formMovil').serialize(),
       }).done(function (response){
         console.log(response);

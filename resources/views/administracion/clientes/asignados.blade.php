@@ -38,11 +38,26 @@
                 <td style="text-align: center;">
                   <div class="btn-group">
                     @if ($cliente->estado == 'ASIGNADO')
-                      <button class="btn btn-sm btn-warning" data-id="{{ $cliente->id }}" data-nombre="{{ $cliente->nombres }}"
+                      <button class="btn btn-sm btn-info" data-id="{{ $cliente->id }}" data-nombre="{{ $cliente->nombres }}"
                         data-area="{{ $cliente->area }}" data-numero="{{ $cliente->numero }}" title="Asignar" data-toggle="modal" 
                         data-target="#modal-asignar">
-                        <i class="fas fa-pencil" ></i> Actualizar
+                        <i class="fas fa-pen" ></i> Actualizar
                       </button>
+                    @endif
+                    @if ($cliente->estado == 'REASIGNADO')
+                      <span class="text-muted font-italic text-sm">sin acciones</span>
+                    @endif
+                    @if ($cliente->estado == 'RECHAZADO')
+                      <span class="text-muted font-italic text-sm">sin acciones</span>
+                    @endif
+                    @if ($cliente->estado == 'PROCESANDO')
+                      <span class="text-muted font-italic text-sm">sin acciones</span>
+                    @endif
+                    @if ($cliente->estado == 'CANCELADO')
+                      <span class="text-muted font-italic text-sm">sin acciones</span>
+                    @endif
+                    @if ($cliente->estado == 'VENDIDO')
+                      <span class="text-muted font-italic text-sm">sin acciones</span>
                     @endif
                   </div>
                 </td>   
