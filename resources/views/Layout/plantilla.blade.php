@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>LEWIS</title>
+<title>RAPINET</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
@@ -58,7 +58,7 @@
 
   <section id="acceso_wspp">
     <a href="https://wa.me/961717474" class="whatsapp" target="_blank">
-      <img src="img/icon/wsapp.png" alt="" class="burbuja">
+      <img src="{{ asset('img/icon/wsapp.png') }}" alt="" class="burbuja">
     </a>
   </section>
   <footer class="container-fluid bg-dark py-5">
@@ -84,7 +84,7 @@
           <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6 px-4">
-                  <h5><b> Contactanos</b></h5>
+                  <h5 class="pl-4"><b> Contactanos</b></h5>
                   <div class="row ">
                       <div class="col-md-12">
                         <ul>
@@ -96,14 +96,17 @@
                       </div>
                   </div>
                 </div>
-                <div class="col-md-6 ">
-                  <h6> Novedades</h6>
-                  <div class="social">
-                      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <div class="col-md-6">
+                  <h5 class="pl-4"><b> Novedades</b></h5>
+                  <div class="row text-right">
+                      <div class="col-md-12 text-right">
+                        <ul>
+                            <li class="nav"><a href="{{ route('hogar') }}" class="link text-right"> Planes de hogar</a> </li>
+                            <li class="nav"> <a href="{{ route('moviles') }}" class="link text-right"> Planes moviles</a> </li>
+                            <li class="nav"> <a href="{{ route('empresas') }}" class="link text-right"> Planes empresariales</a> </li>
+                        </ul>
+                      </div>
                   </div>
-                  
-                  <p></p>
                 </div>
             </div>
           </div>
@@ -117,8 +120,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Área de sistemas.</b> 
     </div>
-    <strong>Copyright &copy; 2022 <a href="#" class="link"> Diego Vera Villanueva</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2022 <a href="#" class="link"> Diego Vera Villanueva</a>.</strong> Derechos Reservados.
   </footer>
 
 </div>

@@ -28,8 +28,8 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>{{ aviso_clientes_nuevos() }}<sup style="font-size: 20px">%</sup></h3>
-                    <p>Total de Clientes</p>
+                    <h3>{{ aviso_clientes_nuevos() }}</h3>
+                    <p>Clientes Nuevos</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-stats-bars"></i>
@@ -42,8 +42,8 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{ aviso_clientes_nuevos() }}</h3>
-                    <p>Clientes Nuevos</p>
+                    <h3>{{ aviso_postulantes_nuevos() }}</h3>
+                    <p>Postulantes Nuevos</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-user-plus"></i>
@@ -56,8 +56,8 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>65</h3>
-                    <p>Unique Visitors</p>
+                    <h3>{{ aviso_clientes_vendidos() }}</h3>
+                    <p>Clientes Vendidos</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-chart-pie"></i>

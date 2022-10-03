@@ -42,7 +42,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="form-group">
                                 <label>Provincia</label>
-                                <select class="form-control form-control-sm select2" id="provincia" name="provincia">
+                                <select class="form-control form-control-sm select2" id="provincia" name="provincia" required>
                                     <option></option>
                                 </select>
                             </div>
@@ -50,7 +50,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="form-group">
                                 <label>Distrito</label>
-                                <select class="form-control form-control-sm select2" id="distrito" name="distrito">
+                                <select class="form-control form-control-sm select2" id="distrito" name="distrito" required>
                                     <option></option>
                                 </select>
                             </div>

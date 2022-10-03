@@ -250,9 +250,17 @@
                 </div>
               </div>
             </div>
+            <div class="col-12 text-right">
+              <hr>
+              <a href="{{ route('inicio') }}" class="btn btn-warning btn-lg text-right">
+                Volver
+              </a>
+            </div>
           </div>
           <div class="col-lg-1"></div>
+          
         </div>
+        
       </div>
     </div>
     @include('formulario.movil')

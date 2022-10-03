@@ -59,9 +59,19 @@ Route::post('/locacion/distritos','LocacionController@cargarDistritos')->name('l
 
 // =================================== FORMULARIOS ===============================================
 Route::post('/formulario/registro/{area}','FormularioController@store')->name('form.registro');
+Route::post('/formulario/postular','FormularioController@postular')->name('form.postular');
 
 // =================================== CLIENTES ===============================================
 Route::get('/clientes/nuevos','ClienteController@nuevos')->name('clientes.nuevos');
 Route::get('/clientes/asignados','ClienteController@asignados')->name('clientes.asignados');
 Route::post('/clientes/asignar/{id}','ClienteController@asignar')->name('clientes.asignar');
+Route::post('/clientes/actualizar/{id}','ClienteController@actualizar_estado')->name('clientes.estado');
+// ==============================================================================================
+
+// =================================== POSTULANTES ===============================================
+Route::get('/postulantes','PostulanteController@index')->name('postulantes');
+Route::get('/download/postulantes/{id}', 'PostulanteController@download_cv')->name('postulantes.download');
+// Route::get('/clientes/asignados','ClienteController@asignados')->name('clientes.asignados');
+// Route::post('/clientes/asignar/{id}','ClienteController@asignar')->name('clientes.asignar');
+// Route::post('/clientes/actualizar/{id}','ClienteController@actualizar_estado')->name('clientes.estado');
 // ==============================================================================================

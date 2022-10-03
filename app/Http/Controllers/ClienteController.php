@@ -55,7 +55,7 @@ class ClienteController extends Controller
         ->where([
             ['asignaciones.activo', true]
         ])
-        ->select('asignaciones.*','cl.nombres as cliente','cl.id as cliente_id','sup.id as supervisor_id','sup.nombres as supervisor_nombre','sup.apellidos as supervisor_apellidos', 'a.nombre as area')
+        ->select('asignaciones.*','cl.nombres as cliente','cl.id as cliente_id','sup.id as supervisor_id','sup.nombres as supervisor_nombre','sup.apellidos as supervisor_apellidos', 'a.nombre as area','cl.departamento','cl.provincia','cl.distrito','cl.numero')
         ->get();
         return view('administracion.clientes.asignados',compact('asignaciones'));
     }
@@ -100,14 +100,50 @@ class ClienteController extends Controller
         return response()->json($response);
     }
 
-    public function index()
+    public function actualizar_estado(Request $request, $idAsignacion)
     {
-        //
-    }
+        $error = false;
+        $message = "";
+        $collection = collect([]);
 
-    public function create()
-    {
-        //
+        $asignacion = Asignacion::findOrFail($idAsignacion);
+
+        if ($asignacion) {
+            $nuevo_estado = $request->estado;
+            if ($nuevo_estado == 'REASIGNADO') {
+                $supervisor = Supervisor::findOrFail($request->reasignado);
+
+                $reasignacion = new Asignacion();
+                $reasignacion->cliente_id = $asignacion->cliente_id;
+                $reasignacion->supervisor_id = $supervisor->id;
+                $reasignacion->area_id = $supervisor->area_id;
+                $reasignacion->estado = 'ASIGNADO';
+                $reasignacion->created_by = usuario()->id;
+                $reasignacion->save();
+
+                // $reasignacion->supervisor_id = $supervisor->id;
+            }             
+            $asignacion->estado = $nuevo_estado;
+            $asignacion->updated_by = usuario()->id;
+            $asignacion->save();
+
+            $message = "Se actualizó el estado de la asignación correctamente";
+        } else {
+            $error = true;
+            $message = "No se pudo realizar la actualización del estado, intentelo nuevamente";
+        }
+        
+        if (!$error) {
+            $collection->push($asignacion);
+        }
+        
+        $response = [
+            'error' => $error,
+            'message' => $message,
+            'datos' => $collection
+        ];
+
+        return response()->json($response);
     }
 
     public function store(Request $request)
@@ -125,13 +161,4 @@ class ClienteController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
-    }
 }

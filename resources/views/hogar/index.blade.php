@@ -577,6 +577,13 @@
           </div>
           <div class="col-lg-2"></div>
         </div>
+
+        <div class="col-12 text-right">
+          <hr>
+          <a href="{{ route('inicio') }}" class="btn btn-warning btn-lg text-right">
+            Volver
+          </a>
+        </div>
       </div>      
     </div>
     @include('formulario.hogar')

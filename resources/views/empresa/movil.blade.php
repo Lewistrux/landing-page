@@ -3,6 +3,8 @@
 @section('pre-script')
 <!-- Select2 -->
 <link rel="stylesheet" href="{{ asset('Adminlte/plugins/select2/css/select2.min.css') }}">
+ <!-- Toastr -->
+ <link rel="stylesheet" href="{{ asset('Adminlte/plugins/toastr/toastr.min.css') }}">
 @endsection
 
 @section('distribuidor')
@@ -117,7 +119,7 @@
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
-                        <button type="button" class="btn btn-warning w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
                       </div>
                     </div>
                   </div>
@@ -137,12 +139,19 @@
               </div>
 
             </div>
+            <div class="col-12 text-right">
+              <hr>
+              <a href="{{ route('empresas') }}" class="btn btn-warning btn-lg text-right">
+                Volver
+              </a>
+            </div>
           </div>
           <div class="col-lg-1"></div>
         </div>
+        
       </div>
     </div>
-    @include('formulario.movil')
+    @include('formulario.empresa.movil')
 @endsection
 
 @section('post-script')
@@ -151,6 +160,8 @@
   <!-- InputMask -->
   <script src="{{ asset('Adminlte/plugins/moment/moment.min.js') }}"></script>
   <script src="{{ asset('Adminlte/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
+  <!-- Toastr -->
+  <script src="{{ asset('Adminlte/plugins/toastr/toastr.min.js') }}"></script>
   <script>
     $(function () {
       //Initialize Select2 Elements
@@ -201,9 +212,7 @@
     }
 
     function IniciarCargado(){
-      $('#div_ruc').hide();
-      $('#div_carne').hide();
-      $('#tipo_documento').trigger('change');
+
     }
 
     function CambioTipoDocumento(){

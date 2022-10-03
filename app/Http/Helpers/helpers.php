@@ -1,13 +1,16 @@
 <?php
 
 use App\Asesor;
+use App\Asignacion;
 use App\Cliente;
 use App\Models\Distrito;
 use App\Models\Locacion;
 use App\Persona;
 use App\Models\Usuario;
+use App\Postulante;
 use App\Supervisor;
 use Carbon\Carbon;
+use PhpParser\Node\Expr\AssignOp\Concat;
 
 if (! function_exists('usuario')) {
   function usuario()
@@ -43,6 +46,22 @@ if (! function_exists('aviso_clientes_nuevos')) {
   }
 }
 
+if (! function_exists('aviso_postulantes_nuevos')) {
+  function aviso_postulantes_nuevos()
+  {
+    $postulantes = Postulante::where('estado','NUEVO')->get();
+    return count($postulantes);
+  }
+}
+
+if (! function_exists('aviso_clientes_vendidos')) {
+  function aviso_clientes_vendidos()
+  {
+    $ventas = Asignacion::where('estado','VENDIDO')->get();
+    return count($ventas);
+  }
+}
+
 if (! function_exists('total_clientes')) {
   function total_clientes()
   {
@@ -70,6 +89,25 @@ if (! function_exists('getAsesores')) {
     ->select('asesores.id','asesores.nombres','asesores.apellidos','ar.nombre as area')
     ->get();
     return $asesores;
+  }
+}
+
+if (! function_exists('getDireccionClienteByAsignacion')) {
+  function getDireccionClienteByAsignacion($idAsignacion)
+  {
+    if ( $idAsignacion!= null && $idAsignacion != '') {
+      $asignacion = Asignacion::join('clientes as cl','cl.id','asignaciones.cliente_id')
+        ->where('asignaciones.activo',true)
+        ->where('asignaciones.id',$idAsignacion)
+        ->select('cl.distrito','cl.provincia','cl.departamento')
+        ->first();
+
+      return $asignacion->distrito.' - '.$asignacion->provincia;
+    } else {
+      return 'SIN DIRECCIÓN';
+    }
+    
+    
   }
 }
 

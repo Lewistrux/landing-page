@@ -2,6 +2,8 @@
 @section('pre-script')
   <!-- Select2 -->
   <link rel="stylesheet" href="Adminlte/plugins/select2/css/select2.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="{{ asset('Adminlte/plugins/toastr/toastr.min.css') }}">
 @endsection
 @section('distribuidor')
     <header id="distribuidor_red" class="distribuidor_red">
@@ -79,7 +81,7 @@
                   <li class="nav-item m-2 espacio_entre">
                     <a class="w-100" href="#supervisor" data-toggle="tab">
                       <div class="info-box">
-                        <span class="info-box-icon bg-success">
+                        <span class="info-box-icon bg-secondary">
                           <i class="fas fa-user-shield"></i>
                         </span>
                         <div class="info-box-content">
@@ -92,7 +94,7 @@
                   <li class="nav-item m-2">
                     <a class="w-100" href="#control" data-toggle="tab">
                       <div class="info-box ">
-                        <span class="info-box-icon bg-secondary">
+                        <span class="info-box-icon bg-info">
                           <i class="fas fa-user-clock"></i>
                         </span>
                         <div class="info-box-content">
@@ -123,8 +125,8 @@
                       <div class="row">
                           <div class="col-md-12 col-sm-12 col-12">
                               <div class="info-box bg-warning text-center algin-center text-white">
-                                  <span class="info-box-icon"><i class="fa fa-user"></i></span>
-                                  <div class="info-box-content ">
+                                  <span class="info-box-icon"><i class="fa fa-user" style="color: white;"></i></span>
+                                  <div class="info-box-content text-white">
                                       <span class="h5">Asesor comercial.</span>
                                       <span class="progress-description">
                                       </span>
@@ -132,21 +134,66 @@
                               </div>
                           </div>
                           <div class="col-md-6 col-sm-6 col-12">
-                              <div class="info-box bg-success">
-                                  <span class="info-box-icon"><i class="fa fa-sync-alt"></i></span>
-                                  <div class="info-box-content">
+                              <div class="info-box bg-warning">
+                                  <span class="info-box-icon"><i class="fa fa-sync-alt" style="color: white;"></i></span>
+                                  <div class="info-box-content text-white">
                                       <span class="h5">Asesor comercial.</span>
                                       <span class="progress-description">
                                       </span>
                                   </div>
                               </div>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-12">
+                              <div class="info-box bg-warning">
+                                  <span class="info-box-icon"><i class="fa fa-sync-alt" style="color: white;"></i></span>
+                                  <div class="info-box-content text-white">
+                                      <span class="h5">Asesor comercial.</span>
+                                      <span class="progress-description">
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-12">
+                              <div class="info-box bg-warning">
+                                  <span class="info-box-icon"><i class="fa fa-sync-alt" style="color: white;"></i></span>
+                                  <div class="info-box-content text-white">
+                                      <span class="h5">Asesor comercial.</span>
+                                      <span class="progress-description">
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-12">
+                              <div class="info-box bg-warning">
+                                  <span class="info-box-icon"><i class="fa fa-sync-alt" style="color: white;"></i></span>
+                                  <div class="info-box-content text-white">
+                                      <span class="h5">Asesor comercial.</span>
+                                      <span class="progress-description">
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-12">
+                            <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-postular" data-puesto="ASESOR">Postula Aquí !</button>
                           </div>
                       </div>
                   </div>
                   <div class="tab-pane" id="supervisor">
                       <div class="row">
+                          <div class="col-md-12 col-sm-12 col-12">
+                              <div class="info-box bg-secondary text-center algin-center">
+                                  <span class="info-box-icon">
+                                    <i class="fa fa-user-clock"></i>
+                                  </span>
+                                  <div class="info-box-content ">
+                                      <span class="h5">Supervisor comercial</span>
+                                      <span class="progress-description">
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
                           <div class="col-md-6 col-sm-6 col-12">
-                              <div class="info-box bg-success">
+                              <div class="info-box bg-secondary">
                                   <span class="info-box-icon"><i class="fa fa-sync-alt"></i></span>
                                   <div class="info-box-content">
                                       <span class="h5">Supervisor</span>
@@ -156,7 +203,7 @@
                               </div>
                           </div>
                           <div class="col-md-6 col-sm-6 col-12">
-                              <div class="info-box bg-success">
+                              <div class="info-box bg-secondary">
                                   <span class="info-box-icon"><i class="fa fa-sync-alt"></i></span>
                                   <div class="info-box-content">
                                       <span class="h5">comercial.</span>
@@ -165,12 +212,15 @@
                                   </div>
                               </div>
                           </div>
+                          <div class="col-12">
+                            <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-postular" data-puesto="SUPERVISOR">Postula Aquí !</button>
+                          </div>
                       </div>
                   </div>
                   <div class="tab-pane" id="control">
                       <div class="row">
                           <div class="col-md-12 col-sm-12 col-12">
-                              <div class="info-box bg-warning text-center algin-center text-white">
+                              <div class="info-box bg-info text-center algin-center">
                                   <span class="info-box-icon">
                                     <i class="fa fa-user-clock"></i>
                                   </span>
@@ -182,7 +232,7 @@
                               </div>
                           </div>
                           <div class="col-md-6 col-sm-6 col-12">
-                              <div class="info-box bg-success">
+                              <div class="info-box bg-info">
                                   <span class="info-box-icon"><i class="fa fa-check"></i></span>
                                   <div class="info-box-content">
                                       <span class="h5">Generación SEC</span>
@@ -190,7 +240,7 @@
                               </div>
                           </div>
                           <div class="col-md-6 col-sm-6 col-12">
-                              <div class="info-box bg-success">
+                              <div class="info-box bg-info">
                                   <span class="info-box-icon"><i class="fa fa-check"></i></span>
                                   <div class="info-box-content">
                                       <span class="h5">Generación SOT</span>
@@ -198,7 +248,7 @@
                               </div>
                           </div>
                           <div class="col-md-6 col-sm-6 col-12">
-                              <div class="info-box bg-success">
+                              <div class="info-box bg-info">
                                   <span class="info-box-icon"><i class="fa fa-check"></i></span>
                                   <div class="info-box-content">
                                       <span class="h5">Seguimiento de instalación (SGA)</span>
@@ -206,27 +256,50 @@
                               </div>
                           </div>
                           <div class="col-md-6 col-sm-6 col-12">
-                              <div class="info-box bg-success">
+                              <div class="info-box bg-info">
                                   <span class="info-box-icon"><i class="fa fa-check"></i></span>
                                   <div class="info-box-content">
-                                      <span class="h5">Seguimiento de instalación (SGA)</span>
+                                      <span class="h5">Loteo de venta (SIGEX)</span>
                                   </div>
                               </div>
                           </div>
                           <div class="col-md-6 col-sm-6 col-12">
-                              <div class="info-box bg-success">
+                              <div class="info-box bg-info">
                                   <span class="info-box-icon"><i class="fa fa-check"></i></span>
                                   <div class="info-box-content">
-                                      <span class="h5">Seguimiento de instalación (SGA)</span>
+                                      <span class="h5">Seguimiento de conformidad (SIGEX)</span>
                                   </div>
                               </div>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-12">
+                              <div class="info-box bg-info">
+                                  <span class="info-box-icon"><i class="fa fa-check"></i></span>
+                                  <div class="info-box-content">
+                                      <span class="h5">Regularizaciones de audios</span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-12">
+                            <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-postular" data-puesto="MESA DE CONTROL">Postula Aquí !</button>
                           </div>
                       </div>
                   </div>
                   <div class="tab-pane" id="rrhh">
                       <div class="row">
+                          <div class="col-md-12 col-sm-12 col-12">
+                              <div class="info-box bg-danger text-center algin-center">
+                                  <span class="info-box-icon">
+                                    <i class="fa fa-user-clock"></i>
+                                  </span>
+                                  <div class="info-box-content ">
+                                      <span class="h5">Recursos Humanos</span>
+                                      <span class="progress-description">
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
                           <div class="col-md-6 col-sm-6 col-12">
-                              <div class="info-box bg-success">
+                              <div class="info-box bg-danger">
                                   <span class="info-box-icon"><i class="fa fa-sync-alt"></i></span>
                                   <div class="info-box-content">
                                       <span class="h5">Recursos Humanos</span>
@@ -235,13 +308,49 @@
                                   </div>
                               </div>
                           </div>
-                          
+                          <div class="col-md-6 col-sm-6 col-12">
+                              <div class="info-box bg-danger">
+                                  <span class="info-box-icon"><i class="fa fa-sync-alt"></i></span>
+                                  <div class="info-box-content">
+                                      <span class="h5">Recursos Humanos</span>
+                                      <span class="progress-description">
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-12">
+                              <div class="info-box bg-danger">
+                                  <span class="info-box-icon"><i class="fa fa-sync-alt"></i></span>
+                                  <div class="info-box-content">
+                                      <span class="h5">Recursos Humanos</span>
+                                      <span class="progress-description">
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-12">
+                              <div class="info-box bg-danger">
+                                  <span class="info-box-icon"><i class="fa fa-sync-alt"></i></span>
+                                  <div class="info-box-content">
+                                      <span class="h5">Recursos Humanos</span>
+                                      <span class="progress-description">
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-12">
+                            <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-postular" data-puesto="RECURSOS HUMANOS">Postula Aquí !</button>
+                          </div>
                       </div>
                   </div>
               </div>
           </div>
           <!-- <div class="card-footer">
-
+            <div class="row">
+              <div class="col-12">
+                <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-postular">Postula Aquí !</button>
+              </div>
+            </div>
           </div> -->
         </div>
         <!-- <div class="row content-buttons">
@@ -257,12 +366,16 @@
 @endsection
 
 @section('post-script')
+  <!-- bs-custom-file-input -->
+  <script src="{{ asset('Adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
   <!-- Select2 -->
-  <script src="Adminlte/plugins/select2/js/select2.full.min.js"></script>
+  <script src="{{ asset('Adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
   <!-- InputMask -->
-  <script src="Adminlte/plugins/moment/moment.min.js"></script>
-  <script src="Adminlte/plugins/inputmask/jquery.inputmask.min.js"></script>
+  <script src="{{ asset('Adminlte/plugins/moment/moment.min.js') }}"></script>
+  <script src="{{ asset('Adminlte/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
   <script src="{{ asset('js/modulos/locacion.js') }}"></script>
+  <!-- Toastr -->
+  <script src="{{ asset('Adminlte/plugins/toastr/toastr.min.js') }}"></script>
   <script>
     $(function () {
       //Initialize Select2 Elements
@@ -273,12 +386,80 @@
       });
       //Money Euro
       $('[data-mask]').inputmask()
-
+      bsCustomFileInput.init();
       IniciarCargado();
       $('#tipo_documento').on('change', CambioTipoDocumento);
       $('#region').on('change', cargarProvincias);
       $('#provincia').on('change', cargarDistritos);
+
+      // MODALS
+      $('#modal-postular').on('show.bs.modal', showModalPostular)
+
+      //FORMULARIOS
+      $('#formPostular').on('submit', submitFormCreate);
     })
+
+    function showModalPostular(event){
+      let button = $(event.relatedTarget) // Button that triggered the modal
+      
+      let puesto = button.data('puesto');
+      // cargamos el modal
+      let modal = $(this);
+      $('#puesto').val(puesto).trigger('change');
+      console.log(puesto);
+      if (puesto == "RECURSOS HUMANOS") {
+        $('#div_practicante').show();
+        $('#practicante').attr('disabled',false);
+      }
+      else{
+        $('#div_practicante').hide();
+        $('#practicante').attr('disabled',true); 
+      }
+      //modal.find('#A_mensaje').text(nombre);
+    }
+
+    // SUBMITS
+    function submitFormCreate(e){
+      e.preventDefault();
+      var formData = new FormData(document.getElementById("formPostular"));
+        // formData.append("nombre", $('#nombre'));
+        // formData.append("numero", $('#numero'));
+        // formData.append("archivo_cv", $('#archivo_cv'));
+        // formData.append("puesto", $('#puesto'));
+        // formData.append("practicante", $('#practicante'));
+      console.log(formData);
+      $.ajax({
+          type: "POST",
+          url: "{{ route('form.postular') }}",
+          data: formData,
+          cache: false,
+          contentType: false,
+          processData: false
+          //data: $('#formPostular').serialize(),
+      }).done(function (response){
+        console.log(response);
+          if(!response.error){
+              //clearModalCreate();
+              $('#modal-postular').modal('hide');
+              toastr.success(response.message);
+          }else{
+            toastr.danger(response.message);
+          }
+      });
+    }
+
+    function clearModalCreate(event){
+      $('#tipo_documento').val('');
+      $('#dni').val('');
+      $('#ruc').val('');
+      $('#carnet').val('');
+      $('#numero').val('');
+      $('#region').val('');
+      $('#distrito').val('');
+      $('#provincia').val('');
+      $('#nombre').val('');
+    }
+
 
     function cargarProvincias() {
       let departamento_id = this.value;

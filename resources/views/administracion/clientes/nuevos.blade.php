@@ -46,15 +46,21 @@
                 <td class="text-sm">{{ $cliente->distrito }}</td>
                 <td class="text-sm">{{ getFecha($cliente->created_at) }}</td>
                 <td style="text-align: center;">
-                  <div class="btn-group">
+                  
                     @if ($cliente->estado == 'NUEVO')
+                      <button class="btn btn-sm btn-secondary" data-id="{{ $cliente->id }}" data-nombre="{{ $cliente->nombres }}" data-estado="{{ $cliente->estado }}"
+                        data-asignacion_id="{{ $cliente->id }}" data-supervisor="{{ $cliente->supervisor_nombre }} {{ $cliente->supervisor_apellidos }}" data-numero="{{ $cliente->numero }}"
+                        data-departamento="{{ $cliente->departamento }}" data-provincia="{{ $cliente->provincia }}" data-distrito="{{ $cliente->distrito }}"
+                        title="Ver Cliente" data-toggle="modal" data-target="#modal-show">
+                        <i class="fas fa-user"></i> 
+                      </button>
                       <button class="btn btn-sm btn-warning" data-id="{{ $cliente->id }}" data-nombre="{{ $cliente->nombres }}"
                         data-area="{{ $cliente->area }}" data-numero="{{ $cliente->numero }}" title="Asignar" data-toggle="modal" 
                         data-target="#modal-asignar">
-                        <i class="fas fa-clipboard-check" ></i> Asignar
+                        <i class="fas fa-clipboard-check" ></i>
                       </button>
                     @endif
-                  </div>
+              
                 </td>
                       
               </tr>
@@ -64,6 +70,7 @@
       </div>
     </div>
     @include('administracion.clientes.modal.asignar')
+    @include('administracion.clientes.modal.ver_cliente')
 @endsection
 
 @section('post-script')
@@ -354,10 +361,33 @@
         
         // MODALS
         $('#modal-asignar').on('show.bs.modal', showModalAsignar)
+        $('#modal-show').on('show.bs.modal', showModalVerCliente)
 
         // FORMULARIOS
         $('#formAsignar').on('submit', submitFormAsignar)
     })
+
+    function showModalVerCliente(event){
+      let button = $(event.relatedTarget) // Button that triggered the modal
+      
+      IDAsignacion = button.data('id');
+      let nombre = button.data('nombre');
+      let supervisor = button.data('supervisor');
+      let estado = button.data('estado');
+      let departamento = button.data('departamento');
+      let provincia = button.data('provincia');
+      let distrito = button.data('distrito');
+      let numero = button.data('numero');
+      // cargamos el modal
+      let modal = $(this);
+      $('#nombre').val(nombre);
+      $('#supervisor').val(supervisor);
+      $('#estado').val(estado).trigger('change');
+      modal.find('#nombre').text(nombre);
+      modal.find('#estado').text("CLIENTE "+estado);
+      modal.find('#direccion').text(' '+departamento+' - '+provincia+' - '+distrito);
+      modal.find('#numero').text(numero);
+    }
 
     function showModalAsignar(event){
       let button = $(event.relatedTarget) // Button that triggered the modal

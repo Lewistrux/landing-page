@@ -1,8 +1,8 @@
 @extends('Layout.admin')
 @section('pre-script')
-  <!-- SweetAlert2 -->
-  <link rel="stylesheet" href="{{ asset('Adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
-  <!-- Select2 -->
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="{{ asset('Adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+<!-- Select2 -->
   <link rel="stylesheet" href="{{ asset('Adminlte/plugins/select2/css/select2.min.css') }}">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('Adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
@@ -11,80 +11,53 @@
 @endsection
 
 @section('titulo-vista') 
-    Clientes Asignados
+    Clientes Nuevos 
 @endsection
 
 @section('contenido-admin')
     <div class="card card-warning card-outline">
       <div class="card-header">
-        <h3 class="card-title">Listado de clientes asignados</h3>
+        <h3 class="card-title">Listado de postulantes</h3>
       </div>
       <div class="card-body">
         <table id="clientes" class="table table-sm table-bordered hover display nowrap">
           <thead>
             <tr>
-              <th>Cliente</th>
-              <th>Supervisor</th>
-              <th>Área</th>
-              <th>Estado</th>
-              <th>F. Asignación</th>
+              <th>Nombres</th>
+              <th>N° Celular</th>
+              <th>Puesto</th>
+              <th>F. Registro</th>
               <th>Opciones</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($asignaciones as $cliente)
+            @foreach($postulantes as $postulante)
               <tr>
-                <td class="text-sm">{{ $cliente->cliente }}</td>
-                <td class="text-sm">{{ $cliente->supervisor_nombre }} {{ $cliente->supervisor_apellidos }}</td>
-                <td class="text-sm">{{ $cliente->area }}</td>
-                <td class="text-sm"><span class="badge text-wrap badge-{{ getEstado_asignacion($cliente->estado)}}">{{ $cliente->estado }}</span></td>
-                <td class="text-sm">{{ getFecha($cliente->created_at) }}</td>
+                <td class="text-sm">{{ $postulante->nombres }}</td>
+                <td class="text-sm">{{ $postulante->numero }}</td>
+                <td class="text-sm text-center">{{ $postulante->puesto }}</td>
+                <td class="text-sm">{{ getFecha($postulante->created_at) }}</td>
                 <td style="text-align: center;">
-                  <button class="btn btn-sm btn-info" data-id="{{ $cliente->id }}" data-nombre="{{ $cliente->cliente }}" data-estado="{{ $cliente->estado }}"
-                    data-asignacion_id="{{ $cliente->id }}" data-supervisor="{{ $cliente->supervisor_nombre }} {{ $cliente->supervisor_apellidos }}" data-numero="{{ $cliente->numero }}"
-                    data-departamento="{{ $cliente->departamento }}" data-provincia="{{ $cliente->provincia }}" data-distrito="{{ $cliente->distrito }}"
-                    title="Ver Cliente" data-toggle="modal" data-target="#modal-show">
-                    <i class="fas fa-user"></i> 
-                  </button>
-                    @if ($cliente->estado == 'ASIGNADO')
-                      <button class="btn btn-sm btn-warning" data-id="{{ $cliente->id }}" data-nombre="{{ $cliente->cliente }}" data-estado="{{ $cliente->estado }}"
-                        data-asignacion_id="{{ $cliente->id }}" data-supervisor="{{ $cliente->supervisor_nombre }} {{ $cliente->supervisor_apellidos }}" 
-                        title="Asignar" data-toggle="modal" data-target="#modal-estado">
-                        <i class="fas fa-pen"></i>
-                      </button>
+                  <div class="btn-group">
+                    @if ($postulante->estado == 'NUEVO')
+                        <a class="btn btn-sm btn-info" href="{{ route('postulantes.download', $postulante->id) }}" title="{{ $postulante->nombre_archivo }}">
+                            <i class="fa fa-download"></i>
+                        </a>
+                        <button class="btn btn-sm btn-warning" data-id="{{ $postulante->id }}" data-nombre="{{ $postulante->nombres }}"
+                            data-area="{{ $postulante->area }}" data-numero="{{ $postulante->numero }}" title="Asignar" data-toggle="modal" 
+                            data-target="#modal-asignar">
+                            <i class="fas fa-clipboard-check" ></i> Asignar
+                        </button>
                     @endif
-                    @if ($cliente->estado == 'REASIGNADO')
-
-                    @endif
-                    @if ($cliente->estado == 'RECHAZADO')
-                      <button class="btn btn-sm btn-warning" data-id="{{ $cliente->id }}" data-nombre="{{ $cliente->cliente }}" data-estado="{{ $cliente->estado }}"
-                        data-asignacion_id="{{ $cliente->id }}" data-supervisor="{{ $cliente->supervisor_nombre }} {{ $cliente->supervisor_apellidos }}" 
-                        title="Asignar" data-toggle="modal" data-target="#modal-estado">
-                        <i class="fas fa-pen" ></i> 
-                      </button>
-                    @endif
-                    @if ($cliente->estado == 'PROCESANDO')
-                      <button class="btn btn-sm btn-warning" data-id="{{ $cliente->id }}" data-nombre="{{ $cliente->cliente }}" data-estado="{{ $cliente->estado }}"
-                        data-asignacion_id="{{ $cliente->id }}" data-supervisor="{{ $cliente->supervisor_nombre }} {{ $cliente->supervisor_apellidos }}" 
-                        title="Asignar" data-toggle="modal" data-target="#modal-estado">
-                        <i class="fas fa-pen" ></i> 
-                      </button>
-                    @endif
-                    @if ($cliente->estado == 'CANCELADO')
-                      <!-- <span class="text-muted font-italic text-sm">sin acciones</span> -->
-                    @endif
-                    @if ($cliente->estado == 'VENDIDO')
-                      <!-- <span class="text-muted font-italic text-sm">sin acciones</span> -->
-                    @endif
-                </td>   
+                  </div>
+                </td>
               </tr>
             @endforeach
           </tbody>
         </table>
       </div>
     </div>
-    @include('administracion.clientes.modal.estado_cliente')
-    @include('administracion.clientes.modal.ver_cliente')
+    @include('administracion.clientes.modal.asignar')
 @endsection
 
 @section('post-script')
@@ -106,10 +79,9 @@
 <script src="{{ asset('Adminlte/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('Adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 <script>
-  var IDCliente = 0
-  var IDAsignacion = 0
-  $(function () {
-    $("#clientes").DataTable({
+    var IDCliente = 0
+    $(function () {
+      $("#clientes").DataTable({
         "autoWidth": false,
         "paging": true,
         "language": {
@@ -289,7 +261,7 @@
                     "noMulti": "Este registro puede ser editado individualmente, pero no como parte de un grupo."
                 }
             },
-            "info": "Mostrando de _START_ a _END_ de _TOTAL_ entradas"
+            "info": "Mostrando de _START_ a _END_ de _TOTAL_ registros"
         },
         "lengthChange": true,
         "ordering": true,
@@ -365,112 +337,78 @@
           }
         }
       }).buttons().container().appendTo('#clientes_wrapper .col-md-6:eq(0)');
+
   });
-  $(document).ready(function(){
+    $(document).ready(function(){
         $('.select2').select2({
           placeholder: "Seleccionar",
           allowClear: false,
           width: '100%',
         });
-
-        $('#div_supervisor').hide();
-        $('#estado').on('change', ChangeEstado)
         
         // MODALS
-        $('#modal-estado').on('show.bs.modal', showModalEstado)
-        $('#modal-show').on('show.bs.modal', showModalVerCliente)
+        $('#modal-asignar').on('show.bs.modal', showModalAsignar)
 
         // FORMULARIOS
-        $('#formEstado').on('submit', submitFormEstado)
-  })
+        $('#formAsignar').on('submit', submitFormAsignar)
+    })
 
-  function ChangeEstado(){
-    let estado = $('#estado').val();
-    if (estado == 'REASIGNADO') {
-      $('#div_supervisor').show();
-    } else {
-      $('#div_supervisor').hide();
-    }
-  }
-  
-  function showModalEstado(event){
-    let button = $(event.relatedTarget) // Button that triggered the modal
-    
-    IDAsignacion = button.data('id');
-    let nombre = button.data('nombre');
-    let supervisor = button.data('supervisor');
-    let estado = button.data('estado');
-    console.log(IDAsignacion)
-    // cargamos el modal
-    let modal = $(this);
-    $('#nombre').val(nombre);
-    $('#supervisor').val(supervisor);
-    $('#estado').val(estado).trigger('change');
-    //modal.find('#A_mensaje').text(nombre);
-  }
-
-  function showModalVerCliente(event){
-    let button = $(event.relatedTarget) // Button that triggered the modal
-    
-    IDAsignacion = button.data('id');
-    let nombre = button.data('nombre');
-    let supervisor = button.data('supervisor');
-    let estado = button.data('estado');
-    let departamento = button.data('departamento');
-    let provincia = button.data('provincia');
-    let distrito = button.data('distrito');
-    let numero = button.data('numero');
-    // cargamos el modal
-    let modal = $(this);
-    $('#nombre').val(nombre);
-    $('#supervisor').val(supervisor);
-    $('#estado').val(estado).trigger('change');
-    modal.find('#nombre').text(nombre);
-    modal.find('#estado').text("CLIENTE "+estado);
-    modal.find('#direccion').text(' '+departamento+' - '+provincia+' - '+distrito);
-    modal.find('#numero').text(numero);
-  }
-
-  function submitFormEstado(e){
-      e.preventDefault();
-      let enlace = "{{ route('clientes.estado','IDAsignacion') }}"
-      enlace = enlace.replace('IDAsignacion', IDAsignacion)
+    function showModalAsignar(event){
+      let button = $(event.relatedTarget) // Button that triggered the modal
       
-      $.ajax({
-          type: "POST",
-          url: enlace,
-          data: $('#formEstado').serialize(),
-          success: function(response){
-            $('#modal-estado').modal('hide');
-            if (!response.error) {
-              let Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-              });
-              Toast.fire({
-                icon: 'success',
-                title: response.message
-              })
-              location.reload();
-            } else {
-              let Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-              });
-              Toast.fire({
-                icon: 'error',
-                title: response.message
-              })
+      IDCliente = button.data('id');
+      let nombre = button.data('nombre');
+      let numero = button.data('numero');
+      let area = button.data('area');
+      // cargamos el modal
+      let modal = $(this);
+      $('#nombre').val(nombre);
+      $('#numero').val(numero);
+      $('#area').val(area);
+
+      //modal.find('#A_mensaje').text(nombre);
+    }
+
+    function submitFormAsignar(e){
+        e.preventDefault();
+        let enlace = "{{ route('clientes.asignar','IDCliente') }}"
+        enlace = enlace.replace('IDCliente', IDCliente)
+        
+        $.ajax({
+            type: "POST",
+            url: enlace,
+            data: $('#formAsignar').serialize(),
+            success: function(response){
+              $('#modal-asignar').modal('hide');
+              if (!response.error) {
+                let Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 3000
+                });
+                Toast.fire({
+                  icon: 'success',
+                  title: response.message
+                })
+                location.reload();
+              } else {
+                let Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 3000
+                });
+                Toast.fire({
+                  icon: 'error',
+                  title: response.message
+                })
+              }
+            },
+            error: function(error){
+                console.log(error)
             }
-          },
-          error: function(error){
-              console.log(error)
-          }
-      });
-  }
+        });
+    }
 </script>
 @endsection

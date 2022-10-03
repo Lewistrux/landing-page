@@ -365,3 +365,36 @@ footer{
 .espacio_entre{
     justify-content: space-between;
 }
+.centrado{
+    justify-content: center;
+}
+
+.volver {
+    font-size: 22px;
+    outline: none;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    background: #424242;
+    /* text-align: center; */
+}
+.volver:link {
+    color: #fcf087;
+}
+.volver:visited {
+    color: #ffbb00;
+}
+.volver:focus {
+    color: #ffec44;
+    background: #353535;
+}
+.volver:hover {
+    background-color: #ffec44;
+    color: #f7cb3e !important;
+    background: #181818;
+    border-radius: 5px;
+}
+.volver:active {
+    background: #f7f463fd;
+    color: #fcff41;
+}

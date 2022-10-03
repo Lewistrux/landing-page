@@ -115,11 +115,11 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('postulantes') }}" class="nav-link">
               <i class="nav-icon fas fa-clipboard"></i>
               <p>
                 Postulantes
-                <span class="right badge badge-warning">{{ aviso_clientes_nuevos() }}</span>
+                <span class="right badge badge-warning">{{ aviso_postulantes_nuevos() }}</span>
               </p>
             </a>
           </li>

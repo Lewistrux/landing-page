@@ -22,41 +22,93 @@
           <div class="col-lg-1"></div>
           <div class="col-lg-10">
             <div class="row">
-              <div class="col-lg-4">
+              <div class="col-12">
+                <hr>
+                <h1 class="text-center">INTERNET</h1>
+                <hr>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
                   <img src="{{ asset('img/cards/negocios/fija/emp_fija_77.png') }}" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-hogar">Me interesa</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
                   <img src="{{ asset('img/cards/negocios/fija/emp_fija_87.png') }}" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-hogar">Me interesa</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
                   <img src="{{ asset('img/cards/negocios/fija/emp_fija_98.png') }}" class="card-img-top" alt="..."> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-hogar">Me interesa</button>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
+              <div class="col-12">
+                <hr>
+                <h1 class="text-center">1 play</h1>
+                <hr>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                  <img src="{{ asset('img/cards/negocios/fija/1play_49.png') }}" class="card-img-top" alt="..."> 
+                  <div class="card-footer">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-hogar">Me interesa</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                  <img src="{{ asset('img/cards/negocios/fija/1play_120.png') }}" class="card-img-top" alt="..."> 
+                  <div class="card-footer">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-hogar">Me interesa</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                  <img src="{{ asset('img/cards/negocios/fija/1play_170.png') }}" class="card-img-top" alt="..."> 
+                  <div class="card-footer">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-hogar">Me interesa</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 text-right">
+                <hr>
+                <a href="{{ route('empresas') }}" class="btn btn-warning btn-lg text-right">
+                  Volver
+                </a>
               </div>
             </div>
           </div>
@@ -64,7 +116,7 @@
         </div>
       </div>
     </div>
-    @include('formulario.movil')
+    @include('formulario.empresa.hogar')
 @endsection
 
 @section('post-script')
@@ -92,22 +144,22 @@
       $('#provincia').on('change', cargarDistritos);
 
       //FORMULARIOS
-      $('#formMovil').on('submit', submitFormCreate);
+      $('#formHogar').on('submit', submitFormCreate);
     })
 
     // SUBMITS
     function submitFormCreate(e){
       e.preventDefault();
-      console.log($('#formMovil').serialize());
+      console.log($('#formHogar').serialize());
       $.ajax({
           type: "POST",
           url: "{{ route('form.registro','CORP-FIJA') }}",
-          data: $('#formMovil').serialize(),
+          data: $('#formHogar').serialize(),
       }).done(function (response){
         console.log(response);
           if(!response.error){
               clearModalCreate();
-              $('#modal-movil').modal('hide');
+              $('#modal-hogar').modal('hide');
               toastr.success(response.message);
           }else{
             toastr.danger(response.message);
@@ -128,10 +180,7 @@
     }
 
     function IniciarCargado(){
-      // $('#div_dni').hide();
-      $('#div_ruc').hide();
-      $('#div_carne').hide();
-      $('#tipo_documento').trigger('change');
+
     }
 
     function CambioTipoDocumento(){
