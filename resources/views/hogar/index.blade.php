@@ -202,9 +202,17 @@
           <div class="row">
             <div class="col-lg-3 col-md-2 col-sm-0"></div>
             <div class="col-lg-6 col-md-8 col-sm-12 text-center">
-              <button type="button" id="btn-2play" onclick="Boton2Play()" class="btn btn-lg" style="background-color: red; color: white;">Planes 2 Play</button>
-              <button type="button" id="btn-3play" onclick="Boton3Play()" class="btn btn-lg" style="background-color: red; color: white;">Planes 3 Play</button>
-              <button type="button" id="btn-2play" onclick="BotonNetflix()" class="btn btn-lg" style="background-color: red; color: white;">Planes Netflix</button>
+              <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                  <button type="button" id="btn-2play" onclick="Boton2Play()" class="btn btn-lg" style="background-color: red; color: white;">Planes 2 Play</button>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                  <button type="button" id="btn-3play" onclick="Boton3Play()" class="btn btn-lg" style="background-color: red; color: white;">Planes 3 Play</button>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                  <button type="button" id="btn-2play" onclick="BotonNetflix()" class="btn btn-lg" style="background-color: red; color: white;">Planes Netflix</button>
+                </div>
+              </div>
             </div>
             <div class="col-lg-3 col-md-2 col-sm-0"></div>
           </div>
