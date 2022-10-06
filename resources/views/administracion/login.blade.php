@@ -6,6 +6,7 @@
 @endsection
 
 @section('distribuidor')
+    <!-- no lleva header de distribuidor -->
 @endsection
 
 @section('contenido')
@@ -17,7 +18,8 @@
                 <a href="#" class="h1"><b>Rapinet</b> S.A.C</a>
                 </div>
                 <div class="card-body">
-                <p class="login-box-msg">Ingresar usuario para iniciar sesión</p>
+                <p class="login-box-msg">Ingresar usuario para iniciar sesión <br>
+                    <span class="font-italic text-muted">Acceso solo para administrativos</span></p>
                 <form method="POST" action="{{ route ('user.login') }}">
                 @csrf 
                     <div class="input-group mb-3">
@@ -56,6 +58,5 @@
             </div>
         </div>
     </div>
-
 </div>
 @endsection

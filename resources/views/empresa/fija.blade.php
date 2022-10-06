@@ -168,10 +168,7 @@
     }
 
     function clearModalCreate(event){
-      $('#tipo_documento').val('');
-      $('#dni').val('');
       $('#ruc').val('');
-      $('#carnet').val('');
       $('#numero').val('');
       $('#region').val('');
       $('#distrito').val('');
@@ -180,7 +177,7 @@
     }
 
     function IniciarCargado(){
-
+      //sin datos
     }
 
     function CambioTipoDocumento(){
@@ -204,7 +201,6 @@
 
     function cargarProvincias() {
       let departamento_id = this.value;
-      console.log(departamento_id);
       if (departamento_id !== "" || departamento_id.length > 0) {
           $.ajax({
               type: 'post',

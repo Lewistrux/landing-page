@@ -5,7 +5,6 @@
 @endsection
 
 @section('contenido')
-    
     <div class="wrapper">
       <section id="banner">
         <div class="row">
@@ -13,7 +12,6 @@
           <img src="{{ asset('img/portadas/portada_principal.png') }}">
           </div>
         </div>
-        
       </section>
       <!-- ./wrapper -->
       <!-- <div class="card">
@@ -86,14 +84,10 @@
                   </a>
                 </div>
               </div>
-                
-            </div>
-                
+            </div>   
             <div class="col-1"></div>
           </div>
         </div>
       </div>
     </div>
-
-
 @endsection

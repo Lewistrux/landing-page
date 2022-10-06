@@ -11,19 +11,4 @@ class NosotrosController extends Controller
         return view('Vista.nosotros');
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
 }

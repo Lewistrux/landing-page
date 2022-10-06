@@ -40,14 +40,14 @@
                 <td style="text-align: center;">
                   <div class="btn-group">
                     @if ($postulante->estado == 'NUEVO')
-                        <a class="btn btn-sm btn-info" href="{{ route('postulantes.download', $postulante->id) }}" title="{{ $postulante->nombre_archivo }}">
-                            <i class="fa fa-download"></i>
-                        </a>
-                        <button class="btn btn-sm btn-warning" data-id="{{ $postulante->id }}" data-nombre="{{ $postulante->nombres }}"
-                            data-area="{{ $postulante->area }}" data-numero="{{ $postulante->numero }}" title="Asignar" data-toggle="modal" 
-                            data-target="#modal-asignar">
-                            <i class="fas fa-clipboard-check" ></i> Asignar
-                        </button>
+                      <a class="btn btn-sm btn-info" href="{{ route('postulantes.download', $postulante->id) }}" title="{{ $postulante->nombre_archivo }}">
+                          <i class="fa fa-download"></i>
+                      </a>
+                      <button class="btn btn-sm btn-warning" data-id="{{ $postulante->id }}" data-nombre="{{ $postulante->nombres }}"
+                          data-area="{{ $postulante->area }}" data-numero="{{ $postulante->numero }}" title="Asignar" data-toggle="modal" 
+                          data-target="#modal-asignar">
+                          <i class="fas fa-clipboard-check" ></i> Asignar
+                      </button>
                     @endif
                   </div>
                 </td>
@@ -365,7 +365,6 @@
       $('#nombre').val(nombre);
       $('#numero').val(numero);
       $('#area').val(area);
-
       //modal.find('#A_mensaje').text(nombre);
     }
 

@@ -18,35 +18,6 @@ class ClienteController extends Controller
         return view('administracion.clientes.nuevos',compact('clientes'));
     }
 
-    // function dtCompetencias($id) {
-    //     $clientes = Cliente::where([
-    //         ['estado', 'NUEVO'],
-    //         ['activo', true]
-    //     ])->get();
-         
-    //     return Datatables()->of($clientes)
-    //         ->editColumn('nombres', function(Cliente $cliente){
-    //             return  $cliente->nombres;
-    //         })
-    //          ->editColumn('area', function(Cliente $cliente){
-    //              return $cliente->area;
-    //          })
-    //          ->addColumn('opciones', function(Cliente $cliente){
-    //              if ($cliente->activo) {
-    //                  $buttons = '<button class="btn btn-sm btn-warning" data-id="'.$cliente->id.'" data-nombre="'.$cliente->nombres.'"
-    //                  data-area="'.$cliente->area.'" data-numero="'.$cliente->numero.'" title="Asignar" data-toggle="modal" 
-    //                  data-target="#modal-asignar">
-    //                  <i class="fas fa-clipboard-check" ></i> Asignar
-    //                  </button>';
-    //              } else {
-    //                 $buttons = '-';
-    //              }
-    //                 return $buttons;
-    //          })
-    //          ->rawColumns(['opciones'])
-    //          ->toJson();
-    // }
-
     public function asignados()
     {
         $asignaciones = Asignacion::join('clientes as cl','asignaciones.cliente_id','cl.id')
@@ -120,8 +91,6 @@ class ClienteController extends Controller
                 $reasignacion->estado = 'ASIGNADO';
                 $reasignacion->created_by = usuario()->id;
                 $reasignacion->save();
-
-                // $reasignacion->supervisor_id = $supervisor->id;
             }             
             $asignacion->estado = $nuevo_estado;
             $asignacion->updated_by = usuario()->id;
@@ -144,21 +113,6 @@ class ClienteController extends Controller
         ];
 
         return response()->json($response);
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
     }
 
 }

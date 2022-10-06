@@ -25,8 +25,6 @@
             <tr>
               <th>Nombres</th>
               <th>N° Celular</th>
-              <!-- <th>Tipo Doc</th>
-              <th>N° Documento</th> -->
               <th>Área</th>
               <th>Departamento</th>
               <th>Provincia</th>
@@ -46,7 +44,6 @@
                 <td class="text-sm">{{ $cliente->distrito }}</td>
                 <td class="text-sm">{{ getFecha($cliente->created_at) }}</td>
                 <td style="text-align: center;">
-                  
                     @if ($cliente->estado == 'NUEVO')
                       <button class="btn btn-sm btn-secondary" data-id="{{ $cliente->id }}" data-nombre="{{ $cliente->nombres }}" data-estado="{{ $cliente->estado }}"
                         data-asignacion_id="{{ $cliente->id }}" data-supervisor="{{ $cliente->supervisor_nombre }} {{ $cliente->supervisor_apellidos }}" data-numero="{{ $cliente->numero }}"
@@ -60,9 +57,7 @@
                         <i class="fas fa-clipboard-check" ></i>
                       </button>
                     @endif
-              
                 </td>
-                      
               </tr>
             @endforeach
           </tbody>

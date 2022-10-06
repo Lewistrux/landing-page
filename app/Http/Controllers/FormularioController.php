@@ -15,11 +15,6 @@ use Illuminate\Support\Facades\Storage;
 
 class FormularioController extends Controller
 {
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request, $area)
     {
         $error = false;

@@ -137,7 +137,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
             <div class="col-12 text-right">
               <hr>
@@ -148,7 +147,6 @@
           </div>
           <div class="col-lg-1"></div>
         </div>
-        
       </div>
     </div>
     @include('formulario.empresa.movil')
@@ -212,7 +210,7 @@
     }
 
     function IniciarCargado(){
-
+      //sin datos
     }
 
     function CambioTipoDocumento(){

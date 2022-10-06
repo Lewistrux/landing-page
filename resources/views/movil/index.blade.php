@@ -258,9 +258,7 @@
             </div>
           </div>
           <div class="col-lg-1"></div>
-          
         </div>
-        
       </div>
     </div>
     @include('formulario.movil')
@@ -315,10 +313,6 @@
     }
 
     function clearModalCreate(event){
-      $('#tipo_documento').val('');
-      $('#dni').val('');
-      $('#ruc').val('');
-      $('#carnet').val('');
       $('#numero').val('');
       $('#region').val('');
       $('#distrito').val('');

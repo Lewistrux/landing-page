@@ -62,7 +62,6 @@
         <div class="card">
           <div class="card-header p-2">
               <ul class="nav nav-pills items-center espacio_entre">
-                
                   <li class="nav-item m-2">
                     <a class="active w-100 " href="#asesor" data-toggle="tab">
                       <div class="info-box ">
@@ -77,7 +76,6 @@
                       </div>
                     </a>
                   </li>
-                 
                   <li class="nav-item m-2 espacio_entre">
                     <a class="w-100" href="#supervisor" data-toggle="tab">
                       <div class="info-box">
@@ -352,15 +350,7 @@
               </div>
             </div>
           </div> -->
-        </div>
-        <!-- <div class="row content-buttons">
-          <div class="col-lg-3"></div>
-          <div class="col-lg-6">
-            <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-postular">Postula Aquí</button>
-          </div>
-          <div class="col-lg-3"></div>
-        </div> -->
-       
+        </div> 
       </div>
     @include('formulario.postular')
 @endsection
@@ -422,12 +412,6 @@
     function submitFormCreate(e){
       e.preventDefault();
       var formData = new FormData(document.getElementById("formPostular"));
-        // formData.append("nombre", $('#nombre'));
-        // formData.append("numero", $('#numero'));
-        // formData.append("archivo_cv", $('#archivo_cv'));
-        // formData.append("puesto", $('#puesto'));
-        // formData.append("practicante", $('#practicante'));
-      console.log(formData);
       $.ajax({
           type: "POST",
           url: "{{ route('form.postular') }}",
@@ -449,17 +433,12 @@
     }
 
     function clearModalCreate(event){
-      $('#tipo_documento').val('');
-      $('#dni').val('');
-      $('#ruc').val('');
-      $('#carnet').val('');
       $('#numero').val('');
       $('#region').val('');
       $('#distrito').val('');
       $('#provincia').val('');
       $('#nombre').val('');
     }
-
 
     function cargarProvincias() {
       let departamento_id = this.value;

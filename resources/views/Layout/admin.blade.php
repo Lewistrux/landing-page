@@ -17,7 +17,6 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-
   <nav class="main-header navbar navbar-expand navbar-secondary navbar-light">
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -27,7 +26,6 @@
         <a href="{{ route('administracion') }}" class=" link">Inicio</a>
       </li>
     </ul>
-
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Notifications Dropdown Menu -->
@@ -62,7 +60,6 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -86,7 +83,6 @@
           <a href="#" class="d-block link text-sm">{{ getNombresYApellidosUser() }}</a>
         </div>
       </div>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -160,9 +156,7 @@
     </section>
 
     <section class="content">
-
       @yield('contenido-admin')
-
     </section>
   </div>
   <!-- /.content-wrapper -->

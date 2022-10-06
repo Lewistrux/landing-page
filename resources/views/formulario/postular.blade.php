@@ -47,7 +47,6 @@
                             <label for="practicante" class="custom-control-label">Soy Practicante</label>
                         </div>
                     </div>
-                  
                     <hr>
                     <div class="row">
                         <div class="col-12">

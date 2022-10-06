@@ -23,38 +23,10 @@
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
   @yield('distribuidor')
- <!-- Navbar -->
-  <nav class="navbar navbar-expand-md navbar-light navbar-white bg-dark text-white">
-    <div class="container">
-        <a href="{{route('inicio')}}" class="navbar-brand">
-          <img src="{{ asset('img/logotipo/rapinet_blanco.png') }}" alt="Claro Lewis" class="logo brand-image " style="opacity: .9">
-        </a>
 
-        <button class="navbar-toggler order-0 text-muted bg-light" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  @include('Layout.header_emptity')
 
-        <div class="collapse navbar-collapse order-3 justify-content-end" id="navbarCollapse">
-          <!-- Left navbar links -->    
-          <ul class="navbar-nav ">
-            <li class="nav-item">
-              <a href="{{route('inicio')}}" class="btn-block navegacion">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a href="{{route('trabaja_con_nosotros')}}" class=" btn-block navegacion">Trabaja con nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a href="{{route('nosotros')}}" class=" btn-block navegacion">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a href="{{route('login')}}" class=" btn-block navegacion">Acceso</a>
-            </li>
-          </ul>
-        </div>
-    </div>
-  </nav>
-
-      @yield('contenido')
+  @yield('contenido')
 
   <section id="acceso_wspp">
     <a href="https://wa.me/961717474" class="whatsapp" target="_blank">
@@ -122,17 +94,14 @@
     </div>
     <strong>Copyright &copy; 2022 <a href="#" class="link"> Diego Vera Villanueva</a>.</strong> Derechos Reservados.
   </footer>
-
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery -->
 <script src="{{ asset('Adminlte/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('Adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('Adminlte/dist/js/adminlte.min.js') }}"></script>
-
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('Adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

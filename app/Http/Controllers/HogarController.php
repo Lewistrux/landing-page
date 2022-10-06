@@ -19,11 +19,6 @@ class HogarController extends Controller
         return view('hogar.index',compact('regiones'));
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request){
         $data = $request->all();
 
@@ -79,25 +74,5 @@ class HogarController extends Controller
         });
 
         return redirect()->route('personal.edit', ['id' => $result->id])->with(['message'=>'Personal registrado correctamente.']);
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

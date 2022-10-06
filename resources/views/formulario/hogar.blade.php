@@ -100,7 +100,6 @@
                         </div>
                     </div>  
                     <div class="modal-footer justify-content-between">
-                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal"></button> -->
                         <button type="submit" class="btn btn-danger text-white w-100">Enviar</button>
                     </div>                
                 </form>
