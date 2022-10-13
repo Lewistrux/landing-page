@@ -3,7 +3,7 @@
 use App\Asesor;
 use App\Asignacion;
 use App\Cliente;
-use App\Models\Distrito;
+use App\Distrito;
 use App\Models\Locacion;
 use App\Persona;
 use App\Models\Usuario;
@@ -101,13 +101,20 @@ if (! function_exists('getDireccionClienteByAsignacion')) {
         ->where('asignaciones.id',$idAsignacion)
         ->select('cl.distrito','cl.provincia','cl.departamento')
         ->first();
-
       return $asignacion->distrito.' - '.$asignacion->provincia;
     } else {
       return 'SIN DIRECCIÓN';
     }
-    
-    
+  }
+}
+
+if (! function_exists('cargarCiudades')) {
+  function cargarCiudades()
+  {
+    $ciudades = Distrito::join('provincia as pro','pro.prov_ID','distrito.dist_provinciaID')
+    ->join('region as reg','reg.regi_ID','pro.prov_regionID')
+    ->select('distrito.*','reg.regi_nombre','pro.prov_nombre')->get();
+    return $ciudades;
   }
 }
 

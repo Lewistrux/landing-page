@@ -400,7 +400,6 @@
     let nombre = button.data('nombre');
     let supervisor = button.data('supervisor');
     let estado = button.data('estado');
-    console.log(IDAsignacion)
     // cargamos el modal
     let modal = $(this);
     $('#nombre').val(nombre);

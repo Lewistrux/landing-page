@@ -22,9 +22,13 @@ class FormularioController extends Controller
         $collection = collect([]);
 
         // Obtenemos datos previos
-        $departamento = Region::where('regi_ID',$request->region)->first();
-        $provincia = Provincia::where('prov_ID',$request->provincia)->first();
-        $distrito = Distrito::where('dist_ID',$request->distrito)->first();
+        // $departamento = Region::where('regi_ID',$request->region)->first();
+        // $provincia = Provincia::where('prov_ID',$request->provincia)->first();
+        // $distrito = Distrito::where('dist_ID',$request->distrito)->first();
+        $localidad = Distrito::join('provincia as pro','pro.prov_ID','distrito.dist_provinciaID')
+        ->join('region as reg','reg.regi_ID','pro.prov_regionID')
+        ->where('distrito.dist_ID',$request->localidad)
+        ->select('distrito.*','reg.regi_nombre','pro.prov_nombre')->first();
 
         $cliente = new Cliente();
         if ($area == "CORP-FIJA" || $area == "CORP-MOVIL" || $area == "CORP-SOLUCIONES" ) {
@@ -38,9 +42,9 @@ class FormularioController extends Controller
         }
         $cliente->nombres = setCadena($request->nombre);
         $cliente->area = setCadena($area);
-        $cliente->departamento = ($departamento) ? setCadena($departamento->regi_nombre) : '';
-        $cliente->provincia = ($provincia) ? setCadena($provincia->prov_nombre) : '';
-        $cliente->distrito = ($distrito) ? setCadena($distrito->dist_nombre) :  '';
+        $cliente->departamento = ($localidad) ? setCadena($localidad->regi_nombre) : '';
+        $cliente->provincia = ($localidad) ? setCadena($localidad->prov_nombre) : '';
+        $cliente->distrito = ($localidad) ? setCadena($localidad->dist_nombre) :  '';
         $cliente->numero = setCadena($request->numero);
         $cliente->save();
 

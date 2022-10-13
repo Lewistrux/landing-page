@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="nombre">Nombre completo</label>
+                                <label for="nombre">Nombres y Apellidos</label>
                                 <input type="text" class="form-control form-control-sm" id="nombre" name="nombre" placeholder="Nombre" required>
                             </div>
                         </div>

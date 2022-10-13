@@ -284,10 +284,9 @@
       $('[data-mask]').inputmask()
 
       IniciarCargado();
-      $('#tipo_documento').on('change', CambioTipoDocumento);
-      $('#region').on('change', cargarProvincias);
-      $('#provincia').on('change', cargarDistritos);
-
+      // $('#tipo_documento').on('change', CambioTipoDocumento);
+      // $('#region').on('change', cargarProvincias);
+      // $('#provincia').on('change', cargarDistritos);
       //FORMULARIOS
       $('#formMovil').on('submit', submitFormCreate);
     })
@@ -314,96 +313,94 @@
 
     function clearModalCreate(event){
       $('#numero').val('');
-      $('#region').val('');
-      $('#distrito').val('');
-      $('#provincia').val('');
+      $('#localidad').val('');
       $('#nombre').val('');
     }
 
     function IniciarCargado(){
       // $('#div_dni').hide();
-      $('#div_ruc').hide();
-      $('#div_carne').hide();
-      $('#tipo_documento').trigger('change');
+      // $('#div_ruc').hide();
+      // $('#div_carne').hide();
+      // $('#tipo_documento').trigger('change');
     }
 
-    function CambioTipoDocumento(){
-      let tipo = $('#tipo_documento').val();
-      if(tipo == 'DNI'){
-        $('#div_dni').show();
-        $('#div_ruc').hide();
-        $('#div_carne').hide();
-      }
-      if(tipo == 'RUC'){
-        $('#div_dni').hide();
-        $('#div_ruc').show();
-        $('#div_carne').hide();
-      }
-      if(tipo == 'CARNE'){
-        $('#div_dni').hide();
-        $('#div_ruc').hide();
-        $('#div_carne').show();
-      }
-    }
+    // function CambioTipoDocumento(){
+    //   let tipo = $('#tipo_documento').val();
+    //   if(tipo == 'DNI'){
+    //     $('#div_dni').show();
+    //     $('#div_ruc').hide();
+    //     $('#div_carne').hide();
+    //   }
+    //   if(tipo == 'RUC'){
+    //     $('#div_dni').hide();
+    //     $('#div_ruc').show();
+    //     $('#div_carne').hide();
+    //   }
+    //   if(tipo == 'CARNE'){
+    //     $('#div_dni').hide();
+    //     $('#div_ruc').hide();
+    //     $('#div_carne').show();
+    //   }
+    // }
 
-    function cargarProvincias() {
-      let departamento_id = this.value;
-      console.log(departamento_id);
-      if (departamento_id !== "" || departamento_id.length > 0) {
-          $.ajax({
-              type: 'post',
-              dataType: 'json',
-              data: {
-                  _token: $('input[name=_token]').val(),
-                  departamento_id: departamento_id
-              },
-              url: "{{ route('locacion.provincias') }}",
-              success: function (response) {
-                  // Limpiamos data
-                  $("#provincia").empty();
-                  $("#distrito").empty();
-                  if (!response.error) {
-                      // Mostramos la información
-                      if (response.provincias != null) {
-                        $("#provincia").select2({
-                            data: response.provincias
-                        }).val($('#provincia').find(':selected').val()).trigger('change');
-                      }
-                  } else {
-                      Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: response.message });
-                  }
-              }
-          });
-      }
-    }
+    // function cargarProvincias() {
+    //   let departamento_id = this.value;
+    //   console.log(departamento_id);
+    //   if (departamento_id !== "" || departamento_id.length > 0) {
+    //       $.ajax({
+    //           type: 'post',
+    //           dataType: 'json',
+    //           data: {
+    //               _token: $('input[name=_token]').val(),
+    //               departamento_id: departamento_id
+    //           },
+    //           url: "{{ route('locacion.provincias') }}",
+    //           success: function (response) {
+    //               // Limpiamos data
+    //               $("#provincia").empty();
+    //               $("#distrito").empty();
+    //               if (!response.error) {
+    //                   // Mostramos la información
+    //                   if (response.provincias != null) {
+    //                     $("#provincia").select2({
+    //                         data: response.provincias
+    //                     }).val($('#provincia').find(':selected').val()).trigger('change');
+    //                   }
+    //               } else {
+    //                   Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: response.message });
+    //               }
+    //           }
+    //       });
+    //   }
+    // }
 
-    function cargarDistritos() {
-      let provincia_id = this.value;
-      if (provincia_id !== "" || provincia_id.length > 0) {
-          $.ajax({
-              type: 'post',
-              dataType: 'json',
-              data: {
-                  _token: $('input[name=_token]').val(),
-                  provincia_id: provincia_id
-              },
-              url: "{{ route('locacion.distritos') }}",
-              success: function (response) {
-                  // Limpiamos data
-                  $("#distrito").empty();
-                  if (!response.error) {
-                      // Mostramos la información
-                      if (response.distritos != null) {
-                        $("#distrito").select2({
-                            data: response.distritos
-                        }).val($('#distrito').find(':selected').val()).trigger('change');
-                      }
-                  } else {
-                      Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: response.message });
-                  }
-              }
-          });
-      }
-    }
+    // function cargarDistritos() {
+    //   let provincia_id = this.value;
+    //   if (provincia_id !== "" || provincia_id.length > 0) {
+    //       $.ajax({
+    //           type: 'post',
+    //           dataType: 'json',
+    //           data: {
+    //               _token: $('input[name=_token]').val(),
+    //               provincia_id: provincia_id
+    //           },
+    //           url: "{{ route('locacion.distritos') }}",
+    //           success: function (response) {
+    //               // Limpiamos data
+    //               $("#distrito").empty();
+    //               if (!response.error) {
+    //                   // Mostramos la información
+    //                   if (response.distritos != null) {
+    //                     $("#distrito").select2({
+    //                         data: response.distritos
+    //                     }).val($('#distrito').find(':selected').val()).trigger('change');
+    //                   }
+    //               } else {
+    //                   Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: response.message });
+    //               }
+    //           }
+    //       });
+    //   }
+    // }
   </script>
 @endsection
