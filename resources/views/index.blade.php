@@ -9,7 +9,7 @@
       <section id="banner">
         <div class="row">
           <div class="col-12">
-          <img src="{{ asset('img/portadas/portada_principal.png') }}">
+          <img src="{{ asset('img/portadas/portada_principal.png') }}" alt="Claro Distribuidor rapinet">
           </div>
         </div>
       </section>
@@ -70,17 +70,17 @@
               <div class="row">
               <div class="col-lg-4 p-2">
                   <a type="button" class="btn" href="{{route('hogar')}}">
-                    <img src="{{ asset('img/servicios/hogar.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                    <img src="{{ asset('img/servicios/hogar.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="Hogar y familia">
                   </a>
                 </div>
                 <div class="col-lg-4 p-2">
                   <a type="button" class="btn" href="{{route('moviles')}}">
-                    <img src="{{ asset('img/servicios/movil.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                    <img src="{{ asset('img/servicios/movil.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="plan movil">
                   </a>
                 </div>
                 <div class="col-lg-4 p-2">
                   <a type="button" class="btn" href="{{route('empresas')}}">
-                    <img src="{{ asset('img/servicios/empresa.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                    <img src="{{ asset('img/servicios/empresa.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="Empresas y negocios">
                   </a>
                 </div>
               </div>

@@ -30,7 +30,7 @@
 
   <section id="acceso_wspp">
     <a href="https://wa.me/961717474" class="whatsapp" target="_blank">
-      <img src="{{ asset('img/icon/wsapp.png') }}" alt="" class="burbuja">
+      <img src="{{ asset('img/icon/wsapp.png') }}" alt="contactar claro" class="burbuja">
     </a>
   </section>
   <footer class="container-fluid bg-dark py-5">
@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-md-6 ">
                   <div class="logo-part">
-                      <img src="{{ asset('img/logotipo/rapinet_blanco.png') }}" class="w-50 logo-footer" >
+                      <img src="{{ asset('img/logotipo/rapinet_color.png') }}" class="w-50 logo-footer" alt="Rapinet">
                       <p></p>
                       <p>Distribuidor Autorizado</p>
                   </div>
@@ -92,7 +92,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Área de sistemas.</b> 
     </div>
-    <strong>Copyright &copy; 2022 <a href="#" class="link"> Diego Vera Villanueva</a>.</strong> Derechos Reservados.
+    <strong>Copyright &copy; 2022 <a href="https://wa.me/925339373" target="_blank" class="link"> Diego Vera Villanueva</a>.</strong> Derechos Reservados.
   </footer>
 </div>
 <!-- ./wrapper -->

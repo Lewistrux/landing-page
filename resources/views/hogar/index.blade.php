@@ -22,13 +22,13 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="{{ asset('img/banners/banner_1.png') }}" alt="First slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/banner_1.png') }}" alt="Costo de instalación gratis">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="{{ asset('img/banners/banner_2.png') }}" alt="Second slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/banner_2.png') }}" alt="Claro tv">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="{{ asset('img/banners/banner_3.png') }}" alt="Third slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/banner_3.png') }}" alt="Fibra óptica">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -73,7 +73,7 @@
         <div class="row p-4 g-4" id="2play">
           <div class="col-lg-4">
             <div class="card">
-              <img src="{{ asset('img/cards/hogar/2play_inter_tel.png') }}" class="card-img-top" alt="...">
+              <img src="{{ asset('img/cards/hogar/2play_inter_tel.png') }}" class="card-img-top" alt="Internet y telefono">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -120,7 +120,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="{{ asset('img/cards/hogar/2play_avanzado.png') }}" class="card-img-top" alt="Claro 2 play">
+              <img src="{{ asset('img/cards/hogar/2play_avanzado.png') }}" class="card-img-top" alt="Internet y cable">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -167,7 +167,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="{{ asset('img/cards/hogar/2play_superior.png') }}" class="card-img-top" alt="Claro 2 play">
+              <img src="{{ asset('img/cards/hogar/2play_superior.png') }}" class="card-img-top" alt="Internet y tv">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -218,7 +218,7 @@
           <div class="col-lg-2"></div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="{{ asset('img/cards/hogar/3play_avanzado.png') }}" class="card-img-top" alt="...">
+              <img src="{{ asset('img/cards/hogar/3play_avanzado.png') }}" class="card-img-top" alt="Internet, telefono y cable">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -270,7 +270,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="{{ asset('img/cards/hogar/3play_superior.png') }}" class="card-img-top" alt="...">
+              <img src="{{ asset('img/cards/hogar/3play_superior.png') }}" class="card-img-top" alt="Internet, telefono y tv">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -331,7 +331,7 @@
           <div class="col-lg-2"></div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="{{ asset('img/cards/hogar/2play_netflix.png') }}" class="card-img-top" alt="...">
+              <img src="{{ asset('img/cards/hogar/2play_netflix.png') }}" class="card-img-top" alt="Internet, telefono y netflix">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">
@@ -378,7 +378,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img src="{{ asset('img/cards/hogar/3play_netflix.png') }}" class="card-img-top" alt="...">
+              <img src="{{ asset('img/cards/hogar/3play_netflix.png') }}" class="card-img-top" alt="Internet, cable, telefono y netflix">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-center">
                   <div class="row">

@@ -6,15 +6,11 @@
   <link rel="stylesheet" href="{{ asset('Adminlte/plugins/toastr/toastr.min.css') }}">
 @endsection
 @section('distribuidor')
-    <header id="distribuidor_red" class="distribuidor_red">
-      <div class="content-autorized">
-          <img src="img/logotipo/logo-distribuidor-autorizado-persona.png" alt="distribuidor" class="logo_distribuidor">
-      </div>
-    </header>
+  @include('Layout.header_red')
 @endsection
 @section('contenido')
       <section id="portada" class="portada">
-        <img src="img/portadas/postula.png" class="portada">
+        <img src="{{ asset('img/portadas/postula.png') }}" class="portada" alt="trabajo en claro">
       </section>
         <!-- <section class="content m-5">
           <div class="container-fluid contenido">

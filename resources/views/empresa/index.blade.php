@@ -8,7 +8,7 @@
   <section id="banner">
     <div class="row">
       <div class="col-12">
-        <img src="{{ asset('img/portadas/portada_corporativa.png') }}">
+        <img src="{{ asset('img/portadas/portada_corporativa.png') }}" alt="Soluciones corporativas">
       </div>
     </div>
   </section>
@@ -20,17 +20,17 @@
           <div class="row">
             <div class="col-lg-4 p-2">
               <a type="button" class="btn" href="{{route('empresas.fijas')}}">
-                <img src="{{ asset('img/servicios/fija_empresa.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                <img src="{{ asset('img/servicios/fija_empresa.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="Internet fijo para empresas">
               </a>
             </div>
             <div class="col-lg-4 p-2">
               <a type="button" class="btn" href="{{route('empresas.moviles')}}">
-                <img src="{{ asset('img/servicios/movil_empresa.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                <img src="{{ asset('img/servicios/movil_empresa.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="Planes moviles para empresas">
               </a>
             </div>
             <div class="col-lg-4 p-2">
               <a type="button" class="btn" href="{{route('empresas.soluciones')}}">
-                <img src="{{ asset('img/servicios/soluciones_empresa.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                <img src="{{ asset('img/servicios/soluciones_empresa.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="soluciones para empresas">
               </a>
             </div>
             <div class="col-12 text-right">

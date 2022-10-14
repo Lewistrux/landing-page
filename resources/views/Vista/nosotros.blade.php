@@ -21,7 +21,7 @@
                 <div class="card card-warning card-outline">
                     <div class="card-body box-profile">
                         <div class="text-center">
-                            <img class=" img-fluid" src="img/logotipo/rapinet_negro.png" alt="User profile picture">  <!-- profile-user-img -->
+                            <img class=" img-fluid" src="{{ asset('img/logotipo/rapinet_color.png') }}" alt="User profile picture">  <!-- profile-user-img -->
                         </div>
                         <h3 class="profile-username text-center">RAPINET S.A.C</h3>
                         <p class="text-muted text-center">Distribuidor Autorizado de Claro</p>

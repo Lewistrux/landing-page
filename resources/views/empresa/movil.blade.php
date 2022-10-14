@@ -15,7 +15,7 @@
   <section id="banner">
     <div class="row">
       <div class="col-12">
-        <img src="{{ asset('img/portadas/empresa/moviles.png') }}">
+        <img src="{{ asset('img/portadas/empresa/moviles.png') }}" alt="telefonía movil negocios">
       </div>
     </div>
   </section>
@@ -27,7 +27,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/movil/maxneg_69.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/movil/maxneg_69.png') }}" class="card-img-top" alt="Plan para negocio"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -39,7 +39,7 @@
               </div>
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/movil/maxneg_79.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/movil/maxneg_79.png') }}" class="card-img-top" alt="Plan para negocio"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -51,51 +51,7 @@
               </div>
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/movil/maxneg_95.png') }}" class="card-img-top" alt="..."> 
-                  <div class="card-footer">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-1"></div>
-        </div>
-        <div class="row p-4 g-4">
-          <div class="col-lg-1"></div>
-          <div class="col-lg-10">
-            <div class="row">
-              <div class="col-lg-4">
-                <div class="card">
-                  <img src="{{ asset('img/cards/negocios/movil/maxneg_109.png') }}" class="card-img-top" alt="..."> 
-                  <div class="card-footer">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="card">
-                  <img src="{{ asset('img/cards/negocios/movil/maxneg_125.png') }}" class="card-img-top" alt="..."> 
-                  <div class="card-footer">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="card">
-                  <img src="{{ asset('img/cards/negocios/movil/maxneg_159.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/movil/maxneg_95.png') }}" class="card-img-top" alt="Plan para negocio"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -115,7 +71,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/movil/maxneg_189.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/movil/maxneg_109.png') }}" class="card-img-top" alt="Plan para negocio"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -127,7 +83,51 @@
               </div>
               <div class="col-lg-4">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/movil/maxneg_289.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/movil/maxneg_125.png') }}" class="card-img-top" alt="Plan para negocio"> 
+                  <div class="card-footer">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card">
+                  <img src="{{ asset('img/cards/negocios/movil/maxneg_159.png') }}" class="card-img-top" alt="Plan para negocio"> 
+                  <div class="card-footer">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-1"></div>
+        </div>
+        <div class="row p-4 g-4">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-10">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="card">
+                  <img src="{{ asset('img/cards/negocios/movil/maxneg_189.png') }}" class="card-img-top" alt="Plan para negocio"> 
+                  <div class="card-footer">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <button type="button" class="btn btn-info w-100" data-toggle="modal" data-target="#modal-movil">Me interesa</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card">
+                  <img src="{{ asset('img/cards/negocios/movil/maxneg_289.png') }}" class="card-img-top" alt="Plan para negocio"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">

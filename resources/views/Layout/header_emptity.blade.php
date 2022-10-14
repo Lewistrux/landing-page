@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-white bg-dark text-white">
   <div class="container">
     <a href="{{route('inicio')}}" class="navbar-brand">
-      <img src="{{ asset('img/logotipo/rapinet_blanco.png') }}" alt="Claro Lewis" class="logo brand-image " style="opacity: .9">
+      <img src="{{ asset('img/logotipo/rapinet_blanco.png') }}" alt="Rapinet" class="logo brand-image " style="opacity: .9">
     </a>
 
     <button class="navbar-toggler order-0 text-muted bg-light" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

@@ -20,16 +20,16 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_1.png') }}" alt="First slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_1.png') }}" alt="Postpago">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_2.png') }}" alt="Second slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_2.png') }}" alt="Internet ilimitado">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_3.png') }}" alt="Third slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_3.png') }}" alt="JTodo ilimitado">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_4.png') }}" alt="four slide">
+              <img class="d-block w-100" src="{{ asset('img/banners/movil/movil_4.png') }}" alt="Plan Netflix">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

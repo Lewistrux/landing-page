@@ -15,7 +15,7 @@
   <section id="banner">
     <div class="row">
       <div class="col-12">
-        <img src="{{ asset('img/portadas/empresa/soluciones.png') }}">
+        <img src="{{ asset('img/portadas/empresa/soluciones.png') }}" alt="soluciones moviles">
       </div>
     </div>
   </section>
@@ -36,17 +36,17 @@
                 <div class="row centrado">
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/administracion.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/administracion.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="administracion">
                     </button>
                   </div>
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_activity.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_activity.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_activity">
                     </button>
                   </div>
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_contact.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_contact.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_contact">
                     </button>
                   </div>
                 </div>
@@ -55,36 +55,17 @@
                 <div class="row centrado">
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_content.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_content.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_content">
                     </button>
                   </div>
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_delivery.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_delivery.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_delivery">
                     </button>
                   </div>
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_message.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row centrado">
-                  <div class="col-lg-3 p-2">
-                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_mobility.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
-                    </button>
-                  </div>
-                  <div class="col-lg-3 p-2">
-                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_presence.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
-                    </button>
-                  </div>
-                  <div class="col-lg-3 p-2">
-                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_sales.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_message.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_message">
                     </button>
                   </div>
                 </div>
@@ -93,36 +74,17 @@
                 <div class="row centrado">
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_security.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_mobility.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_mobility">
                     </button>
                   </div>
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_track.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_presence.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_presence">
                     </button>
                   </div>
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/e_visit.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row centrado">
-                  <div class="col-lg-3 p-2">
-                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/form_dinamico.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
-                    </button>
-                  </div>
-                  <div class="col-lg-3 p-2">
-                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/g_financiera.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
-                    </button>
-                  </div>
-                  <div class="col-lg-3 p-2">
-                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/localizacion.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_sales.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_sales">
                     </button>
                   </div>
                 </div>
@@ -131,17 +93,55 @@
                 <div class="row centrado">
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/mensajeria.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_security.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_security">
                     </button>
                   </div>
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/monitoreo.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_track.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_track">
                     </button>
                   </div>
                   <div class="col-lg-3 p-2">
                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
-                      <img src="{{ asset('img/cards/negocios/soluciones/smart.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="">
+                      <img src="{{ asset('img/cards/negocios/soluciones/e_visit.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="e_visit">
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row centrado">
+                  <div class="col-lg-3 p-2">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
+                      <img src="{{ asset('img/cards/negocios/soluciones/form_dinamico.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="formulario dinámico">
+                    </button>
+                  </div>
+                  <div class="col-lg-3 p-2">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
+                      <img src="{{ asset('img/cards/negocios/soluciones/g_financiera.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="gestion financiera">
+                    </button>
+                  </div>
+                  <div class="col-lg-3 p-2">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
+                      <img src="{{ asset('img/cards/negocios/soluciones/localizacion.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="localización">
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row centrado">
+                  <div class="col-lg-3 p-2">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
+                      <img src="{{ asset('img/cards/negocios/soluciones/mensajeria.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="mensajeria">
+                    </button>
+                  </div>
+                  <div class="col-lg-3 p-2">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
+                      <img src="{{ asset('img/cards/negocios/soluciones/monitoreo.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="monitoreo">
+                    </button>
+                  </div>
+                  <div class="col-lg-3 p-2">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-soluciones">
+                      <img src="{{ asset('img/cards/negocios/soluciones/smart.png') }}" class="tarjeta-btn elevation-2 p-2 link-tarjeta" alt="smart">
                     </button>
                   </div>
                 </div>

@@ -12,7 +12,7 @@
   <section id="banner">
     <div class="row">
       <div class="col-12">
-        <img src="{{ asset('img/portadas/empresa/fija.png') }}">
+        <img src="{{ asset('img/portadas/empresa/fija.png') }}" alt="Internet corporativo">
       </div>
     </div>
   </section>
@@ -29,7 +29,7 @@
               </div>
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/fija/emp_fija_77.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/fija/emp_fija_77.png') }}" class="card-img-top" alt="Internet empresas"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -41,7 +41,7 @@
               </div>
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/fija/emp_fija_87.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/fija/emp_fija_87.png') }}" class="card-img-top" alt="Internet empresas"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -53,7 +53,7 @@
               </div>
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/fija/emp_fija_98.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/fija/emp_fija_98.png') }}" class="card-img-top" alt="Internet empresas"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -70,7 +70,7 @@
               </div>
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/fija/1play_49.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/fija/1play_49.png') }}" class="card-img-top" alt="Telefonía para empresas"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -82,7 +82,7 @@
               </div>
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/fija/1play_120.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/fija/1play_120.png') }}" class="card-img-top" alt="Canales para empresas"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
@@ -94,7 +94,7 @@
               </div>
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
-                  <img src="{{ asset('img/cards/negocios/fija/1play_170.png') }}" class="card-img-top" alt="..."> 
+                  <img src="{{ asset('img/cards/negocios/fija/1play_170.png') }}" class="card-img-top" alt="canales para empresas"> 
                   <div class="card-footer">
                     <div class="row">
                       <div class="col-lg-12">
