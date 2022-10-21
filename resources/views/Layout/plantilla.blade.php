@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-md-6 ">
                   <div class="logo-part">
-                      <img src="{{ asset('img/logotipo/rapinet_color.png') }}" class="w-50 logo-footer" alt="Rapinet">
+                      <img src="{{ asset('img/logotipo/rapinet_blanco.png') }}" class="w-50 logo-footer" alt="Rapinet">
                       <p></p>
                       <p>Distribuidor Autorizado</p>
                   </div>
