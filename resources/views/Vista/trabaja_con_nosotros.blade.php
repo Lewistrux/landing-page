@@ -60,10 +60,9 @@
               <ul class="nav nav-pills items-center espacio_entre">
                   <li class="nav-item m-2">
                     <a class="w-100" href="#asesor" data-toggle="tab">
-                      <div class="info-box ">
-                        <span class="info-box-icon bg-warning">
+                      <div class="info-box bg-warning">
+                        <span class="info-box-icon">
                           <i class="fas fa-user" style="color: white;"></i>
-                          <!-- <img src="{{ asset('img/botones/btn_inter_tel.png')}}" alt=""> -->
                         </span>
                         <div class="info-box-content">
                           <span class="info-box-text">Quiero ser ... </span>
@@ -74,8 +73,8 @@
                   </li>
                   <li class="nav-item m-2 espacio_entre">
                     <a class="w-100" href="#supervisor" data-toggle="tab">
-                      <div class="info-box">
-                        <span class="info-box-icon bg-secondary">
+                      <div class="info-box bg-secondary">
+                        <span class="info-box-icon">
                           <i class="fas fa-user-shield"></i>
                         </span>
                         <div class="info-box-content">
@@ -87,8 +86,8 @@
                   </li>
                   <li class="nav-item m-2">
                     <a class="w-100" href="#control" data-toggle="tab">
-                      <div class="info-box ">
-                        <span class="info-box-icon bg-info">
+                      <div class="info-box bg-info">
+                        <span class="info-box-icon">
                           <i class="fas fa-user-clock"></i>
                         </span>
                         <div class="info-box-content">
@@ -100,8 +99,8 @@
                   </li>
                   <li class="nav-item m-2">
                     <a class="" href="#rrhh" data-toggle="tab">
-                      <div class="info-box ">
-                        <span class="info-box-icon bg-danger">
+                      <div class="info-box bg-danger">
+                        <span class="info-box-icon">
                           <i class="fas fa-user-check"></i>
                         </span>
                         <div class="info-box-content">
@@ -129,117 +128,61 @@
                           </div>
                         </div>
                         <!-- descripcion acordeon -->
-                        <div class="col-md-12">
-                          <div id="accordion">
-                            <div class="card card-info">
-                              <div class="card-header">
-                                <h4 class="card-title w-100">
-                                  <a class="d-block w-100 collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false">
-                                    Descripción breve del puesto <span class="font-italic">(Click aquí)</span>
-                                  </a>
-                                </h4>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                          <div class="card card-info">
+                            <div class="card card-widget widget-user-2">
+                            <div class="widget-user-header bg-info">
+                              <div class="widget-user-image">
+                                <img class="img-circle elevation-2" src="{{ asset('img/icon/descripcion.jpg') }}" alt="Descripcion de trabajo">
                               </div>
-                              <div id="collapseOne" class="collapse" data-parent="#accordion" style="">
-                                <div class="card-body">
-                                  Los encargados de ventas comunican los productos que ofrece la empresa, sabe escuchar y conoce las necesidades de los clientes. 
-                                  Asimismo, asesora a clientes potenciales para que estos tengan una experiencia única de compra, a su vez, deben acercarlos más a los beneficios 
-                                  del producto o servicio para que terminen de tomar la decisión y adquirir el producto. 
-                                </div>
-                              </div>
+                              <h3 class="widget-user-username">Descripción</h3>
+                              <h5 class="widget-user-desc">Resumen Breve del Puesto</h5>
+                            </div>
+                              
+                            </div>
+                            <div class="card-body text-justify pt-2">
+                              Los encargados de ventas comunican los productos que ofrece la empresa, sabe escuchar y conoce las necesidades de los clientes. 
+                              Asimismo, asesora a clientes potenciales para que estos tengan una experiencia única de compra, a su vez, deben acercarlos más a los beneficios 
+                              del producto o servicio para que terminen de tomar la decisión y adquirir el producto. 
                             </div>
                           </div>
                         </div>
-
-                        <div class="col-md-4">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
                           <div class="card card-widget widget-user-2">
-                            <div class="widget-user-header bg-warning">
+                            <div class="widget-user-header bg-info">
                               <div class="widget-user-image">
                                 <img class="img-circle elevation-2" src="{{ asset('img/icon/lista.png') }}" alt="Actividades de Asesor">
                               </div>
-                              <h3 class="widget-user-username">Lista de actividades</h3>
-                              <h5 class="widget-user-desc">Tareas y responsabilidades</h5>
+                              <h3 class="widget-user-username">Aptitudes</h3>
+                              <h5 class="widget-user-desc">Valores y Características</h5>
                             </div>
                             <div class="card-footer p-0">
                               <ul class="nav flex-column">
                                 <li class="nav-item">
                                   <span class="nav-link">
-                                    Evalúa al cliente <span class="float-right badge bg-primary">a</span>
+                                    Honestidad<span class="float-right badge bg-primary"></span>
                                   </span>
                                 </li>
                                 <li class="nav-item">
                                   <span class="nav-link">
-                                    Registra a los clientes según la evaluación <span class="float-right badge bg-info">5</span>
+                                    Puntualidad <span class="float-right badge bg-info"></span>
                                   </span>
                                 </li>
                                 <li class="nav-item">
                                   <span class="nav-link">
-                                    Genera código SEC <span class="float-right badge bg-success">12</span>
+                                    Proactivo <span class="float-right badge bg-success"></span>
+                                  </span>
+                                </li>
+                                <li class="nav-item">
+                                  <span class="nav-link">
+                                    Carismático <span class="float-right badge bg-success"></span>
                                   </span>
                                 </li>
                               </ul>
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-4">
-                          <div class="card card-widget widget-user-2">
-                            <div class="widget-user-header bg-warning">
-                              <div class="widget-user-image">
-                                <img class="img-circle elevation-2" src="{{ asset('img/icon/lista.png') }}" alt="Actividades de Asesor">
-                              </div>
-                              <h3 class="widget-user-username">Aptitudes y Valores</h3>
-                              <h5 class="widget-user-desc">Caracteristicas</h5>
-                            </div>
-                            <div class="card-footer p-0">
-                              <ul class="nav flex-column">
-                                <li class="nav-item">
-                                  <span class="nav-link">
-                                    Evalúa al cliente <span class="float-right badge bg-primary">a</span>
-                                  </span>
-                                </li>
-                                <li class="nav-item">
-                                  <span class="nav-link">
-                                    Registra a los clientes según la evaluación <span class="float-right badge bg-info">5</span>
-                                  </span>
-                                </li>
-                                <li class="nav-item">
-                                  <span class="nav-link">
-                                    Genera código SEC <span class="float-right badge bg-success">12</span>
-                                  </span>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="card card-widget widget-user-2">
-                            <div class="widget-user-header bg-warning">
-                              <div class="widget-user-image">
-                                <img class="img-circle elevation-2" src="{{ asset('img/icon/lista.png') }}" alt="Actividades de Asesor">
-                              </div>
-                              <h3 class="widget-user-username">Requisitos</h3>
-                              <h5 class="widget-user-desc">Sugerencia de requerimientos</h5>
-                            </div>
-                            <div class="card-footer p-0">
-                              <ul class="nav flex-column">
-                                <li class="nav-item">
-                                  <span class="nav-link">
-                                    Evalúa al cliente <span class="float-right badge bg-primary">a</span>
-                                  </span>
-                                </li>
-                                <li class="nav-item">
-                                  <span class="nav-link">
-                                    Registra a los clientes según la evaluación <span class="float-right badge bg-info">5</span>
-                                  </span>
-                                </li>
-                                <li class="nav-item">
-                                  <span class="nav-link">
-                                    Genera código SEC <span class="float-right badge bg-success">12</span>
-                                  </span>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                        
                       </div>
                       <div class="row">
                           <!-- <div class="col-md-6 col-sm-6 col-12">

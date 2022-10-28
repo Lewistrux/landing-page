@@ -21,7 +21,7 @@
                 <div class="card card-warning card-outline">
                     <div class="card-body box-profile">
                         <div class="text-center">
-                            <img class=" img-fluid" src="{{ asset('img/logotipo/rapinet_color.png') }}" alt="User profile picture">  <!-- profile-user-img -->
+                            <img class=" img-fluid" src="{{ asset('img/logotipo/rapinet_negro.png') }}" alt="User profile picture">  <!-- profile-user-img -->
                         </div>
                         <h3 class="profile-username text-center">RAPINET S.A.C</h3>
                         <p class="text-muted text-center">Distribuidor Autorizado de Claro</p>
@@ -48,7 +48,6 @@
                         <strong><i class="fas fa-map-marker-alt mr-1"></i> Ubicación</strong>
                         <p class="text-muted">Av. España 136 - Trujillo - Perú</p>
                         <hr>
-                        
                     </div>
                 </div>
             </div>
@@ -129,81 +128,59 @@
                     </div>
                 </div>
                 <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-warning">
-                            <div class="card-header">
-                                <h4 class="card-title text-white">Galería</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/galeria/equipo/1.jpg') }}" data-toggle="lightbox" data-title="sample plan - 1111" data-gallery="gallery">
-                                    <img src="{{ asset('img/galeria/equipo/1.jpg') }}" class="img-fluid mb-2" alt="white sample"/>
-                                    </a>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card card-warning">
+                                    <div class="card-header">
+                                        <h4 class="card-title text-white">Galería</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <a href="{{ asset('img/galeria/equipo/1.jpg') }}" data-toggle="lightbox" data-title="Primer equipo de trabajo" data-gallery="gallery">
+                                                    <img src="{{ asset('img/galeria/equipo/1.jpg') }}" class="img-fluid mb-2" alt="equipo de trabajo"/>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="{{ asset('img/galeria/equipo/2.jpg') }}" data-toggle="lightbox" data-title="Asesores brindando información de calidad" data-gallery="gallery">
+                                                    <img src="{{ asset('img/galeria/equipo/2.jpg') }}" class="img-fluid mb-2" alt="asesores"/>
+                                                </a>
+                                                <a href="{{ asset('img/galeria/equipo/3.jpg') }}" data-toggle="lightbox" data-title="Premiando su esfuerzo" data-gallery="gallery">
+                                                    <img src="{{ asset('img/galeria/equipo/3.jpg') }}" class="img-fluid mb-2" alt="premiación"/>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <a href="{{ asset('img/galeria/equipo/7.jpg') }}" data-toggle="lightbox" data-title="Capacitaciones constantes" data-gallery="gallery">
+                                                    <img src="{{ asset('img/galeria/equipo/7.jpg') }}" class="img-fluid mb-2" alt="capacitaciones"/>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="{{ asset('img/galeria/equipo/6.jpg') }}" data-toggle="lightbox" data-title="Líderes en ventas" data-gallery="gallery">
+                                                    <img src="{{ asset('img/galeria/equipo/6.jpg') }}" class="img-fluid mb-2" alt="líderes"/>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="{{ asset('img/galeria/equipo/5.jpg') }}" data-toggle="lightbox" data-title="Reconociendo el talento" data-gallery="gallery">
+                                                    <img src="{{ asset('img/galeria/equipo/5.jpg') }}" class="img-fluid mb-2" alt="reconocimiento"/>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="{{ asset('img/galeria/equipo/8.jpg') }}" data-toggle="lightbox" data-title="Apoyo de compañeros" data-gallery="gallery">
+                                                    <img src="{{ asset('img/galeria/equipo/8.jpg') }}" class="img-fluid mb-2" alt="asesores"/>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="{{ asset('img/galeria/equipo/9.jpg') }}" data-toggle="lightbox" data-title="Servicios y productos" data-gallery="gallery">
+                                                    <img src="{{ asset('img/galeria/equipo/9.jpg') }}" class="img-fluid mb-2" alt="servicios y productos"/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/galeria/equipo/1.jpg') }}" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
-                                    <img src="{{ asset('img/galeria/equipo/1.jpg') }}" class="img-fluid mb-2" alt="black sample"/>
-                                    </a>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/galeria/equipo/1.jpg') }}" data-toggle="lightbox" data-title="sample 3 - red" data-gallery="gallery">
-                                    <img src="{{ asset('img/galeria/equipo/1.jpg') }}" class="img-fluid mb-2" alt="red sample"/>
-                                    </a>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/galeria/equipo/1.jpg') }}" data-toggle="lightbox" data-title="sample 4 - red" data-gallery="gallery">
-                                    <img src="{{ asset('img/galeria/equipo/1.jpg') }}" class="img-fluid mb-2" alt="red sample"/>
-                                    </a>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/galeria/equipo/1.jpg') }}" data-toggle="lightbox" data-title="sample 5 - black" data-gallery="gallery">
-                                    <img src="{{ asset('img/galeria/equipo/1.jpg') }}" class="img-fluid mb-2" alt="black sample"/>
-                                    </a>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/publicidad/p2.png') }}" data-toggle="lightbox" data-title="sample 6 - white" data-gallery="gallery">
-                                    <img src="{{ asset('img/publicidad/p2.png') }}" class="img-fluid mb-2" alt="white sample"/>
-                                    </a>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/publicidad/p3.png') }}" data-toggle="lightbox" data-title="sample 7 - white" data-gallery="gallery">
-                                    <img src="{{ asset('img/publicidad/p3.png') }}" class="img-fluid mb-2" alt="white sample"/>
-                                    </a>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/publicidad/p4.png') }}" data-toggle="lightbox" data-title="sample 8 - black" data-gallery="gallery">
-                                    <img src="{{ asset('img/publicidad/p4.png') }}" class="img-fluid mb-2" alt="black sample"/>
-                                    </a>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/publicidad/p1.png') }}" data-toggle="lightbox" data-title="sample 9 - red" data-gallery="gallery">
-                                    <img src="{{ asset('img/publicidad/p1.png') }}" class="img-fluid mb-2" alt="red sample"/>
-                                    </a>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/publicidad/p2.png') }}" data-toggle="lightbox" data-title="sample 10 - white" data-gallery="gallery">
-                                    <img src="{{ asset('img/publicidad/p2.png') }}" class="img-fluid mb-2" alt="white sample"/>
-                                    </a>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/publicidad/p3.png') }}" data-toggle="lightbox" data-title="sample 11 - white" data-gallery="gallery">
-                                    <img src="{{ asset('img/publicidad/p3.png') }}" class="img-fluid mb-2" alt="white sample"/>
-                                    </a>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="{{ asset('img/publicidad/p4.png') }}" data-toggle="lightbox" data-title="sample 12 - black" data-gallery="gallery">
-                                    <img src="{{ asset('img/publicidad/p4.png') }}" class="img-fluid mb-2" alt="black sample"/>
-                                    </a>
-                                </div>
-                                </div>
-                            </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </section>
             </div>
         </div>    

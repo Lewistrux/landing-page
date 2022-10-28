@@ -350,6 +350,16 @@ footer{
     text-align:center;
     font-size:30px;
     z-index:100;
+    -webkit-animation: tiembla 1.3s infinite;
+}
+
+.whatsapp:hover{
+    /* -webkit-transform:scale(1.3);transform:scale(1.3); */
+}
+@-webkit-keyframes tiembla{
+    0%  { -webkit-transform:rotateZ(-5deg); }
+    50% { -webkit-transform:rotateZ( 0deg) scale(.7); }
+    100%{ -webkit-transform:rotateZ( 5deg); }
 }
 
 .publicidad{
